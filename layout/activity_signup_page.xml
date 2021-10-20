@@ -1,0 +1,166 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".Signup_page">
+
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="550dp"
+        android:background="@drawable/background">
+    </FrameLayout>
+
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="350dp"
+        android:layout_marginTop="500dp"
+        android:background="#ffffff"></FrameLayout>
+
+
+    <FrameLayout
+        android:layout_width="350dp"
+        android:layout_height="580dp"
+        android:layout_centerHorizontal="true"
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="50dp"
+        android:background="@drawable/wround_square"
+        android:elevation="10dp">
+
+        <TextView
+            android:id="@+id/textView2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:layout_marginStart="128dp"
+            android:layout_marginTop="15dp"
+            android:text="회원가입"
+            android:textSize="25sp"
+            android:textStyle="bold"
+            android:textColor="#7ED687"/>
+        <EditText
+            android:id="@+id/username"
+            android:layout_width="240dp"
+            android:layout_height="50dp"
+            android:ems="10"
+            android:layout_marginStart="23dp"
+            android:layout_marginTop="60dp"
+            android:hint="성명"
+            android:textColorHint="#CCCCCC" />
+        <View
+            android:background="#CCCCCC"
+            android:layout_width="300dp"
+            android:layout_marginStart="25dp"
+            android:layout_marginTop="105dp"
+            android:layout_height="6px"/>
+
+        <EditText
+            android:id="@+id/ID"
+            android:layout_width="240dp"
+            android:layout_height="50dp"
+            android:ems="10"
+            android:layout_marginStart="23dp"
+            android:layout_marginTop="120dp"
+            android:hint="아이디"
+            android:textColorHint="#CCCCCC"/>
+        <View
+            android:background="#CCCCCC"
+            android:layout_width="300dp"
+            android:layout_marginStart="25dp"
+            android:layout_marginTop="160dp"
+            android:layout_height="6px"/>
+
+        <Button
+            android:id="@+id/check_button"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="중복확인"
+            android:layout_marginStart="240dp"
+            android:layout_marginTop="110dp"/>
+        <EditText
+            android:id="@+id/password"
+            android:layout_width="240dp"
+            android:layout_height="50dp"
+            android:ems="10"
+            android:layout_marginStart="20dp"
+            android:layout_marginTop="170dp"
+            android:inputType="textPassword"
+            android:hint="비밀번호"
+            android:textColorHint="#CCCCCC"/>
+        <View
+            android:background="#CCCCCC"
+            android:layout_width="300dp"
+            android:layout_marginStart="25dp"
+            android:layout_marginTop="213dp"
+            android:layout_height="6px"/>
+
+        <EditText
+            android:id="@+id/editTextPhone"
+            android:layout_width="240dp"
+            android:layout_height="50dp"
+            android:ems="10"
+            android:inputType="phone"
+            android:layout_marginStart="20dp"
+            android:layout_marginTop="230dp"
+            android:hint="전화번호"
+            android:textColorHint="#CCCCCC"/>
+        <View
+            android:background="#CCCCCC"
+            android:layout_width="300dp"
+            android:layout_marginStart="25dp"
+            android:layout_marginTop="280dp"
+            android:layout_height="6px"/>
+        <!--<EditText
+            android:id="@+id/editTextNumber"
+            android:layout_width="240dp"
+            android:layout_height="50dp"
+            android:ems="10"
+            android:inputType="number"
+            android:layout_marginStart="20dp"
+            android:layout_marginTop="290dp"
+            android:hint="인증번호"
+            android:textColorHint="#CCCCCC"/>
+        <View
+            android:background="#CCCCCC"
+            android:layout_width="300dp"
+            android:layout_marginStart="25dp"
+            android:layout_marginTop="340dp"
+            android:layout_height="6px"/>
+        <Button
+            android:id="@+id/button8"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="확인"
+            android:layout_marginStart="240dp"
+            android:layout_marginTop="290dp"/>-->
+    </FrameLayout>
+
+    <FrameLayout
+        android:layout_width="350dp"
+        android:layout_height="100dp"
+        android:layout_centerHorizontal="true"
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="600dp"
+        android:background="#00ffffff"
+        android:elevation="10dp">
+        <Button
+            android:id="@+id/join_button"
+            android:layout_width="250dp"
+            android:layout_height="60dp"
+            android:layout_marginStart="45dp"
+            android:layout_marginTop="10dp"
+            android:background="@drawable/gradient_round_squre"
+            android:text="가입완료"
+            android:textSize="23sp"
+            android:textStyle="bold"></Button>
+
+    </FrameLayout>
+
+
+
+
+
+
+</FrameLayout>

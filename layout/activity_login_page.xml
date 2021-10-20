@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/background"
+    tools:context=".Signup_page">
+
+    <FrameLayout
+        android:layout_width="350dp"
+        android:layout_height="400dp"
+        android:layout_centerHorizontal="true"
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="100dp"
+        android:background="@drawable/wround_square"
+        android:elevation="10dp">
+
+        <TextView
+            android:id="@+id/textView2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:layout_marginStart="130dp"
+            android:layout_marginTop="15dp"
+            android:text="로그인"
+            android:textSize="25sp"
+            android:textStyle="bold"
+            android:textColor="#7ED687"/>
+        <EditText
+            android:id="@+id/login_ID"
+            android:layout_width="240dp"
+            android:layout_height="50dp"
+            android:ems="10"
+            android:layout_marginStart="23dp"
+            android:layout_marginTop="90dp"
+            android:hint="아이디"
+            android:textColorHint="#CCCCCC" />
+        <View
+            android:background="#CCCCCC"
+            android:layout_width="300dp"
+            android:layout_marginStart="25dp"
+            android:layout_marginTop="135dp"
+            android:layout_height="6px"/>
+
+        <EditText
+            android:id="@+id/login_pass"
+            android:layout_width="240dp"
+            android:layout_height="50dp"
+            android:ems="10"
+            android:layout_marginStart="23dp"
+            android:layout_marginTop="160dp"
+            android:inputType="textPassword"
+            android:hint="비밀번호"
+            android:textColorHint="#CCCCCC"/>
+        <View
+            android:background="#CCCCCC"
+            android:layout_width="300dp"
+            android:layout_marginStart="25dp"
+            android:layout_marginTop="210dp"
+            android:layout_height="6px"/>
+
+        <Button
+            android:id="@+id/join_button"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="130dp"
+            android:layout_marginTop="340dp"
+            android:background="@color/white"
+            android:textColor="#CCCCCC"
+            android:text="회원가입"
+            android:textSize="15sp"
+            android:textStyle="bold"/>
+
+
+    </FrameLayout>
+
+    <Button
+        android:id="@+id/login_button"
+        android:layout_width="240dp"
+        android:layout_height="55dp"
+        android:layout_marginStart="70dp"
+        android:layout_marginTop="540dp"
+        android:background="@drawable/wround_square"
+        android:text="로그인"
+        android:textSize="20sp"
+        android:textColor="#7ED687"
+        android:textStyle="bold"></Button>
+
+
+
+
+
+
+</FrameLayout>
