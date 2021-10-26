@@ -1,3 +1,5 @@
+<!--그라데이션 효과 넣은 모서리가 둥근 네모(난 주로 로그인/회원가입/신청하기 버튼 같은데 썼어-->
+
 <?xml version="1.0" encoding="utf-8"?>
 <shape
     xmlns:android="http://schemas.android.com/apk/res/android"
