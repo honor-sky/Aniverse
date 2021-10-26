@@ -6,7 +6,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@drawable/background"
-    tools:context=".Signup_page">
+    tools:context=".Login_normal">
 
     <FrameLayout
         android:layout_width="350dp"
@@ -16,6 +16,34 @@
         android:layout_marginTop="100dp"
         android:background="@drawable/wround_square"
         android:elevation="10dp">
+        <Button
+            android:id="@+id/normalbtn"
+            android:layout_width="wrap_content"
+            android:layout_height="40dp"
+            android:layout_marginStart="30dp"
+            android:layout_marginTop="300dp"
+            android:text="normal"
+            android:textSize="15sp"
+            android:background="@drawable/background"/>
+        <Button
+            android:id="@+id/centerbtn"
+            android:layout_width="wrap_content"
+            android:layout_height="40dp"
+            android:layout_marginStart="130dp"
+            android:layout_marginTop="300dp"
+            android:text="center"
+            android:textSize="15sp"
+            android:background="@drawable/background"/>
+        <Button
+            android:id="@+id/sellerbtn"
+            android:layout_width="wrap_content"
+            android:layout_height="40dp"
+            android:layout_marginStart="230dp"
+            android:layout_marginTop="300dp"
+            android:text="seller"
+            android:textSize="15sp"
+            android:background="@drawable/background"/>
+
 
         <TextView
             android:id="@+id/textView2"
@@ -66,12 +94,18 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginStart="130dp"
-            android:layout_marginTop="340dp"
-            android:background="@color/white"
+            android:layout_marginTop="345dp"
+            android:background="#00ffffff"
             android:textColor="#CCCCCC"
             android:text="회원가입"
             android:textSize="15sp"
             android:textStyle="bold"/>
+        <View
+            android:background="#CCCCCC"
+            android:layout_width="70dp"
+            android:layout_marginStart="140dp"
+            android:layout_marginTop="380dp"
+            android:layout_height="6px"/>
 
 
     </FrameLayout>

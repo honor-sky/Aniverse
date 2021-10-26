@@ -3,27 +3,53 @@ package org.gyeongsoton.gyeongsoton_jelly;
 import androidx.appcompat.app.AppCompatActivity;
 import android.os.Bundle;
 import android.content.Intent;
-import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
-import androidx.appcompat.app.AppCompatActivity;
+
 import com.android.volley.RequestQueue;
 import com.android.volley.Response;
 import com.android.volley.toolbox.Volley;
 import org.json.JSONException;
 import org.json.JSONObject;
 
-public class Login_page extends AppCompatActivity {
+public class Login_normal extends AppCompatActivity {
 
     private EditText login_ID, login_pass;
-    private Button login_button,join_button;
+    private Button login_button,join_button,normalbtn,centerbtn,sellerbtn;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_login_page);
+        setContentView(R.layout.activity_login_normal);
+
+        normalbtn = findViewById( R.id.normalbtn );
+        normalbtn.setOnClickListener( new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent( Login_normal.this, Login_normal.class );
+                startActivity( intent );
+            }
+        });
+
+        centerbtn=  findViewById( R.id.centerbtn );
+        centerbtn.setOnClickListener( new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent( Login_normal.this, Login_center.class );
+                startActivity( intent );
+            }
+        });
+
+        sellerbtn=findViewById( R.id.sellerbtn );
+        sellerbtn.setOnClickListener( new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent( Login_normal.this, Login_seller.class );
+                startActivity( intent );
+            }
+        });
 
 
         login_ID = findViewById( R.id.login_ID );
@@ -33,7 +59,7 @@ public class Login_page extends AppCompatActivity {
         join_button.setOnClickListener( new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent = new Intent( Login_page.this, Signup_page.class );
+                Intent intent = new Intent( Login_normal.this, Signup.class );
                 startActivity( intent );
             }
         });
@@ -59,7 +85,7 @@ public class Login_page extends AppCompatActivity {
                                 String UserName = jsonObject.getString( "UserName" );
 
                                 Toast.makeText( getApplicationContext(), String.format("%s님 환영합니다.", UserName), Toast.LENGTH_SHORT ).show();
-                                Intent intent = new Intent( Login_page.this, MainActivity.class );
+                                Intent intent = new Intent( Login_normal.this, MainActivity.class );
 
                                 intent.putExtra( "UserID", UserID );
                                 intent.putExtra( "UserPass", UserPass );
@@ -78,7 +104,7 @@ public class Login_page extends AppCompatActivity {
                     }
                 };
                 LoginRequest loginRequest = new LoginRequest( UserID, UserPass, responseListener );
-                RequestQueue queue = Volley.newRequestQueue( Login_page.this );
+                RequestQueue queue = Volley.newRequestQueue( Login_normal.this );
                 queue.add( loginRequest );
 
             }

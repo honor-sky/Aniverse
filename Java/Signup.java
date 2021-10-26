@@ -15,7 +15,7 @@ import com.android.volley.RequestQueue;
 import com.android.volley.Response;
 import com.android.volley.toolbox.Volley;
 
-public class Signup_page extends AppCompatActivity {
+public class Signup extends AppCompatActivity {
 
     private EditText username, ID, password,editTextPhone;
     private Button join_button, check_button;
@@ -25,7 +25,7 @@ public class Signup_page extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_signup_page);
+        setContentView(R.layout.activity_signup);
 
         //아이디값 찾아주기
         username = findViewById( R.id.username );
@@ -46,7 +46,7 @@ public class Signup_page extends AppCompatActivity {
                 }
 
                 if (UserID.equals("")) {
-                    AlertDialog.Builder builder = new AlertDialog.Builder(Signup_page.this);
+                    AlertDialog.Builder builder = new AlertDialog.Builder(Signup.this);
                     dialog = builder.setMessage("아이디를 입력하세요.").setPositiveButton("확인", null).create();
                     dialog.show();
                     return;
@@ -57,11 +57,11 @@ public class Signup_page extends AppCompatActivity {
                     public void onResponse(String response) {
                         try {
 
-                            JSONObject jsonResponse = new JSONObject(response);
+                            JSONObject jsonResponse = new JSONObject(response); //서버 응답 받아 json 파일 받아옴
                             boolean success = jsonResponse.getBoolean("success");
 
                             if (success) {
-                                AlertDialog.Builder builder = new AlertDialog.Builder(Signup_page.this);
+                                AlertDialog.Builder builder = new AlertDialog.Builder(Signup.this);
                                 dialog = builder.setMessage("사용할 수 있는 아이디입니다.").setPositiveButton("확인", null).create();
                                 dialog.show();
                                 ID.setEnabled(false); //아이디값 고정
@@ -69,7 +69,7 @@ public class Signup_page extends AppCompatActivity {
                                 check_button.setBackgroundColor(getResources().getColor(R.color.white));
                             }
                             else {
-                                AlertDialog.Builder builder = new AlertDialog.Builder(Signup_page.this);
+                                AlertDialog.Builder builder = new AlertDialog.Builder(Signup.this);
                                 dialog = builder.setMessage("이미 존재하는 아이디입니다.").setNegativeButton("확인", null).create();
                                 dialog.show();
                             }
@@ -79,7 +79,7 @@ public class Signup_page extends AppCompatActivity {
                     }
                 };
                 ValidateRequest validateRequest = new ValidateRequest(UserID, responseListener);
-                RequestQueue queue = Volley.newRequestQueue(Signup_page.this);
+                RequestQueue queue = Volley.newRequestQueue(Signup.this);
                 queue.add(validateRequest);
             }
         });
@@ -97,7 +97,7 @@ public class Signup_page extends AppCompatActivity {
 
                 //아이디 중복체크 했는지 확인
                 if (!validate) {
-                    AlertDialog.Builder builder = new AlertDialog.Builder(Signup_page.this);
+                    AlertDialog.Builder builder = new AlertDialog.Builder(Signup.this);
                     dialog = builder.setMessage("중복된 아이디가 있는지 확인하세요.").setNegativeButton("확인", null).create();
                     dialog.show();
                     return;
@@ -105,7 +105,7 @@ public class Signup_page extends AppCompatActivity {
 
                 //한 칸이라도 입력 안했을 경우
                 if (UserName.equals("") || UserID.equals("") || UserPass.equals("")||UserNum.equals("")) {
-                    AlertDialog.Builder builder = new AlertDialog.Builder(Signup_page.this);
+                    AlertDialog.Builder builder = new AlertDialog.Builder(Signup.this);
                     dialog = builder.setMessage("모두 입력해주세요.").setNegativeButton("확인", null).create();
                     dialog.show();
                     return;
@@ -123,7 +123,7 @@ public class Signup_page extends AppCompatActivity {
                             if (success) {
 
                                 Toast.makeText(getApplicationContext(), String.format("%s님 가입을 환영합니다.", UserName), Toast.LENGTH_SHORT).show();
-                                Intent intent = new Intent(Signup_page.this, Login_page.class);
+                                Intent intent = new Intent(Signup.this, Login_normal.class);
                                 startActivity(intent);
 
                                 //회원가입 실패시
@@ -141,7 +141,7 @@ public class Signup_page extends AppCompatActivity {
 
                 //서버로 Volley를 이용해서 요청
                 SignupRequest signupRequest = new SignupRequest( UserID, UserPass, UserName, UserNum,responseListener);
-                RequestQueue queue = Volley.newRequestQueue( Signup_page.this );
+                RequestQueue queue = Volley.newRequestQueue( Signup.this );
                 queue.add( signupRequest );
             }
         });

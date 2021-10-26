@@ -14,7 +14,7 @@ public class SignupRequest extends StringRequest{
     //private Map<String, String>parameters;
 
     public SignupRequest(String UserID, String UserPass, String UserName, String UserNum,Response.Listener<String> listener) {
-        super(Method.POST, URL, listener, null);
+        super(Method.POST, URL, listener, null); //서버에 요청
 
         map = new HashMap<>();
         map.put("UserID", UserID);
