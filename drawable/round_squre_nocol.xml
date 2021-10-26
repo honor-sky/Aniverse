@@ -1,3 +1,5 @@
+<!--모서리가 둥글고 색이없는 사각형(그냥 사진넣는 부분에 임의로 넣은거, 크게 안 중요함)-->
+
 <?xml version="1.0" encoding="utf-8"?>
 <shape
     xmlns:android="http://schemas.android.com/apk/res/android"
