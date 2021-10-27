@@ -47,6 +47,16 @@ public class Funding_list extends AppCompatActivity {
                 startActivity(intent);
             }
         });
+        
+        ImageView image1 = (ImageView)findViewById(R.id.imageView);
+        image1.setOnClickListener(new View.OnClickListener() {
+
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(getApplicationContext(), Funding_info.class);
+                startActivity(intent);
+            }
+        });
 
     }
 }
