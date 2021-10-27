@@ -153,12 +153,17 @@ public class Market_list extends AppCompatActivity {
                 startActivity(intent);
             }
         });
+
+        ImageView image1 = (ImageView)findViewById(R.id.imageView);
+        image1.setOnClickListener(new View.OnClickListener() {
+
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(getApplicationContext(), Market_item_info.class);
+                startActivity(intent);
+            }
+        });
     }
 
-
-    public void onClick(View v){
-        Intent intent = new Intent(Market_list.this, Market_item_info.class);
-        startActivity(intent);
-    }
 
 }
