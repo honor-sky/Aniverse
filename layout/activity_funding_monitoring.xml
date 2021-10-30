@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    tools:context=".Adopt_info">
+
+    <FrameLayout
+        android:layout_width="417dp"
+        android:layout_height="150dp"
+        android:background="@drawable/background">
+
+        <TextView
+            android:id="@+id/textView6"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="110dp"
+            android:layout_marginTop="20dp"
+            android:text="Funding/ 기부하기"
+            android:textColor="@color/white"
+            android:textSize="25sp" />
+    </FrameLayout>
+
+    <FrameLayout
+        android:id="@+id/frameLayout"
+        android:layout_width="415dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="80dp"
+        android:background="@drawable/top_round_wsquare">
+
+
+        <ImageView
+            android:id="@+id/itemImage"
+            android:layout_width="350dp"
+            android:layout_height="300dp"
+            android:layout_marginStart="20dp"
+            android:layout_marginTop="25dp"
+            tools:srcCompat="@drawable/gradient_round_squre" />
+
+        <TextView
+            android:id="@+id/textView11"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="125dp"
+            android:layout_marginTop="340dp"
+            android:text="젤리 사용 정보"
+            android:textColor="#434343"
+            android:textSize="24sp" />
+
+        <Button
+            android:id="@+id/add_btn2"
+            android:layout_width="55dp"
+            android:layout_height="55dp"
+            android:layout_marginStart="325dp"
+            android:layout_marginTop="325dp"
+            android:background="@drawable/button_design"
+            android:gravity="center"
+            android:text="+"
+            android:textColor="#000000"
+            android:textSize="20sp" />
+
+        <ScrollView
+            android:layout_width="361dp"
+            android:layout_height="197dp"
+            android:layout_marginStart="20dp"
+            android:layout_marginTop="380dp" />
+
+    </FrameLayout>
+
+
+
+</RelativeLayout>

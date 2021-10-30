@@ -1,0 +1,176 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".Adopt_request">
+
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="550dp"
+        android:background="@drawable/jelly_bg">
+
+    </FrameLayout>
+
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="350dp"
+        android:layout_marginTop="500dp"
+        android:background="#ffffff"></FrameLayout>
+
+    <FrameLayout
+        android:layout_width="350dp"
+        android:layout_height="580dp"
+        android:layout_centerHorizontal="true"
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="50dp"
+        android:background="@drawable/wround_square"
+        android:elevation="10dp">
+
+        <TextView
+            android:id="@+id/textView2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:layout_marginStart="128dp"
+            android:layout_marginTop="15dp"
+            android:text="젤리 결제"
+            android:textColor="#FA8E99"
+            android:textSize="25sp"
+            android:textStyle="bold" />
+
+        <ScrollView
+            android:layout_width="match_parent"
+            android:layout_height="500dp"
+            android:layout_marginStart="20dp"
+            android:layout_marginTop="60dp">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical" >
+
+                <Space
+                    android:layout_width="match_parent"
+                    android:layout_height="29dp" />
+
+                <TextView
+                    android:id="@+id/textView8"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_centerHorizontal="true"
+                    android:text="구매할 젤리"
+                    android:textColor="#FA8E99"
+                    android:textSize="24sp"
+                    android:textStyle="bold" />
+
+                <Space
+                    android:layout_width="match_parent"
+                    android:layout_height="19dp" />
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:id="@+id/jelly"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:gravity="center"
+                        android:text="TextView"
+                        android:textSize="20sp" />
+
+                    <TextView
+                        android:id="@+id/price"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:gravity="center"
+                        android:text="TextView"
+                        android:textSize="20sp" />
+                </LinearLayout>
+
+                <Space
+                    android:layout_width="match_parent"
+                    android:layout_height="51dp" />
+
+                <TextView
+                    android:id="@+id/textView10"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_centerHorizontal="true"
+                    android:text="결제 수단"
+                    android:textColor="#FA8E99"
+                    android:textSize="24sp"
+                    android:textStyle="bold" />
+
+                <Space
+                    android:layout_width="match_parent"
+                    android:layout_height="19dp" />
+
+                <RadioGroup
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent" >
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:orientation="vertical">
+
+                        <RadioButton
+                            android:id="@+id/radioButton3"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="카드 간편 결제" />
+
+                        <RadioButton
+                            android:id="@+id/radioButton4"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="계좌 간편 결제" />
+
+                        <RadioButton
+                            android:id="@+id/radioButton5"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="일반 결제" />
+
+                    </LinearLayout>
+                </RadioGroup>
+
+            </LinearLayout>
+        </ScrollView>
+
+
+    </FrameLayout>
+
+    <FrameLayout
+        android:layout_width="350dp"
+        android:layout_height="100dp"
+        android:layout_centerHorizontal="true"
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="600dp"
+        android:background="#00ffffff"
+        android:elevation="10dp">
+
+        <Button
+            android:id="@+id/buy_btn"
+            android:layout_width="250dp"
+            android:layout_height="60dp"
+            android:layout_marginStart="50dp"
+            android:layout_marginTop="10dp"
+            android:background="@drawable/jellyshop_button"
+            android:gravity="center"
+            android:text="결제하기"
+            android:textColor="#FFFFFF"
+            android:textSize="23sp"
+            android:textStyle="bold"></Button>
+
+    </FrameLayout>
+
+
+</RelativeLayout>

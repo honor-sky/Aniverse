@@ -1,0 +1,144 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".Adopt_request">
+
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="550dp"
+        android:background="@drawable/background">
+
+    </FrameLayout>
+
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="350dp"
+        android:layout_marginTop="500dp"
+        android:background="#ffffff"></FrameLayout>
+
+    <FrameLayout
+        android:layout_width="350dp"
+        android:layout_height="580dp"
+        android:layout_centerHorizontal="true"
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="50dp"
+        android:background="@drawable/wround_square"
+        android:elevation="10dp">
+
+        <TextView
+            android:id="@+id/textView2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:layout_marginStart="100dp"
+            android:layout_marginTop="15dp"
+            android:text="젤리 사용 정보"
+            android:textColor="#7ED687"
+            android:textSize="25sp"
+            android:textStyle="bold" />
+
+        <ScrollView
+            android:layout_width="match_parent"
+            android:layout_height="500dp"
+            android:layout_marginStart="20dp"
+            android:layout_marginTop="60dp">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical" >
+
+                <TextView
+                    android:id="@+id/textView12"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_centerHorizontal="true"
+                    android:text="결과 자료"
+                    android:textColor="#6F6F6F"
+                    android:textSize="20sp"
+                    android:textStyle="bold" />
+
+                <ImageButton
+                    android:id="@+id/imageButton2"
+                    android:layout_width="225dp"
+                    android:layout_height="125dp"
+                    android:layout_gravity="center"
+                    android:layout_weight="1"
+                    app:srcCompat="@android:drawable/ic_menu_upload" />
+
+                <Space
+                    android:layout_width="match_parent"
+                    android:layout_height="22dp" />
+
+                <TextView
+                    android:id="@+id/textView9"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_centerHorizontal="true"
+                    android:text="증빙 자료"
+                    android:textColor="#6F6F6F"
+                    android:textSize="20sp"
+                    android:textStyle="bold" />
+
+                <ImageButton
+                    android:id="@+id/imageButton"
+                    android:layout_width="225dp"
+                    android:layout_height="125dp"
+                    android:layout_gravity="center"
+                    android:layout_weight="1"
+                    app:srcCompat="@android:drawable/ic_menu_upload" />
+
+                <Space
+                    android:layout_width="match_parent"
+                    android:layout_height="19dp" />
+
+                <com.google.android.material.textfield.TextInputLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent">
+
+                    <com.google.android.material.textfield.TextInputEditText
+                        android:layout_width="match_parent"
+                        android:layout_height="100dp"
+                        android:hint="글 작성" />
+                </com.google.android.material.textfield.TextInputLayout>
+
+                <Space
+                    android:layout_width="match_parent"
+                    android:layout_height="19dp"
+                    android:layout_weight="1" />
+
+            </LinearLayout>
+        </ScrollView>
+
+
+    </FrameLayout>
+
+    <FrameLayout
+        android:layout_width="350dp"
+        android:layout_height="100dp"
+        android:layout_centerHorizontal="true"
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="600dp"
+        android:background="#00ffffff"
+        android:elevation="10dp">
+
+        <Button
+            android:id="@+id/buy_btn"
+            android:layout_width="250dp"
+            android:layout_height="60dp"
+            android:layout_marginStart="50dp"
+            android:layout_marginTop="10dp"
+            android:background="@drawable/gradient_round_squre"
+            android:gravity="center"
+            android:text="업로드하기"
+            android:textSize="23sp"
+            android:textStyle="bold"></Button>
+
+    </FrameLayout>
+
+
+</RelativeLayout>
