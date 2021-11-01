@@ -1,0 +1,214 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".Adopt_upload">
+
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@drawable/background">
+
+
+
+        <ImageButton
+            android:id="@+id/back_btn"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="13dp"
+            android:layout_marginTop="15dp"
+            android:background="#00ff0000"
+            app:srcCompat="@drawable/ic_baseline_arrow_back_ios_24" />
+
+
+    </FrameLayout>
+
+    <!-- <FrameLayout
+         android:layout_width="match_parent"
+         android:layout_height="350dp"
+         android:layout_marginTop="500dp"
+         android:background="#ffffff"></FrameLayout>-->
+
+
+    <FrameLayout
+        android:layout_width="350dp"
+        android:layout_height="630dp"
+        android:layout_centerHorizontal="true"
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="50dp"
+        android:background="@drawable/wround_square"
+        android:elevation="10dp">
+
+        <TextView
+            android:id="@+id/title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:text="후기 작성"
+            android:layout_marginStart="125dp"
+            android:layout_marginTop="20dp"
+            android:textColor="#7ED687"
+            android:textSize="24sp"
+            android:textStyle="bold" />
+
+        <ScrollView
+            android:layout_width="330dp"
+            android:layout_height="500dp"
+            android:layout_marginStart="13dp"
+            android:layout_marginTop="65dp">
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:orientation="vertical">
+
+                <Space
+                    android:layout_width="310dp"
+                    android:layout_height="19dp" />
+
+                <TextView
+                    android:id="@+id/text1"
+                    android:layout_width="310dp"
+                    android:layout_height="wrap_content"
+                    android:layout_centerHorizontal="true"
+                    android:text="건강검진"
+                    android:textColor="#7ED687"
+                    android:textSize="24sp"
+                    android:textStyle="bold" />
+
+                <Space
+                    android:layout_width="310dp"
+                    android:layout_height="19dp" />
+
+                <TextView
+                    android:id="@+id/text2"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerHorizontal="true"
+                    android:text="진단서"
+                    android:textColor="#6F6F6F"
+                    android:textSize="20sp"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:id="@+id/text3"
+                    android:layout_width="270dp"
+                    android:layout_height="wrap_content"
+                    android:layout_centerHorizontal="true"
+                    android:text="*진단서는 지정 병원에서 발급한 서류만 유효하며 결과가 잘 보이게 촬영해 주세요."
+                    android:textColor="#f05650"
+                    android:textSize="13sp"
+                    android:textStyle="bold" />
+
+                <ImageButton
+                    android:id="@+id/diagnosis_img"
+                    android:layout_width="225dp"
+                    android:layout_height="125dp"
+                    android:layout_gravity="center"
+                    android:layout_weight="1"
+                    app:srcCompat="@android:drawable/ic_menu_upload" />
+
+                <Space
+                    android:layout_width="310dp"
+                    android:layout_height="19dp" />
+
+                <TextView
+                    android:id="@+id/textView10"
+                    android:layout_width="310dp"
+                    android:layout_height="wrap_content"
+                    android:layout_centerHorizontal="true"
+                    android:text="소식"
+                    android:textColor="#7ED687"
+                    android:textSize="24sp"
+                    android:textStyle="bold" />
+
+                <Space
+                    android:layout_width="310dp"
+                    android:layout_height="19dp" />
+
+                <TextView
+                    android:id="@+id/text4"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerHorizontal="true"
+                    android:text="반려동물 사진"
+                    android:textColor="#6F6F6F"
+                    android:textSize="20sp"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:id="@+id/text5"
+                    android:layout_width="260dp"
+                    android:layout_height="wrap_content"
+                    android:layout_centerHorizontal="true"
+                    android:text="*반려동물 사진은 자유롭게 업로드 하시되 최소 1장은 몸통이 잘 나오도록 촬영해주세요."
+                    android:textColor="#f05650"
+                    android:textSize="13sp"
+                    android:textStyle="bold" />
+                <!--사진 여러장 올릴 수 있도록 생성-->
+
+                <ImageButton
+                    android:id="@+id/diagno_image"
+                    android:layout_width="225dp"
+                    android:layout_height="125dp"
+                    android:layout_gravity="center"
+                    android:layout_weight="1"
+                    app:srcCompat="@android:drawable/ic_menu_upload" />
+
+                <Space
+                    android:layout_width="310dp"
+                    android:layout_height="19dp" />
+
+
+                <com.google.android.material.textfield.TextInputLayout
+                    style="@style/Theme.AppCompat.DayNight.NoActionBar"
+                    android:layout_width="310dp"
+                    android:layout_height="wrap_content">
+
+                    <com.google.android.material.textfield.TextInputEditText
+                        android:layout_width="310dp"
+                        android:layout_height="match_parent"
+                        android:hint="소식/이야기" />
+                </com.google.android.material.textfield.TextInputLayout>
+
+                <Space
+                    android:layout_width="310dp"
+                    android:layout_height="19dp"
+                    android:layout_weight="1" />
+            </LinearLayout>
+
+        </ScrollView>
+    </FrameLayout>
+
+    <FrameLayout
+        android:layout_width="350dp"
+        android:layout_height="100dp"
+        android:layout_centerHorizontal="true"
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="640dp"
+        android:background="#00ffffff"
+        android:elevation="10dp">
+
+        <Button
+            android:id="@+id/upload_button"
+            android:layout_width="250dp"
+            android:layout_height="60dp"
+            android:layout_marginStart="50dp"
+            android:layout_marginTop="15dp"
+            android:background="@drawable/gradient_round_squre"
+            android:text="업로드"
+            android:textSize="23sp"
+            android:textColor="@color/white"
+            android:textStyle="bold"></Button>
+
+    </FrameLayout>
+
+
+
+
+
+
+</RelativeLayout>

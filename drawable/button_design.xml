@@ -1,7 +1,10 @@
-<!--입양중/입양완료/센터/동물 같은 버튼 디자인-->
 <?xml version="1.0" encoding="utf-8"?>
 <shape
     xmlns:android="http://schemas.android.com/apk/res/android"
     android:shape="rectangle">
-
+    <solid android:color="#EEEEEE" />
+    <corners
+        android:radius="10dp"/>
+    <stroke
+        android:color="#CCCCCC" android:width="1dp"/>
 </shape>

@@ -47,6 +47,15 @@ public class MainActivity extends AppCompatActivity {
                 startActivity(intent);
             }
         });
+        ImageButton market_btn = (ImageButton)findViewById(R.id.market_btn);
+        market_btn.setOnClickListener(new View.OnClickListener() {
+
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(getApplicationContext(),Market_list.class);
+                startActivity(intent);
+            }
+        });
 
     }
 }

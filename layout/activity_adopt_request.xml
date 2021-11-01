@@ -12,6 +12,15 @@
         android:layout_height="550dp"
         android:background="@drawable/background">
 
+        <ImageButton
+            android:id="@+id/back_btn"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="13dp"
+            android:layout_marginTop="15dp"
+            android:background="#00ff0000"
+            app:srcCompat="@drawable/ic_baseline_arrow_back_ios_24" />
+
     </FrameLayout>
 
     <FrameLayout
@@ -93,9 +102,10 @@
             android:layout_marginStart="23dp"
             android:layout_marginTop="230dp"
             android:ems="10"
-            android:hint="문의사항/남기는 말"
+            android:hint="    문의사항/남기는 말"
             android:inputType="phone"
-            android:textColorHint="#CCCCCC" />
+            android:textColorHint="#CCCCCC"
+            android:background="@drawable/border"/>
 
 
     </FrameLayout>

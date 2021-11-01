@@ -9,7 +9,7 @@ import java.util.Map;
 public class SignupRequest extends StringRequest{
 
     //서버 URL 설정(php 파일 연동)
-    final static private String URL = "http://ftp 아이디.dothome.co.kr/Register.php";
+    final static private String URL = "http://13.209.98.213/";
     private Map<String, String> map;
     //private Map<String, String>parameters;
 

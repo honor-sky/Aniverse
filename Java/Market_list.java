@@ -1,4 +1,4 @@
-package org.tecttown.aniverse;
+package org.gyeongsoton.gyeongsoton_jelly;
 
 import androidx.appcompat.app.ActionBar;
 import androidx.appcompat.app.AppCompatActivity;
@@ -57,7 +57,7 @@ public class Market_list extends AppCompatActivity {
         });
 
         ImageButton market_btn = (ImageButton)findViewById(R.id.market_btn);
-        funding_btn.setOnClickListener(new View.OnClickListener() {
+        market_btn.setOnClickListener(new View.OnClickListener() {
 
             @Override
             public void onClick(View view) {

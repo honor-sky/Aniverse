@@ -23,6 +23,15 @@
             android:text="입양/임시보호"
             android:textColor="@color/white"
             android:textSize="25sp" />
+
+        <ImageButton
+            android:id="@+id/back_btn"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="13dp"
+            android:layout_marginTop="15dp"
+            android:background="#00ff0000"
+            app:srcCompat="@drawable/ic_baseline_arrow_back_ios_24" />
     </FrameLayout>
 
     <FrameLayout
@@ -32,19 +41,31 @@
         android:layout_marginTop="80dp"
         android:background="@drawable/top_round_wsquare">
 
-
         <ImageView
             android:id="@+id/petImage"
             android:layout_width="350dp"
             android:layout_height="300dp"
             android:layout_marginStart="20dp"
             android:layout_marginTop="25dp"
-            tools:srcCompat="@drawable/gradient_round_squre" />
+            android:background="@drawable/round_squre_nocol"/>
         <ScrollView
             android:layout_width="361dp"
-            android:layout_height="300dp"
+            android:layout_height="500dp"
             android:layout_marginStart="20dp"
             android:layout_marginTop="330dp">
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:orientation="vertical">
+                <TextView
+                    android:id="@+id/species_text"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textSize="18dp">
+
+                </TextView>
+
+            </LinearLayout>
         </ScrollView>
 
         <com.google.android.material.bottomnavigation.BottomNavigationView
@@ -60,6 +81,7 @@
                 android:layout_marginStart="20dp"
                 android:background="@drawable/gradient_round_squre"
                 android:text="신청하기"
+                android:textColor="@color/white"
                 android:textSize="25sp"/>
         </com.google.android.material.bottomnavigation.BottomNavigationView>
 

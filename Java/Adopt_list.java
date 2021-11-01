@@ -1,23 +1,40 @@
 package org.gyeongsoton.gyeongsoton_jelly;
 
-import androidx.appcompat.app.ActionBar;
-import androidx.appcompat.app.AppCompatActivity;
-import androidx.appcompat.widget.SearchView;
-
 import android.annotation.SuppressLint;
 import android.content.Intent;
-import android.graphics.Color;
 import android.os.Bundle;
-import android.view.View;
 import android.view.MotionEvent;
-import android.widget.ImageButton;
+import android.view.View;
 import android.view.WindowManager;
 import android.widget.Button;
+import android.widget.ImageButton;
 import android.widget.ImageView;
 import android.widget.Toast;
 
+import androidx.appcompat.app.AppCompatActivity;
+
+import com.android.volley.Request;
+import com.android.volley.RequestQueue;
+import com.android.volley.Response;
+import com.android.volley.VolleyError;
+import com.android.volley.toolbox.JsonArrayRequest;
+import com.android.volley.toolbox.Volley;
+import com.bumptech.glide.Glide;
+
+import org.json.JSONArray;
+import org.json.JSONException;
+import org.json.JSONObject;
+
+import java.util.ArrayList;
+
 
 public class Adopt_list extends AppCompatActivity {
+
+    ArrayList<Adopt_list_data> items= new ArrayList<>();
+    ImageView image1;
+    //ItemAdapter adapter;
+
+    String URL="http://13.209.98.213/";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -25,6 +42,37 @@ public class Adopt_list extends AppCompatActivity {
         getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN,
                 WindowManager.LayoutParams.FLAG_FULLSCREEN);
         setContentView(R.layout.activity_adopt_list);
+
+        JsonArrayRequest jsonArrayRequest= new JsonArrayRequest(Request.Method.POST, URL, null, new Response.Listener<JSONArray>() {
+            //post 방식이 갱신에도 적합
+            @Override
+            public void onResponse(JSONArray response) {
+                Toast.makeText(Adopt_list.this, response.toString(), Toast.LENGTH_SHORT).show();
+
+                //파라미터로 응답받은 결과 JsonArray를 분석
+                items.clear();
+                try {
+                    for(int i=0;i<response.length();i++){
+                        JSONObject jsonObject= response.getJSONObject(i);
+
+                        int no= Integer.parseInt(jsonObject.getString("no")); //no가 문자열이라서 바꿔야함.
+                        String imgPath=jsonObject.getString("imgPath");
+                        imgPath = "http://13.209.98.213/"+imgPath;
+
+                        items.add(0,new Adopt_list_data(no,imgPath)); // 첫 번째 매개변수는 몇번째에 추가 될지, 제일 위에 오도록
+                    }
+                } catch (JSONException e) {e.printStackTrace();}
+
+            }
+        }, new Response.ErrorListener() {
+            @Override
+            public void onErrorResponse(VolleyError error) {
+                Toast.makeText(Adopt_list.this, "ERROR", Toast.LENGTH_SHORT).show();
+            }
+        });
+
+        image1.findViewById(R.id.imageView);
+        Glide.with(this).load(items.get(0).getImgPath()).into(image1);
 
 
         ImageButton home_btn = (ImageButton)findViewById(R.id.home_btn);
@@ -56,70 +104,91 @@ public class Adopt_list extends AppCompatActivity {
                 startActivity(intent);
             }
         });
+        ImageButton market_btn = (ImageButton)findViewById(R.id.market_btn);
+        market_btn.setOnClickListener(new View.OnClickListener() {
+
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(getApplicationContext(),Market_list.class);
+                startActivity(intent);
+            }
+        });
+        /*ImageButton mypage_btn = (ImageButton)findViewById(R.id.mypage_btn);
+        mypage_btn.setOnClickListener(new View.OnClickListener() {
+
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(getApplicationContext(), Funding_list.class);
+                startActivity(intent);
+            }
+        });*/
 
         /*입양, 입양완료 버튼 전환*/
-        Button btn1 = (Button)findViewById(R.id.button);
-        Button btn2 = (Button)findViewById(R.id.button2);
+        Button adopt_tab = (Button)findViewById(R.id.adopt_tab);
+        Button protect_tab = (Button)findViewById(R.id.protect_tab);
+        Button complete_tab = (Button)findViewById(R.id.complete_tab);
 
-        btn1.setOnTouchListener(new View.OnTouchListener() {
+        adopt_tab.setOnTouchListener(new View.OnTouchListener() {
             @SuppressLint("ClickableViewAccessibility")
             @Override
             public boolean onTouch(View v, MotionEvent event) {
-                btn1.setPressed(true);
-                btn2.setPressed(false);
-                //btn3.setVisibility(View.INVISIBLE);
-
+                adopt_tab.setPressed(true);
+                protect_tab.setPressed(false);
+                complete_tab.setPressed(false);
 
                 return true;
             }
         });
 
-
-        btn2.setOnTouchListener(new View.OnTouchListener() { //입양완료 버튼 누르면 데이터도 바뀌고 검색창도 뜸
+        protect_tab.setOnTouchListener(new View.OnTouchListener() { //입양완료 버튼 누르면 데이터도 바뀌고 검색창도 뜸
             @SuppressLint("ClickableViewAccessibility")
             @Override
             public boolean onTouch(View v, MotionEvent event) {
-                btn2.setPressed(true);
-                btn1.setPressed(false);
-
-               /*btn3.setVisibility(View.VISIBLE);
-               SearchView searchView;
-               searchView = findViewById(R.id.searchView);
-               searchView.setQueryHint("아이디로 검색하세요");*/
-
-
-  /*             searchView.setOnQueryTextListener(new SearchView.OnQueryTextListener() {
-                   @Override
-                   public boolean onQueryTextSubmit(String query) { //검색어 입력시
-                       return false;
-                   }
-
-                   @Override
-                   public boolean onQueryTextChange(String newText) { //검색어 완료시 //데이터베이스에서 비교 후 결과에 따라 데이터 보여줌
-                       return false;
-                   }
-               });*/
-
+                protect_tab.setPressed(true);
+                adopt_tab.setPressed(false);
+                complete_tab.setPressed(false);
                 return true;
+            }
+        });
+
+        complete_tab.setOnTouchListener(new View.OnTouchListener() { //입양완료 버튼 누르면 데이터도 바뀌고 검색창도 뜸
+            @SuppressLint("ClickableViewAccessibility")
+            @Override
+            public boolean onTouch(View v, MotionEvent event) {
+                protect_tab.setPressed(false);
+                adopt_tab.setPressed(false);
+                complete_tab.setPressed(true);
+                return true;
+            }
+        });
+
+        Button add_btn = (Button)findViewById(R.id.add_btn);
+        add_btn.setOnClickListener(new View.OnClickListener() {
+
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(getApplicationContext(),Adopt_upload.class);
+                startActivity(intent);
             }
         });
 
         ImageView image1 = (ImageView)findViewById(R.id.imageView);
         image1.setOnClickListener(new View.OnClickListener() {
-
             @Override
             public void onClick(View view) {
                 Intent intent = new Intent(getApplicationContext(), Adopt_info.class);
+                intent.putExtra("1",items.get(0).getImgPath()); //items 리스트를 넘겨주는 방법은 없나?...
                 startActivity(intent);
             }
         });
 
+        //실제 요청 작업을 수행해주는 요청큐 객체 생성
+        RequestQueue requestQueue= Volley.newRequestQueue(this);
 
-
+        //요청큐에 요청 객체 생성
+        requestQueue.add(jsonArrayRequest);
 
 
     }
-
-
 
 }

@@ -1,6 +1,3 @@
-<!--위에 모서리만 둥근 하얀색 사각형/입양,펀딩 화면에 쓰임(마켓 화면도 이걸로 쓰면 될듯)-->
-
-
 <?xml version="1.0" encoding="utf-8"?>
 <shape
     xmlns:android="http://schemas.android.com/apk/res/android"

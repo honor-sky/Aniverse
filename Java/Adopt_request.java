@@ -25,6 +25,16 @@ public class Adopt_request extends AppCompatActivity {
             }
         });
 
+        ImageButton back_btn = (ImageButton) findViewById(R.id.back_btn);
+        back_btn.setOnClickListener(new View.OnClickListener() {
+
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(getApplicationContext(), Adopt_info.class);
+                startActivity(intent);
+            }
+        });
+
 
     }
 }

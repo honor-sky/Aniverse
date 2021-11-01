@@ -10,11 +10,22 @@
     tools:context=".Adopt_list">
 
 
-
     <FrameLayout
         android:layout_width="417dp"
         android:layout_height="150dp"
         android:background="@drawable/background">
+
+        <Button
+            android:id="@+id/add_btn"
+            android:layout_width="65dp"
+            android:layout_height="65dp"
+            android:layout_marginStart="325dp"
+            android:layout_marginTop="10dp"
+            android:background="#00ff0000"
+            android:gravity="center"
+            android:text="+"
+            android:textColor="#000000"
+            android:textSize="25sp" />
 
         <TextView
             android:id="@+id/textView"
@@ -41,6 +52,7 @@
             android:layout_height="wrap_content"
             android:layout_marginTop="640dp"
             android:background="@android:color/white">
+
             <ImageButton
                 android:id="@+id/adopt_btn"
                 android:layout_width="60dp"
@@ -78,7 +90,7 @@
                 app:srcCompat="@drawable/ic_baseline_shopping_cart_24" />
 
             <ImageButton
-                android:id="@+id/imageButton8"
+                android:id="@+id/mypage_btn"
                 android:layout_width="55dp"
                 android:layout_height="55dp"
                 android:layout_marginStart="330dp"
@@ -87,14 +99,12 @@
                 app:srcCompat="@drawable/ic_baseline_person_24" />
 
 
-
-
         </com.google.android.material.bottomnavigation.BottomNavigationView>
 
         <ScrollView
             android:layout_width="361dp"
             android:layout_height="490dp"
-            android:layout_marginStart="10dp"
+            android:layout_marginStart="20dp"
             android:layout_marginTop="130dp">
 
 
@@ -105,24 +115,22 @@
 
                 <TableRow>
 
+
                     <ImageView
                         android:id="@+id/imageView"
                         android:layout_width="130dp"
                         android:layout_height="130dp"
-                        android:layout_marginStart="40dp"
+                        android:layout_marginStart="20dp"
                         android:layout_marginTop="20dp"
                         android:src="@drawable/ic_launcher_background" />
-
 
                     <ImageView
                         android:id="@+id/imageView2"
                         android:layout_width="130dp"
                         android:layout_height="130dp"
-                        android:layout_marginStart="40dp"
+                        android:layout_marginStart="55dp"
                         android:layout_marginTop="20dp"
                         android:src="@drawable/ic_launcher_background" />
-
-
                 </TableRow>
 
                 <TableRow>
@@ -131,7 +139,7 @@
                         android:id="@+id/imageView3"
                         android:layout_width="130dp"
                         android:layout_height="130dp"
-                        android:layout_marginStart="40dp"
+                        android:layout_marginStart="20dp"
                         android:layout_marginTop="20dp"
                         android:src="@drawable/ic_launcher_background" />
 
@@ -139,7 +147,7 @@
                         android:id="@+id/imageView4"
                         android:layout_width="130dp"
                         android:layout_height="130dp"
-                        android:layout_marginStart="40dp"
+                        android:layout_marginStart="55dp"
                         android:layout_marginTop="20dp"
                         android:src="@drawable/ic_launcher_background" />
                 </TableRow>
@@ -150,7 +158,7 @@
                         android:id="@+id/imageView5"
                         android:layout_width="130dp"
                         android:layout_height="130dp"
-                        android:layout_marginStart="40dp"
+                        android:layout_marginStart="20dp"
                         android:layout_marginTop="20dp"
                         android:src="@drawable/ic_launcher_background" />
 
@@ -158,7 +166,7 @@
                         android:id="@+id/imageView6"
                         android:layout_width="130dp"
                         android:layout_height="130dp"
-                        android:layout_marginStart="40dp"
+                        android:layout_marginStart="55dp"
                         android:layout_marginTop="20dp"
                         android:src="@drawable/ic_launcher_background" />
                 </TableRow>
@@ -169,7 +177,7 @@
                         android:id="@+id/imageView7"
                         android:layout_width="130dp"
                         android:layout_height="130dp"
-                        android:layout_marginStart="40dp"
+                        android:layout_marginStart="20dp"
                         android:layout_marginTop="20dp"
                         android:src="@drawable/ic_launcher_background" />
 
@@ -177,7 +185,7 @@
                         android:id="@+id/imageView8"
                         android:layout_width="130dp"
                         android:layout_height="130dp"
-                        android:layout_marginStart="40dp"
+                        android:layout_marginStart="55dp"
                         android:layout_marginTop="20dp"
                         android:src="@drawable/ic_launcher_background" />
                 </TableRow>
@@ -185,47 +193,43 @@
         </ScrollView>
 
         <Button
-            android:id="@+id/button"
-            android:layout_width="156dp"
+            android:id="@+id/adopt_tab"
+            android:layout_width="100dp"
             android:layout_height="40dp"
-            android:layout_marginStart="30dp"
+            android:layout_marginStart="25dp"
             android:layout_marginTop="18dp"
-            android:background="@drawable/button_design"
-            android:text="입양중"
+            android:background="#00ff0000"
+            android:text="입양"
             android:textColor="@drawable/text_select"
             android:textSize="23sp"
             android:textStyle="bold"
             tools:ignore="TouchTargetSizeCheck" />
 
         <Button
-            android:id="@+id/button2"
-            android:layout_width="153dp"
+            android:id="@+id/protect_tab"
+            android:layout_width="140dp"
             android:layout_height="40dp"
-            android:layout_marginStart="230dp"
+            android:layout_marginStart="130dp"
             android:layout_marginTop="18dp"
-            android:background="@drawable/button_design"
-            android:text="입양완료"
+            android:background="#00ff0000"
+            android:text="임시보호"
             android:textColor="@drawable/text_select"
             android:textSize="23sp"
             android:textStyle="bold"
             tools:ignore="TouchTargetSizeCheck" />
 
-
-        <SearchView
-            android:id="@+id/searchView"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="70dp" />
-
-        <ImageButton
-            android:id="@+id/imageButton6"
-            android:layout_width="40dp"
-            android:layout_height="40dp"
-            android:layout_marginStart="20dp"
-            android:layout_marginTop="75dp"
-            android:background="#ffffffff"
-            android:visibility="invisible"
-            app:srcCompat="@drawable/ic_baseline_search_24" />
+        <Button
+            android:id="@+id/complete_tab"
+            android:layout_width="100dp"
+            android:layout_height="36dp"
+            android:layout_marginStart="270dp"
+            android:layout_marginTop="18dp"
+            android:background="#00ff0000"
+            android:text="완료"
+            android:textColor="@drawable/text_select"
+            android:textSize="23sp"
+            android:textStyle="bold"
+            tools:ignore="TouchTargetSizeCheck" />
 
 
     </FrameLayout>

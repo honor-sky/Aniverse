@@ -2,10 +2,13 @@ package org.gyeongsoton.gyeongsoton_jelly;
 
 import androidx.appcompat.app.AppCompatActivity;
 import android.os.Bundle;
+import android.text.Editable;
+import android.text.TextWatcher;
 import android.widget.Button;
 import android.content.Intent;
 import android.view.View;
 import android.widget.EditText;
+import android.widget.TextView;
 import android.widget.Toast;
 import androidx.appcompat.app.AlertDialog;
 import org.json.JSONException;
@@ -17,7 +20,8 @@ import com.android.volley.toolbox.Volley;
 
 public class Signup extends AppCompatActivity {
 
-    private EditText username, ID, password,editTextPhone;
+    private EditText username, ID, password,confirm;
+    private TextView message;
     private Button join_button, check_button;
     private AlertDialog dialog;
     private boolean validate = false;
@@ -31,7 +35,9 @@ public class Signup extends AppCompatActivity {
         username = findViewById( R.id.username );
         ID = findViewById( R.id.ID );
         password = findViewById( R.id.password );
-        editTextPhone = findViewById(R.id.editTextPhone);
+        confirm = findViewById(R.id.confirm);
+        message = findViewById(R.id.message);
+        message.setVisibility(View.INVISIBLE);
 
 
         //아이디 중복 체크
@@ -84,6 +90,32 @@ public class Signup extends AppCompatActivity {
             }
         });
 
+        //비밀번호 확인
+        confirm.addTextChangedListener(new TextWatcher() {
+            @Override
+            public void beforeTextChanged(CharSequence charSequence, int i, int i1, int i2) {
+
+            }
+
+            @Override
+            public void onTextChanged(CharSequence charSequence, int i, int i1, int i2) {
+                if(password.getText().toString().equals(confirm.getText().toString())) {
+                    //setImage.setImageResource(R.drawable.sign_up_password_right);
+                    message.setVisibility(View.INVISIBLE);
+                } else {
+
+                    //setImage.setImageResource(R.drawable.sign_up_password_currect);
+                    message.setVisibility(View.VISIBLE);
+                }
+            }
+
+            @Override
+            public void afterTextChanged(Editable editable) {
+
+            }
+        });
+
+
         //회원가입 버튼 클릭 시 수행
         join_button = findViewById( R.id.join_button);
         join_button.setOnClickListener( new View.OnClickListener() {
@@ -92,7 +124,7 @@ public class Signup extends AppCompatActivity {
                 final String UserName = username.getText().toString();
                 final String UserID = ID.getText().toString();
                 final String UserPass = password.getText().toString();
-                final String UserNum = editTextPhone.getText().toString();
+                final String UserNum = confirm.getText().toString();
 
 
                 //아이디 중복체크 했는지 확인
@@ -145,6 +177,7 @@ public class Signup extends AppCompatActivity {
                 queue.add( signupRequest );
             }
         });
+
 
     }
 

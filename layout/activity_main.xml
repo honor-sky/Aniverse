@@ -17,8 +17,19 @@
             android:layout_width="340dp"
             android:layout_height="160dp"
             android:layout_marginStart="28dp"
-            android:layout_marginTop="50dp">
-        </HorizontalScrollView>
+            android:layout_marginTop="50dp"></HorizontalScrollView>
+
+        <TextView
+            android:id="@+id/textView6"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:layout_marginStart="138dp"
+            android:layout_marginTop="13dp"
+            android:text="Aniverse"
+            android:textSize="28sp"
+            android:textColor="@color/white"
+            android:textStyle="bold" />
     </FrameLayout>
 
     <FrameLayout
