@@ -46,7 +46,7 @@ public class Adopt_list extends AppCompatActivity {
                 WindowManager.LayoutParams.FLAG_FULLSCREEN);
         setContentView(R.layout.activity_adopt_list);
 
-        JsonObjectRequest jsonObjReq = new JsonObjectRequest(Request.Method.POST, URL, null, new Response.Listener<JSONObject>() {
+        /*JsonObjectRequest jsonObjReq = new JsonObjectRequest(Request.Method.POST, URL, null, new Response.Listener<JSONObject>() {
             //post 방식이 갱신에도 적합
             @Override
             public void onResponse(JSONObject response) {
@@ -74,7 +74,7 @@ public class Adopt_list extends AppCompatActivity {
         });
 
         image1.findViewById(R.id.imageView);
-        Glide.with(this).load(items.get(0).getImgPath()).into(image1);
+        Glide.with(this).load(items.get(0).getImgPath()).into(image1);*/
 
 
         ImageButton home_btn = (ImageButton)findViewById(R.id.home_btn);
@@ -184,13 +184,10 @@ public class Adopt_list extends AppCompatActivity {
             }
         });
 
-        //실제 요청 작업을 수행해주는 요청큐 객체 생성
+      /*  //실제 요청 작업을 수행해주는 요청큐 객체 생성
         RequestQueue requestQueue= Volley.newRequestQueue(this);
         //요청큐에 요청 객체 생성
-        requestQueue.add(jsonObjReq);
-
-
-
+        requestQueue.add(jsonObjReq);*/
 
 
     }

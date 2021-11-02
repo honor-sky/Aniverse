@@ -57,5 +57,15 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
+        ImageButton mypage_btn = (ImageButton)findViewById(R.id.mypage_btn);
+        mypage_btn.setOnClickListener(new View.OnClickListener() {
+
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(getApplicationContext(),Mypage.class);
+                startActivity(intent);
+            }
+        });
+
     }
 }
