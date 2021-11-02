@@ -56,7 +56,7 @@
             android:layout_marginTop="330dp">
         </ScrollView>
 
-        <com.google.android.material.bottomnavigation.BottomNavigationView
+        <FrameLayout
             android:id="@+id/main_bottom"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -71,7 +71,7 @@
                 android:background="@drawable/gradient_round_squre"
                 android:text="구매하기"
                 android:textSize="25sp" />
-        </com.google.android.material.bottomnavigation.BottomNavigationView>
+    </FrameLayout>
 
     </FrameLayout>
 

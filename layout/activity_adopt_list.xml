@@ -115,7 +115,6 @@
 
                 <TableRow>
 
-
                     <ImageView
                         android:id="@+id/imageView"
                         android:layout_width="130dp"

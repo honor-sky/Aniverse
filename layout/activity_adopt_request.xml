@@ -50,63 +50,57 @@
             android:textSize="25sp"
             android:textStyle="bold" />
 
-        <EditText
-            android:id="@+id/username"
-            android:layout_width="240dp"
-            android:layout_height="50dp"
-            android:layout_marginStart="23dp"
-            android:layout_marginTop="60dp"
-            android:ems="10"
-            android:hint="성명"
-            android:textColorHint="#CCCCCC" />
+        <com.google.android.material.textfield.TextInputLayout
+            style="@style/Theme.AppCompat.DayNight.NoActionBar"
+            android:layout_width="310dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="20dp"
+            android:layout_marginTop="80dp">
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/username"
+                android:layout_width="310dp"
+                android:layout_height="match_parent"
+                android:hint="성명"
+                android:inputType="textPersonName"/>
+            </com.google.android.material.textfield.TextInputLayout>
 
-        <View
-            android:layout_width="300dp"
-            android:layout_height="6px"
-            android:layout_marginStart="25dp"
-            android:layout_marginTop="105dp"
-            android:background="#CCCCCC" />
-
-        <EditText
-            android:id="@+id/ID"
-            android:layout_width="240dp"
-            android:layout_height="50dp"
-            android:layout_marginStart="23dp"
-            android:layout_marginTop="112dp"
-            android:ems="10"
-            android:hint="전화번호"
-            android:textColorHint="#CCCCCC" />
-
-        <View
-            android:layout_width="300dp"
-            android:layout_height="6px"
-            android:layout_marginStart="25dp"
-            android:layout_marginTop="160dp"
-            android:background="#CCCCCC" />
+        <com.google.android.material.textfield.TextInputLayout
+            style="@style/Theme.AppCompat.DayNight.NoActionBar"
+            android:layout_width="310dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="20dp"
+            android:layout_marginTop="150dp">
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/phone"
+                android:layout_width="310dp"
+                android:layout_height="match_parent"
+                android:hint="전화번호"
+                android:inputType="phone"/>
+        </com.google.android.material.textfield.TextInputLayout>
 
         <TextView
             android:id="@+id/password"
             android:layout_width="280dp"
             android:layout_height="30dp"
             android:layout_marginStart="23dp"
-            android:layout_marginTop="172dp"
+            android:layout_marginTop="200dp"
             android:text="*센터에서 연락 가능한 번호를 남겨주세요!"
-            android:textSize="14sp"
-            android:textColor="#CCCCCC" />
+            android:textColor="#CCCCCC"
+            android:textSize="14sp" />
 
-
-        <EditText
-            android:id="@+id/editTextPhone"
-            android:layout_width="240dp"
-            android:layout_height="150dp"
-            android:layout_marginStart="23dp"
-            android:layout_marginTop="230dp"
-            android:ems="10"
-            android:hint="    문의사항/남기는 말"
-            android:inputType="phone"
-            android:textColorHint="#CCCCCC"
-            android:background="@drawable/border"/>
-
+        <com.google.android.material.textfield.TextInputLayout
+            style="@style/Theme.AppCompat.DayNight.NoActionBar"
+            android:layout_width="310dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="20dp"
+            android:layout_marginTop="250dp">
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/message"
+                android:layout_width="310dp"
+                android:layout_height="match_parent"
+                android:hint="문의사항/남기는 말"
+                android:inputType="text"/>
+        </com.google.android.material.textfield.TextInputLayout>
 
     </FrameLayout>
 
@@ -126,6 +120,7 @@
             android:layout_marginTop="10dp"
             android:background="@drawable/gradient_round_squre"
             android:text="신청하기"
+            android:textColor="@color/white"
             android:textSize="23sp"
             android:textStyle="bold"></Button>
 

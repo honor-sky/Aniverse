@@ -46,6 +46,6 @@
         android:background="@drawable/gradient_round_squre"
         android:text="구매하기"
         android:textColor="@android:color/white"
-        android:textSize="20sp" />
+        android:textSize="25sp" />
 
 </LinearLayout>
