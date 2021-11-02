@@ -8,6 +8,7 @@ import android.widget.Button;
 import android.content.Intent;
 import android.view.View;
 import android.widget.EditText;
+import android.widget.ImageButton;
 import android.widget.TextView;
 import android.widget.Toast;
 import androidx.appcompat.app.AlertDialog;
@@ -23,6 +24,7 @@ public class Signup extends AppCompatActivity {
     private EditText username, ID, password,confirm;
     private TextView message;
     private Button join_button, check_button;
+    private ImageButton back_btn;
     private AlertDialog dialog;
     private boolean validate = false;
 
@@ -30,6 +32,15 @@ public class Signup extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_signup);
+
+        back_btn = findViewById( R.id.back_btn );
+        back_btn.setOnClickListener( new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent( Signup.this, Mypage.class );
+                startActivity( intent );
+            }
+        });
 
         //아이디값 찾아주기
         username = findViewById( R.id.username );
@@ -177,8 +188,6 @@ public class Signup extends AppCompatActivity {
                 queue.add( signupRequest );
             }
         });
-
-
     }
 
 }

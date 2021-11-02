@@ -6,6 +6,7 @@ import android.content.Intent;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.ImageButton;
 import android.widget.Toast;
 
 import com.android.volley.RequestQueue;
@@ -17,7 +18,8 @@ import org.json.JSONObject;
 public class Login_normal extends AppCompatActivity {
 
     private EditText login_ID, login_pass;
-    private Button login_button,join_button,normalbtn,centerbtn,sellerbtn;
+    private Button signup_btn,login_btn,normalbtn,centerbtn,sellerbtn;
+    private ImageButton back_btn;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -51,12 +53,8 @@ public class Login_normal extends AppCompatActivity {
             }
         });
 
-
-        login_ID = findViewById( R.id.login_ID );
-        login_pass = findViewById( R.id.login_pass );
-
-        join_button = findViewById( R.id.join_button );
-        join_button.setOnClickListener( new View.OnClickListener() {
+        signup_btn = findViewById( R.id.signup_btn );
+        signup_btn.setOnClickListener( new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 Intent intent = new Intent( Login_normal.this, Signup.class );
@@ -64,8 +62,22 @@ public class Login_normal extends AppCompatActivity {
             }
         });
 
-        login_button = findViewById( R.id.login_button );
-        login_button.setOnClickListener( new View.OnClickListener() {
+        back_btn = findViewById( R.id.back_btn );
+        back_btn.setOnClickListener( new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent( Login_normal.this, Mypage.class );
+                startActivity( intent );
+            }
+        });
+
+
+        login_ID = findViewById( R.id.login_ID );
+        login_pass = findViewById( R.id.login_pass );
+
+
+        login_btn = findViewById( R.id.login_button );
+        login_btn.setOnClickListener( new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 String UserID = login_ID.getText().toString();

@@ -13,13 +13,13 @@ public class Adopt_uploadRequest extends StringRequest{
     private Map<String, String> map;
     //private Map<String, String>parameters;
 
-    public Adopt_uploadRequest(String Species, String Sex, String Age, String Inoculation,String Disease,String Deadline,String Finding_spot,String Personality,
+    public Adopt_uploadRequest(String Species, String Age, String Inoculation,String Disease,String Deadline,String Finding_spot,String Personality,
                                String Center_name,String Center_address,String QA_number,String Condition,Response.Listener<String> listener) {
         super(Request.Method.POST, URL, listener, null); //서버에 요청
 
         map = new HashMap<>();
         map.put("UserID", Species);
-        map.put("UserPass", Sex);
+        //map.put("UserPass", Sex);
         map.put("Age", Age);
         map.put("Inoculation", Inoculation);
         map.put("Disease", Disease);

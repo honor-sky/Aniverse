@@ -7,11 +7,13 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.ImageButton;
 
 public class Login_center extends AppCompatActivity {
 
     private EditText login_ID;
-    private Button login_button,normalbtn,centerbtn,sellerbtn;
+    private Button signup_btn,normalbtn,centerbtn,sellerbtn;
+    private ImageButton back_btn;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -36,11 +38,29 @@ public class Login_center extends AppCompatActivity {
             }
         });
 
-        sellerbtn=findViewById( R.id.sellerbtn );
+        sellerbtn = findViewById( R.id.sellerbtn );
         sellerbtn.setOnClickListener( new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 Intent intent = new Intent( Login_center.this, Login_seller.class );
+                startActivity( intent );
+            }
+        });
+
+        signup_btn = findViewById( R.id.signup_btn );
+        signup_btn.setOnClickListener( new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent( Login_center.this, Signup.class );
+                startActivity( intent );
+            }
+        });
+
+        back_btn = findViewById( R.id.back_btn );
+        back_btn.setOnClickListener( new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent( Login_center.this, Mypage.class );
                 startActivity( intent );
             }
         });

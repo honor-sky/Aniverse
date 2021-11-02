@@ -22,7 +22,7 @@ import org.json.JSONObject;
 public class Adopt_upload extends AppCompatActivity {
 
     TextInputEditText species, sex, age, inoculation, disease, deadline,
-            finding_spot, character, center_name, center_address, center_customer_number, condition;
+            finding_spot, personality, center_name, center_address, center_customer_number, condition;
     private AlertDialog dialog;
 
     @Override
@@ -41,13 +41,14 @@ public class Adopt_upload extends AppCompatActivity {
         });
 
         species = findViewById(R.id.species);
-        sex = findViewById(R.id.sex);
+        //sex = findViewById(R.id.sex); //성별 라디오 버튼 처리
+        //중성화 여부도 라디오 버튼
         age = findViewById(R.id.age);
         inoculation = findViewById(R.id.inoculation);
         disease = findViewById(R.id.disease);
         deadline = findViewById(R.id.deadline);
         finding_spot = findViewById(R.id.finding_spot);
-        character = findViewById(R.id.character);
+        personality = findViewById(R.id.personality);
         center_name = findViewById(R.id.center_name);
         center_address = findViewById(R.id.center_address);
         center_customer_number = findViewById(R.id.center_customer_number);
@@ -58,35 +59,64 @@ public class Adopt_upload extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 final String Species = species.getText().toString();
-                final String Sex = sex.getText().toString();
+                //final String Sex = sex.getText().toString();
                 final String Age = age.getText().toString();
                 final String Inoculation = inoculation.getText().toString();
                 final String Disease = disease.getText().toString();
                 final String Deadline = deadline.getText().toString();
                 final String Finding_spot = finding_spot.getText().toString();
-                final String Charac = character.getText().toString();
+                final String Personality = personality.getText().toString();
                 final String Center_name = center_name.getText().toString();
                 final String Center_address = center_address.getText().toString();
-                final String Center_customer_number = center_customer_number.getText().toString();
+                final String QA_number = center_customer_number.getText().toString();
                 final String Condition = condition.getText().toString();
 
 
                 //한 칸이라도 입력 안했을 경우
-                if (Species.equals("") || Sex.equals("") || Age.equals("") || Inoculation.equals("") || Disease.equals("") || Deadline.equals("") || Finding_spot.equals("") ||
-                        Charac.equals("") || Center_name.equals("") || Center_address.equals("") || Center_customer_number.equals("") || Condition.equals("")) {
+                if (Species.equals("")  || Age.equals("") || Inoculation.equals("") || Disease.equals("") || Deadline.equals("") || Finding_spot.equals("") ||
+                        Personality.equals("") || Center_name.equals("") || Center_address.equals("") || QA_number.equals("") || Condition.equals("")) {
                     AlertDialog.Builder builder = new AlertDialog.Builder(Adopt_upload.this);
                     dialog = builder.setMessage("모두 입력해주세요.").setNegativeButton("확인", null).create();
                     dialog.show();
                     return;
                 }
+
+                Response.Listener<String> responseListener = new Response.Listener<String>() {
+                    @Override
+                    public void onResponse(String response) {
+
+                        try {
+                            JSONObject jsonObject = new JSONObject( response );
+                            boolean success = jsonObject.getBoolean( "success" );
+
+                            //업로드 성공시
+                            if (success) {
+
+                                Toast.makeText(getApplicationContext(), String.format("업로드 성공"), Toast.LENGTH_SHORT).show();
+                                Intent intent = new Intent(Adopt_upload.this, Adopt_confirm.class);
+                                startActivity(intent);
+
+                                //업로드 실패시
+                            } else {
+                                Toast.makeText(getApplicationContext(), "업로드 실패", Toast.LENGTH_SHORT).show();
+                                return;
+                            }
+
+                        } catch (JSONException e) {
+                            e.printStackTrace();
+                        }
+
+                    }
+                };
+                //서버로 Volley를 이용해서 요청
+                Adopt_uploadRequest uploadRequest = new Adopt_uploadRequest(Species, Age, Inoculation,Disease,Deadline,Finding_spot,Personality,
+                        Center_name,Center_address,QA_number,Condition,responseListener);
+                RequestQueue queue = Volley.newRequestQueue( Adopt_upload.this );
+                queue.add( uploadRequest );
             }
         });
 
-        /*//서버로 Volley를 이용해서 요청
-        SignupRequest signupRequest = new SignupRequest( Species, Sex, Age, Inoculation,Disease,Deadline,Finding_spot,Charac,
-                Center_name,Center_address,Center_customer_number,Condition);
-        RequestQueue queue = Volley.newRequestQueue( Adopt_upload.this );
-        queue.add( signupRequest );*/
+
 
     }
 }

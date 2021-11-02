@@ -8,7 +8,7 @@ import java.util.Map;
 
 public class ValidateRequest extends StringRequest{
     //서버 url 설정(php파일 연동)
-    final static  private String URL="http://13.209.98.213/";
+    final static  private String URL="http://3.37.90.104:3003/app/users";
     private Map<String, String> map;
 
     public ValidateRequest(String UserID, Response.Listener<String> listener){

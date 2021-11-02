@@ -1,8 +1,11 @@
 package org.gyeongsoton.gyeongsoton_jelly;
 
+import static android.content.ContentValues.TAG;
+
 import android.annotation.SuppressLint;
 import android.content.Intent;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.MotionEvent;
 import android.view.View;
 import android.view.WindowManager;
@@ -18,13 +21,13 @@ import com.android.volley.RequestQueue;
 import com.android.volley.Response;
 import com.android.volley.VolleyError;
 import com.android.volley.toolbox.JsonArrayRequest;
+import com.android.volley.toolbox.JsonObjectRequest;
 import com.android.volley.toolbox.Volley;
 import com.bumptech.glide.Glide;
 
 import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
-
 import java.util.ArrayList;
 
 
@@ -34,7 +37,7 @@ public class Adopt_list extends AppCompatActivity {
     ImageView image1;
     //ItemAdapter adapter;
 
-    String URL="http://13.209.98.213/";
+    String URL="http://3.34.166.156/";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -43,26 +46,25 @@ public class Adopt_list extends AppCompatActivity {
                 WindowManager.LayoutParams.FLAG_FULLSCREEN);
         setContentView(R.layout.activity_adopt_list);
 
-        JsonArrayRequest jsonArrayRequest= new JsonArrayRequest(Request.Method.POST, URL, null, new Response.Listener<JSONArray>() {
+        JsonObjectRequest jsonObjReq = new JsonObjectRequest(Request.Method.POST, URL, null, new Response.Listener<JSONObject>() {
             //post 방식이 갱신에도 적합
             @Override
-            public void onResponse(JSONArray response) {
+            public void onResponse(JSONObject response) {
                 Toast.makeText(Adopt_list.this, response.toString(), Toast.LENGTH_SHORT).show();
+                Log.d(TAG, response.toString());
 
                 //파라미터로 응답받은 결과 JsonArray를 분석
                 items.clear();
                 try {
-                    for(int i=0;i<response.length();i++){
-                        JSONObject jsonObject= response.getJSONObject(i);
 
-                        int no= Integer.parseInt(jsonObject.getString("no")); //no가 문자열이라서 바꿔야함.
-                        String imgPath=jsonObject.getString("imgPath");
-                        imgPath = "http://13.209.98.213/"+imgPath;
+                        int no= Integer.parseInt(response.getString("no")); //no가 문자열이라서 바꿔야함.
+                        String imgPath=response.getString("imgPath");
+                        imgPath = URL+imgPath;
 
                         items.add(0,new Adopt_list_data(no,imgPath)); // 첫 번째 매개변수는 몇번째에 추가 될지, 제일 위에 오도록
-                    }
-                } catch (JSONException e) {e.printStackTrace();}
-
+                    } catch (JSONException jsonException) {
+                    jsonException.printStackTrace();
+                }
             }
         }, new Response.ErrorListener() {
             @Override
@@ -113,15 +115,15 @@ public class Adopt_list extends AppCompatActivity {
                 startActivity(intent);
             }
         });
-        /*ImageButton mypage_btn = (ImageButton)findViewById(R.id.mypage_btn);
+        ImageButton mypage_btn = (ImageButton)findViewById(R.id.mypage_btn);
         mypage_btn.setOnClickListener(new View.OnClickListener() {
 
             @Override
             public void onClick(View view) {
-                Intent intent = new Intent(getApplicationContext(), Funding_list.class);
+                Intent intent = new Intent(getApplicationContext(), Mypage.class);
                 startActivity(intent);
             }
-        });*/
+        });
 
         /*입양, 입양완료 버튼 전환*/
         Button adopt_tab = (Button)findViewById(R.id.adopt_tab);
@@ -184,9 +186,11 @@ public class Adopt_list extends AppCompatActivity {
 
         //실제 요청 작업을 수행해주는 요청큐 객체 생성
         RequestQueue requestQueue= Volley.newRequestQueue(this);
-
         //요청큐에 요청 객체 생성
-        requestQueue.add(jsonArrayRequest);
+        requestQueue.add(jsonObjReq);
+
+
+
 
 
     }
