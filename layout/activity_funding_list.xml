@@ -9,6 +9,18 @@
     android:orientation="vertical"
     tools:context=".Funding_list">
 
+    <Button
+        android:id="@+id/funding_add_btn"
+        android:layout_width="65dp"
+        android:layout_height="65dp"
+        android:layout_marginStart="325dp"
+        android:layout_marginTop="10dp"
+        android:background="#00ff0000"
+        android:gravity="center"
+        android:text="+"
+        android:textColor="#000000"
+        android:textSize="25sp" />
+
     <FrameLayout
         android:layout_width="417dp"
         android:layout_height="150dp"
@@ -32,13 +44,21 @@
         android:layout_marginTop="80dp"
         android:background="@drawable/top_round_wsquare">
 
+        <FrameLayout
+            android:id="@+id/funding_list_container"
+            android:layout_width="match_parent"
+            android:layout_height="500dp"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginTop="100dp"
+            android:layout_weight="1" />
 
         <com.google.android.material.bottomnavigation.BottomNavigationView
             android:id="@+id/main_bottom"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginTop="580dp"
+            android:layout_marginTop="640dp"
             android:background="@android:color/white">
+
 
             <ImageButton
                 android:id="@+id/adopt_btn"
@@ -86,76 +106,8 @@
                 app:srcCompat="@drawable/ic_baseline_person_24" />
         </com.google.android.material.bottomnavigation.BottomNavigationView>
 
-        <ScrollView
-            android:layout_width="361dp"
-            android:layout_height="530dp"
-            android:layout_marginStart="15dp"
-            android:layout_marginTop="100dp">
-
-            <TableLayout
-                android:layout_width="361dp"
-                android:layout_height="530dp"
-                android:orientation="vertical">
-
-                <TableRow>
-                    <ImageView
-                        android:id="@+id/imageView"
-                        android:layout_width="130dp"
-                        android:layout_height="130dp"
-                        android:layout_marginStart="40dp"
-                        android:layout_marginTop="20dp"
-                        android:src="@drawable/ic_launcher_background" />
-
-                    <ImageView
-                        android:id="@+id/imageView2"
-                        android:layout_width="130dp"
-                        android:layout_height="130dp"
-                        android:layout_marginStart="40dp"
-                        android:layout_marginTop="20dp"
-                        android:src="@drawable/ic_launcher_background" />
-                </TableRow>
-
-                <TableRow>
-                    <ImageView
-                        android:id="@+id/imageView3"
-                        android:layout_width="130dp"
-                        android:layout_height="130dp"
-                        android:layout_marginStart="40dp"
-                        android:layout_marginTop="20dp"
-                        android:src="@drawable/ic_launcher_background" />
-
-                    <ImageView
-                        android:id="@+id/imageView4"
-                        android:layout_width="130dp"
-                        android:layout_height="130dp"
-                        android:layout_marginStart="40dp"
-                        android:layout_marginTop="20dp"
-                        android:src="@drawable/ic_launcher_background" />
-                </TableRow>
-
-                <TableRow>
-
-                    <ImageView
-                        android:id="@+id/imageView5"
-                        android:layout_width="130dp"
-                        android:layout_height="130dp"
-                        android:layout_marginStart="40dp"
-                        android:layout_marginTop="20dp"
-                        android:src="@drawable/ic_launcher_background" />
-
-                    <ImageView
-                        android:id="@+id/imageView6"
-                        android:layout_width="130dp"
-                        android:layout_height="130dp"
-                        android:layout_marginStart="40dp"
-                        android:layout_marginTop="20dp"
-                        android:src="@drawable/ic_launcher_background" />
-                </TableRow>
-            </TableLayout>
-        </ScrollView>
-
         <Button
-            android:id="@+id/button"
+            android:id="@+id/animal_funding_btn"
             android:layout_width="156dp"
             android:layout_height="40dp"
             android:layout_marginStart="30dp"
@@ -168,7 +120,7 @@
             tools:ignore="TouchTargetSizeCheck" />
 
         <Button
-            android:id="@+id/button2"
+            android:id="@+id/center_funding_btn"
             android:layout_width="153dp"
             android:layout_height="40dp"
             android:layout_marginStart="200dp"
