@@ -2,6 +2,7 @@ drop database if exists aniverse;
 CREATE DATABASE IF NOT EXISTS aniverse;
 USE aniverse;
 
+-- Center Table Create SQL
 CREATE TABLE Center
 (
     `centerIdx`       INT            NOT NULL    AUTO_INCREMENT COMMENT '보호소 인덱스',
@@ -40,16 +41,21 @@ ALTER TABLE User COMMENT '사용자 테이블';
 -- Animal Table Create SQL
 CREATE TABLE Animal
 (
-    `animalIdx`      INT            NOT NULL    AUTO_INCREMENT COMMENT '동물 인덱스',
-    `centerIdx`      INT            NOT NULL    COMMENT '보호소 인덱스',
-    `animalSpecies`  VARCHAR(45)    NULL        COMMENT '동물 종',
-    `animalName`     VARCHAR(45)    NULL        COMMENT '동물 이름',
-    `animalAge`      VARCHAR(45)    NULL        COMMENT '동물 나이',
-    `animalGender`   CHAR(1)        NULL        COMMENT 'F : 여, M : 남',
-    `animalWeight`   INT            NULL        COMMENT '동물 무게',
-    `createdAt`      TIMESTAMP      NULL        DEFAULT CURRENT_TIMESTAMP COMMENT '동물 생성',
-    `updatedAt`      TIMESTAMP      NULL        DEFAULT CURRENT_TIMESTAMP COMMENT '동물 업데이트',
-    `status`         CHAR(1)        NULL        DEFAULT 'N' COMMENT 'A : 입양중, P : 보호중, F : 펀딩중, N : None',
+    `animalIdx`             INT              NOT NULL    AUTO_INCREMENT COMMENT '동물 인덱스',
+    `centerIdx`             INT              NOT NULL    COMMENT '보호소 인덱스',
+    `animalSpecies`         VARCHAR(45)      NULL        COMMENT '동물 종',
+    `animalName`            VARCHAR(45)      NULL        COMMENT '동물 이름',
+    `animalAge`             VARCHAR(45)      NULL        COMMENT '동물 나이',
+    `animalGender`          CHAR(1)          NULL        COMMENT 'F : 여, M : 남',
+    `animalWeight`          INT              NULL        COMMENT '동물 무게',
+    `animalNeutralization`  CHAR(1)          NULL        DEFAULT 'Y' COMMENT 'Y : 완료, N : 미완',
+    `animalVaccinated`      VARCHAR(1000)    NULL        COMMENT '접종 여부',
+    `animalDiseases`        VARCHAR(1000)    NULL        COMMENT '병력 여부',
+    `animalFind`            VARCHAR(1000)    NULL        COMMENT '발견 장소',
+    `animalIntro`           VARCHAR(1000)    NULL        COMMENT '특성, 성격',
+    `createdAt`             TIMESTAMP        NULL        DEFAULT CURRENT_TIMESTAMP COMMENT '동물 생성',
+    `updatedAt`             TIMESTAMP        NULL        DEFAULT CURRENT_TIMESTAMP COMMENT '동물 업데이트',
+    `status`                CHAR(1)          NULL        DEFAULT 'N' COMMENT 'A : 입양중, P : 보호중, F : 펀딩중, N : None',
      PRIMARY KEY (animalIdx)
 );
 
@@ -67,6 +73,7 @@ CREATE TABLE AdoptList
     `animalIdx`       INT              NOT NULL    COMMENT '동물 인덱스',
     `userIdx`         INT              NOT NULL    COMMENT '등록자 인덱스',
     `adoptCondition`  VARCHAR(1000)    NULL        COMMENT '입양 조건',
+    `adoptEtc`        VARCHAR(1000)    NULL        COMMENT '기타 사항',
     `createdAt`       TIMESTAMP        NULL        DEFAULT CURRENT_TIMESTAMP COMMENT '등록 생성',
     `updatedAt`       TIMESTAMP        NULL        DEFAULT CURRENT_TIMESTAMP COMMENT '등록 업데이트',
     `status`          CHAR(1)          NULL        DEFAULT 'Y' COMMENT 'Y : 유지,  S : 입양완료,  N : 삭제',
@@ -84,32 +91,6 @@ ALTER TABLE AdoptList
         REFERENCES User (userIdx) ON DELETE RESTRICT ON UPDATE RESTRICT;
 
 
--- Funding Table Create SQL
-CREATE TABLE Funding
-(
-    `fundingIdx`      INT             NOT NULL    AUTO_INCREMENT COMMENT '펀딩 업로드 인덱스',
-    `userIdx`         INT             NOT NULL    COMMENT '사용자 인덱스',
-    `animalIdx`       INT             NOT NULL    COMMENT '동물 인덱스',
-    `fundingPurpose`  VARCHAR(100)    NULL        COMMENT '펀딩 목적',
-    `fundingAmount`   INT             NOT NULL    COMMENT '펀딩 금액',
-    `fundingPeriod`   DATETIME        NULL        COMMENT 'DATETIME - CURRENT_TIME 계산',
-    `createdAt`       TIMESTAMP       NULL        DEFAULT CURRENT_TIMESTAMP COMMENT '펀딩 생성',
-    `updatedAt`       TIMESTAMP       NULL        DEFAULT CURRENT_TIMESTAMP COMMENT '펀딩 업데이트',
-    `status`          CHAR(1)         NULL        DEFAULT 'Y' COMMENT 'Y : 유지, S : 마감-성공,  F : 마감-실패, N : 삭제',
-     PRIMARY KEY (fundingIdx)
-);
-
-ALTER TABLE Funding COMMENT '모금 업로드 테이블';
-
-ALTER TABLE Funding
-    ADD CONSTRAINT FK_Funding_userIdx_User_userIdx FOREIGN KEY (userIdx)
-        REFERENCES User (userIdx) ON DELETE RESTRICT ON UPDATE RESTRICT;
-
-ALTER TABLE Funding
-    ADD CONSTRAINT FK_Funding_animalIdx_Animal_animalIdx FOREIGN KEY (animalIdx)
-        REFERENCES Animal (animalIdx) ON DELETE RESTRICT ON UPDATE RESTRICT;
-
-
 -- AdoptRequest Table Create SQL
 CREATE TABLE AdoptRequest
 (
@@ -117,6 +98,7 @@ CREATE TABLE AdoptRequest
     `adoptListIdx`     INT              NOT NULL    COMMENT '입양글 인덱스',
     `userIdx`          INT              NOT NULL    COMMENT '신청자 인덱스',
     `adoptComment`     VARCHAR(1000)    NULL        COMMENT '남기는말',
+    `adoptDate`        TIMESTAMP        NULL        DEFAULT CURRENT_TIMESTAMP COMMENT '입양 완료 날짜',
     `createdAt`        TIMESTAMP        NULL        DEFAULT CURRENT_TIMESTAMP COMMENT '신청 생성',
     `updatedAt`        TIMESTAMP        NULL        DEFAULT CURRENT_TIMESTAMP COMMENT '신청 업데이트',
     `status`           CHAR(1)          NULL        DEFAULT 'Y' COMMENT 'Y : 유지, S : 입양 완료, F : 입양 실패, N : 삭제',
@@ -168,6 +150,32 @@ CREATE TABLE Category
 );
 
 ALTER TABLE Category COMMENT '카테고리 테이블';
+
+
+-- Funding Table Create SQL
+CREATE TABLE Funding
+(
+    `fundingIdx`      INT             NOT NULL    AUTO_INCREMENT COMMENT '펀딩 업로드 인덱스',
+    `userIdx`         INT             NOT NULL    COMMENT '사용자 인덱스',
+    `animalIdx`       INT             NOT NULL    COMMENT '동물 인덱스',
+    `fundingPurpose`  VARCHAR(100)    NULL        COMMENT '펀딩 목적',
+    `fundingAmount`   INT             NOT NULL    COMMENT '펀딩 금액',
+    `fundingPeriod`   DATETIME        NULL        COMMENT 'DATETIME - CURRENT_TIME 계산',
+    `createdAt`       TIMESTAMP       NULL        DEFAULT CURRENT_TIMESTAMP COMMENT '펀딩 생성',
+    `updatedAt`       TIMESTAMP       NULL        DEFAULT CURRENT_TIMESTAMP COMMENT '펀딩 업데이트',
+    `status`          CHAR(1)         NULL        DEFAULT 'Y' COMMENT 'Y : 유지, S : 마감-성공,  F : 마감-실패, N : 삭제',
+     PRIMARY KEY (fundingIdx)
+);
+
+ALTER TABLE Funding COMMENT '모금 업로드 테이블';
+
+ALTER TABLE Funding
+    ADD CONSTRAINT FK_Funding_userIdx_User_userIdx FOREIGN KEY (userIdx)
+        REFERENCES User (userIdx) ON DELETE RESTRICT ON UPDATE RESTRICT;
+
+ALTER TABLE Funding
+    ADD CONSTRAINT FK_Funding_animalIdx_Animal_animalIdx FOREIGN KEY (animalIdx)
+        REFERENCES Animal (animalIdx) ON DELETE RESTRICT ON UPDATE RESTRICT;
 
 
 -- FundingReview Table Create SQL
@@ -389,6 +397,35 @@ CREATE TABLE PurchaseProduct
 );
 
 ALTER TABLE PurchaseProduct COMMENT '상품 구매 테이블 (미완성 + 배송지 관련)';
+
+# ALTER TABLE PurchaseProduct
+#     ADD CONSTRAINT FK_PurchaseProduct_productIdx_Product_productIdx FOREIGN KEY (productIdx)
+#         REFERENCES Product (productIdx) ON DELETE RESTRICT ON UPDATE RESTRICT;
+
+# ALTER TABLE PurchaseProduct
+#     ADD CONSTRAINT FK_PurchaseProduct_userIdx_User_userIdx FOREIGN KEY (userIdx)
+#         REFERENCES User (userIdx) ON DELETE RESTRICT ON UPDATE RESTRICT;
+
+
+-- adoptAnimalFile Table Create SQL
+CREATE TABLE adoptAnimalFile
+(
+    `adoptAnimalFileIdx`  INT              NOT NULL    AUTO_INCREMENT COMMENT '동물 입양 파일 인덱스',
+    `adoptListIdx`        INT              NULL        COMMENT '입양 등록글 인덱스',
+    `adoptLisfFileSort`   CHAR(1)          NULL        DEFAULT 'P' COMMENT 'P : 사진, D : 문서',
+    `adoptListFile`       VARCHAR(1000)    NULL        COMMENT '파일 링크',
+    `createdAt`           TIMESTAMP        NULL        DEFAULT CURRENT_TIMESTAMP COMMENT '파일 생성',
+    `updatedAt`           TIMESTAMP        NULL        DEFAULT CURRENT_TIMESTAMP COMMENT '파일 업데이트',
+    `status`              CHAR(1)          NULL        DEFAULT 'Y' COMMENT 'Y : 유지, N : 삭제',
+     PRIMARY KEY (adoptAnimalFileIdx)
+);
+
+ALTER TABLE adoptAnimalFile COMMENT '입양 등록 동물 파일 테이블';
+
+ALTER TABLE adoptAnimalFile
+    ADD CONSTRAINT FK_adoptAnimalFile_adoptListIdx_AdoptList_adoptListIdx FOREIGN KEY (adoptListIdx)
+        REFERENCES AdoptList (adoptListIdx) ON DELETE RESTRICT ON UPDATE RESTRICT;
+
 
 # ALTER TABLE PurchaseProduct
 #     ADD CONSTRAINT FK_PurchaseProduct_productIdx_Product_productIdx FOREIGN KEY (productIdx)
