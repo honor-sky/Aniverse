@@ -1,4 +1,4 @@
-package org.gyeongsoton.gyeongsoton_jelly;
+package org.tecttown.aniverse;
 
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -15,20 +15,11 @@ public class Mypage extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_mypage);
 
-        Button login_btn = (Button)findViewById(R.id.login_btn);
-        login_btn.setOnClickListener(new View.OnClickListener() {
+        Button btn = (Button)findViewById(R.id.buy_sell_item);
+        btn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent = new Intent(getApplicationContext(), Login_normal.class);
-                startActivity(intent);
-            }
-        });
-
-        Button signup_btn = (Button)findViewById(R.id.signup_btn);
-        signup_btn.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Intent intent = new Intent(getApplicationContext(), Signup.class);
+                Intent intent = new Intent(getApplicationContext(), Mypage_seller_item.class);
                 startActivity(intent);
             }
         });
@@ -62,15 +53,17 @@ public class Mypage extends AppCompatActivity {
                 startActivity(intent);
             }
         });
+
         ImageButton market_btn = (ImageButton)findViewById(R.id.market_btn);
-        market_btn.setOnClickListener(new View.OnClickListener() {
+        funding_btn.setOnClickListener(new View.OnClickListener() {
 
             @Override
             public void onClick(View view) {
-                Intent intent = new Intent(getApplicationContext(),Market_list.class);
+                Intent intent = new Intent(getApplicationContext(), Market_list.class);
                 startActivity(intent);
             }
         });
+
         ImageButton mypage_btn = (ImageButton)findViewById(R.id.mypage_btn);
         mypage_btn.setOnClickListener(new View.OnClickListener() {
 
@@ -80,6 +73,5 @@ public class Mypage extends AppCompatActivity {
                 startActivity(intent);
             }
         });
-
     }
 }
