@@ -87,7 +87,7 @@
                     android:textStyle="bold" />
 
                 <ImageButton
-                    android:id="@+id/imageButton"
+                    android:id="@+id/animal_img"
                     android:layout_width="225dp"
                     android:layout_height="125dp"
                     android:layout_gravity="center"
