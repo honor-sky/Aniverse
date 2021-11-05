@@ -206,22 +206,19 @@ public class Adopt_list extends AppCompatActivity {
             case 1:
                 // 첫번째 프래그먼트 호출
                 Fragment fragment1 = new Adopt_animal_fragment();
-                transaction.replace(R.id.adopt_list_container, fragment1);
-                transaction.commit();
+                getSupportFragmentManager().beginTransaction().replace(R.id.adopt_list_container,fragment1).commit();
                 break;
 
             case 2:
                 // 두번째 프래그먼트 호출
                 Fragment fragment2 = new Adopt_protect_fragment();
-                transaction.replace(R.id.adopt_list_container, fragment2);
-                transaction.commit();
+                getSupportFragmentManager().beginTransaction().replace(R.id.adopt_list_container,fragment2).commit();
                 break;
 
             case 3:
                 // 세번째 프래그먼트 호출
                 Fragment fragment3 = new Adopt_complete_fragment();
-                transaction.replace(R.id.adopt_list_container, fragment3);
-                transaction.commit();
+                getSupportFragmentManager().beginTransaction().replace(R.id.adopt_list_container,fragment3).commit();
                 break;
         }
     }

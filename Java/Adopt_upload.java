@@ -1,9 +1,14 @@
-package org.gyeongsoton.gyeongsoton_jelly;
+package org.tecttown.aniverse;
 
+import androidx.activity.result.ActivityResult;
+import androidx.activity.result.ActivityResultCallback;
+import androidx.activity.result.ActivityResultLauncher;
+import androidx.activity.result.contract.ActivityResultContracts;
 import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
+import android.net.Uri;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
@@ -20,10 +25,13 @@ import org.json.JSONException;
 import org.json.JSONObject;
 
 public class Adopt_upload extends AppCompatActivity {
-
+    /*
     TextInputEditText species, sex, age, inoculation, disease, deadline,
             finding_spot, personality, center_name, center_address, center_customer_number, condition;
     private AlertDialog dialog;
+    */
+    private final int GET_GALLERY_IMAGE=200;
+    private ImageButton img_b;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -40,6 +48,8 @@ public class Adopt_upload extends AppCompatActivity {
             }
         });
 
+        /*
+
         species = findViewById(R.id.species);
         //sex = findViewById(R.id.sex); //성별 라디오 버튼 처리
         //중성화 여부도 라디오 버튼
@@ -53,6 +63,8 @@ public class Adopt_upload extends AppCompatActivity {
         center_address = findViewById(R.id.center_address);
         center_customer_number = findViewById(R.id.center_customer_number);
         condition = findViewById(R.id.condition);
+
+
 
         Button upload_button = (Button) findViewById(R.id.upload_button);
         upload_button.setOnClickListener(new View.OnClickListener() {
@@ -116,7 +128,27 @@ public class Adopt_upload extends AppCompatActivity {
             }
         });
 
-
+        */
+        img_b = (ImageButton) findViewById(R.id.animal_img);
+        img_b.setOnClickListener(v -> {
+            Intent intent = new Intent();
+            intent.setType("image/*");
+            intent.setAction(Intent.ACTION_GET_CONTENT);
+            launcher.launch(intent);
+        });
 
     }
+    ActivityResultLauncher<Intent> launcher = registerForActivityResult(new ActivityResultContracts.StartActivityForResult(),
+            new ActivityResultCallback<ActivityResult>() {
+                @Override
+                public void onActivityResult(ActivityResult result) {
+                    if (result.getResultCode() == RESULT_OK){
+                        Intent intent = result.getData();
+                        Uri uri = intent.getData();
+                        img_b.setImageURI(uri);
+                    }
+                }
+            });
+
+
 }

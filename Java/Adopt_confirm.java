@@ -1,4 +1,4 @@
-package org.gyeongsoton.gyeongsoton_jelly;
+package org.tecttown.aniverse;
 
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -9,6 +9,6 @@ public class Adopt_confirm extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_adopt_confirm);
+        setContentView(R.layout.fragment_adopt_confirm);
     }
 }

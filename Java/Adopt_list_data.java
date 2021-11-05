@@ -1,4 +1,4 @@
-package org.gyeongsoton.gyeongsoton_jelly;
+package org.tecttown.aniverse;
 
 public class Adopt_list_data {
 
