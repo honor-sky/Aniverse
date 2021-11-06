@@ -139,7 +139,7 @@
                 android:textStyle="bold" />
 
             <ImageButton
-                android:id="@+id/imageButton4"
+                android:id="@+id/funding_animal_img"
                 android:layout_width="225dp"
                 android:layout_height="125dp"
                 android:layout_gravity="center"
