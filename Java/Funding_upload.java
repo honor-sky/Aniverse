@@ -1,11 +1,16 @@
 package org.tecttown.aniverse;
 
+import androidx.activity.result.ActivityResult;
+import androidx.activity.result.ActivityResultCallback;
+import androidx.activity.result.ActivityResultLauncher;
+import androidx.activity.result.contract.ActivityResultContracts;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentTransaction;
 
 import android.annotation.SuppressLint;
 import android.content.Intent;
+import android.net.Uri;
 import android.os.Bundle;
 import android.view.MotionEvent;
 import android.view.View;
@@ -54,7 +59,6 @@ public class Funding_upload extends AppCompatActivity {
         FragmentView(Fragment_1);
         btn1.setPressed(true);
         btn2.setPressed(false);
-
 
     }
 
