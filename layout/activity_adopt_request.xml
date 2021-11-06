@@ -62,7 +62,7 @@
                 android:layout_height="match_parent"
                 android:hint="성명"
                 android:inputType="textPersonName"/>
-            </com.google.android.material.textfield.TextInputLayout>
+        </com.google.android.material.textfield.TextInputLayout>
 
         <com.google.android.material.textfield.TextInputLayout
             style="@style/Theme.AppCompat.DayNight.NoActionBar"

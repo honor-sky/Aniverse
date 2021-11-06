@@ -1,4 +1,4 @@
-package org.gyeongsoton.gyeongsoton_jelly;
+package org.tecttown.aniverse;
 
 import static android.content.ContentValues.TAG;
 
@@ -15,6 +15,8 @@ import android.widget.ImageView;
 import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.fragment.app.Fragment;
+import androidx.fragment.app.FragmentTransaction;
 
 import com.android.volley.Request;
 import com.android.volley.RequestQueue;
@@ -38,6 +40,10 @@ public class Adopt_list extends AppCompatActivity {
     //ItemAdapter adapter;
 
     String URL="http://3.34.166.156/";
+
+    private final int Fragment_1 = 1;
+    private final int Fragment_2 = 2;
+    private final int Fragment_3 = 3;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -134,35 +140,44 @@ public class Adopt_list extends AppCompatActivity {
             @SuppressLint("ClickableViewAccessibility")
             @Override
             public boolean onTouch(View v, MotionEvent event) {
+                FragmentView(Fragment_1);
                 adopt_tab.setPressed(true);
                 protect_tab.setPressed(false);
                 complete_tab.setPressed(false);
-
                 return true;
             }
         });
 
-        protect_tab.setOnTouchListener(new View.OnTouchListener() { //입양완료 버튼 누르면 데이터도 바뀌고 검색창도 뜸
+        protect_tab.setOnTouchListener(new View.OnTouchListener() {
             @SuppressLint("ClickableViewAccessibility")
             @Override
             public boolean onTouch(View v, MotionEvent event) {
+                FragmentView(Fragment_2);
                 protect_tab.setPressed(true);
                 adopt_tab.setPressed(false);
                 complete_tab.setPressed(false);
                 return true;
+
             }
         });
 
-        complete_tab.setOnTouchListener(new View.OnTouchListener() { //입양완료 버튼 누르면 데이터도 바뀌고 검색창도 뜸
+        complete_tab.setOnTouchListener(new View.OnTouchListener() {
             @SuppressLint("ClickableViewAccessibility")
             @Override
             public boolean onTouch(View v, MotionEvent event) {
-                protect_tab.setPressed(false);
-                adopt_tab.setPressed(false);
+                FragmentView(Fragment_3);
                 complete_tab.setPressed(true);
+                adopt_tab.setPressed(false);
+                protect_tab.setPressed(false);
                 return true;
+
             }
         });
+
+        FragmentView(Fragment_1);
+        adopt_tab.setPressed(true);
+        protect_tab.setPressed(false);
+        complete_tab.setPressed(false);
 
         Button add_btn = (Button)findViewById(R.id.add_btn);
         add_btn.setOnClickListener(new View.OnClickListener() {
@@ -174,15 +189,7 @@ public class Adopt_list extends AppCompatActivity {
             }
         });
 
-        ImageView image1 = (ImageView)findViewById(R.id.imageView);
-        image1.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Intent intent = new Intent(getApplicationContext(), Adopt_info.class);
-                intent.putExtra("1",items.get(0).getImgPath()); //items 리스트를 넘겨주는 방법은 없나?...
-                startActivity(intent);
-            }
-        });
+
 
       /*  //실제 요청 작업을 수행해주는 요청큐 객체 생성
         RequestQueue requestQueue= Volley.newRequestQueue(this);
@@ -192,4 +199,29 @@ public class Adopt_list extends AppCompatActivity {
 
     }
 
+    private void FragmentView(int fragment) {
+        FragmentTransaction transaction = getSupportFragmentManager().beginTransaction();
+
+        switch (fragment) {
+            case 1:
+                // 첫번째 프래그먼트 호출
+                Fragment fragment1 = new Adopt_animal_fragment();
+                getSupportFragmentManager().beginTransaction().replace(R.id.adopt_list_container,fragment1).commit();
+                break;
+
+            case 2:
+                // 두번째 프래그먼트 호출
+                Fragment fragment2 = new Adopt_protect_fragment();
+                getSupportFragmentManager().beginTransaction().replace(R.id.adopt_list_container,fragment2).commit();
+                break;
+
+            case 3:
+                // 세번째 프래그먼트 호출
+                Fragment fragment3 = new Adopt_complete_fragment();
+                getSupportFragmentManager().beginTransaction().replace(R.id.adopt_list_container,fragment3).commit();
+                break;
+        }
+    }
+
 }
+

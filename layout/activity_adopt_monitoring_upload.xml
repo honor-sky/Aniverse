@@ -151,7 +151,7 @@
                 <!--사진 여러장 올릴 수 있도록 생성-->
 
                 <ImageButton
-                    android:id="@+id/diagno_image"
+                    android:id="@+id/review_img"
                     android:layout_width="225dp"
                     android:layout_height="125dp"
                     android:layout_gravity="center"

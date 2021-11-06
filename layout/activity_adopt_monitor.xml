@@ -23,7 +23,7 @@
             android:textSize="25sp" />
 
         <Button
-            android:id="@+id/add_btn"
+            android:id="@+id/news_add_btn"
             android:layout_width="55dp"
             android:layout_height="55dp"
             android:layout_marginStart="330dp"
@@ -91,7 +91,7 @@
                 android:background="@drawable/button_design"
                 android:elevation="10dp"
                 android:text="검진결과"
-                android:textColor="#CCCCCC"
+                android:textColor="@drawable/text_select"
                 android:textSize="20sp"
                 android:textStyle="bold"
                 tools:ignore="TouchTargetSizeCheck" />
@@ -105,35 +105,18 @@
                 android:background="@drawable/button_design"
                 android:elevation="10dp"
                 android:text="소식"
-                android:textColor="#CCCCCC"
+                android:textColor="@drawable/text_select"
                 android:textSize="20sp"
                 android:textStyle="bold"
                 tools:ignore="TouchTargetSizeCheck" />
 
-            <ScrollView
-                android:layout_width="330dp"
-                android:layout_height="500dp"
-                android:layout_marginStart="10dp"
-                android:layout_marginTop="80dp">
-
-                <TableLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:orientation="vertical">
-
-                    <TableRow>
-
-                        <ImageView
-                            android:id="@+id/imageView"
-                            android:layout_width="130dp"
-                            android:layout_height="130dp"
-                            android:layout_gravity="center"
-                            android:layout_marginStart="65dp"
-                            android:src="@drawable/ic_launcher_background" />
-                    </TableRow>
-                </TableLayout>
-
-            </ScrollView>
+            <FrameLayout
+                android:id="@+id/news_container"
+                android:layout_width="match_parent"
+                android:layout_height="440dp"
+                android:layout_gravity="center_horizontal"
+                android:layout_marginTop="70dp"
+                android:layout_weight="1" />
 
         </FrameLayout>
 

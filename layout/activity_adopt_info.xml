@@ -73,6 +73,7 @@
             android:layout_height="wrap_content"
             android:layout_marginTop="640dp"
             android:background="#00ffffff">
+
             <Button
                 android:id="@+id/request_btn"
                 android:layout_width="350dp"
@@ -81,7 +82,7 @@
                 android:background="@drawable/gradient_round_squre"
                 android:text="신청하기"
                 android:textColor="@color/white"
-                android:textSize="25sp"/>
+                android:textSize="25sp" />
         </FrameLayout>
 
     </FrameLayout>

@@ -23,6 +23,15 @@
             android:text="Funding/ 기부하기"
             android:textColor="@color/white"
             android:textSize="25sp" />
+
+        <ImageButton
+            android:id="@+id/back_btn"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="13dp"
+            android:layout_marginTop="15dp"
+            android:background="#00ff0000"
+            app:srcCompat="@drawable/ic_baseline_arrow_back_ios_24" />
     </FrameLayout>
 
     <FrameLayout
@@ -58,11 +67,11 @@
                 android:layout_width="350dp"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
-                app:layout_constraintBottom_toTopOf="@+id/button2"
+                app:layout_constraintBottom_toTopOf="@+id/center_button"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintHorizontal_bias="0.494"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/imageView"
+                app:layout_constraintTop_toBottomOf="@+id/ani_1"
                 app:layout_constraintVertical_bias="0.269" />
 
             <Space
@@ -81,7 +90,7 @@
                     android:gravity="center"
                     android:text="젤리"
                     android:textSize="20sp"
-                    app:layout_constraintBottom_toTopOf="@+id/button2"
+                    app:layout_constraintBottom_toTopOf="@+id/center_button"
                     app:layout_constraintEnd_toStartOf="@+id/seekBar" />
 
                 <SeekBar
