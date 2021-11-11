@@ -109,7 +109,6 @@ exports.signIn = async function (req, res) {
 
         res.json({
             isSuccess: true,
-            jwt : token,
             userAuth : userInfoRows[0].userAuth,
             userIdx : userInfoRows[0].userIdx
         });
@@ -118,6 +117,77 @@ exports.signIn = async function (req, res) {
         return false;
     }
 };
+//
+// //
+// // /**
+// //  * User 3-2. 센터 로그인 API
+// //  * [POST] /signin/center
+// //  */
+// // exports.signInCenter = async function (req, res) {
+// //     const {
+// //         centerName
+// //     } = req.body;
+// //
+// //     try {
+// //         const userInfoRows = await userModel.selectCenterUserInfo(centerName);
+// //
+// //         // let token = await jwt.sign({
+// //         //         userId: userInfoRows[0].userId,
+// //         //     },
+// //         //     secret_config.jwtsecret,
+// //         //     {
+// //         //         expiresIn: '365d',
+// //         //         subject: 'UserId',
+// //         //     }
+// //         // );
+// //
+// //         res.json({
+// //             isSuccess: true,
+// //             userAuth : userInfoRows[0].userAuth,
+// //             userIdx : userInfoRows[0].userIdx
+// //         });
+// //
+// //     } catch (err) {
+// //         logger.error(`centerSignIn Query error\n: ${JSON.stringify(err)}`);
+// //         return false;
+// //     }
+// // };
+// //
+// /**
+//  * User 3-3. 마켓 로그인 API
+//  * [POST] /signin/market
+//  */
+// exports.signInMarket = async function (req, res) {
+//     const {
+//         marketName
+//     } = req.body;
+//
+//     try {
+//         const UserInfoRows = await userModel.selectMarketUserInfo(marketName);
+//
+//         // let token = await jwt.sign({
+//         //         userId: userInfoRows[0].userId,
+//         //     },
+//         //     secret_config.jwtsecret,
+//         //     {
+//         //         expiresIn: '365d',
+//         //         subject: 'UserId',
+//         //     }
+//         // );
+//
+//         res.json({
+//             isSuccess: true,
+//             userAuth : userInfoRows[0].userAuth,
+//             userIdx : userInfoRows[0].userIdx
+//         });
+//     } catch (err) {
+//         logger.error(`marketSignIn Query error\n: ${JSON.stringify(err)}`);
+//         return false;
+//     }
+// };
+
+
+
 
 /**
  * JWT 검증 API
@@ -177,7 +247,7 @@ exports.getMypage = async function(req, res){
     const { userIdx } = req.body;
     try{
         const selectMypageRows = await userModel.selectMypage(userIdx);
-
+        const userIdRows = await userModel.selectUserId(userIdx);
         if (!selectMypageRows){
             return res.json({
                 isSuccess : false
@@ -186,6 +256,7 @@ exports.getMypage = async function(req, res){
 
         res.json({
             isSuccess : true,
+            userId : userIdRows[0].userId,
             fundingName : selectMypageRows[0].fundingName,
             fundingImage : selectMypageRows[0].fundingImage
         });
@@ -272,13 +343,13 @@ exports.getMypageAdopt = async function(req, res){
         }
 
         let resultRows = [
-            mypageAdoptRows,
-            mypageProtectRows
+            mypageAdoptRows
+            // mypageProtectRows
         ];
 
         res.json({
             isSuccess: true,
-            result : resultRows
+            result : mypageAdoptRows
         });
 
     } catch (err){
@@ -290,9 +361,9 @@ exports.getMypageAdopt = async function(req, res){
 
 /**
  * User 8. 마이페이지 펀딩 조회 API
- * [GET] /user/mypage/adopt
+ * [POST] /user/mypage/funding
  */
-exports.getMypageAdopt = async function(req, res){
+exports.getMypageFunding = async function(req, res){
     // const userId = req.verifiedToken.userId;  // 토큰화
 
     const {
@@ -308,8 +379,9 @@ exports.getMypageAdopt = async function(req, res){
         if (auth === 'U' || auth === 'M'){
             mypageFundingRows = await userModel.selectMypageFundingUM(userIdx);
         }
+
         else{
-            mypageFundingRows = await userModel.selectMypageAdoptC(userIdx);
+            mypageFundingRows = await userModel.selectMypageFundingC(userIdx);
         }
 
         let resultRows = [
@@ -318,14 +390,19 @@ exports.getMypageAdopt = async function(req, res){
 
         res.json({
             isSuccess: true,
-            result : resultRows
+            mypageFundingRows
         });
 
     } catch (err){
-        logger.error(`selectMyPageAdopt DB Connection error\n: ${err.message}`);
+        logger.error(`selectMyPageFunding DB Connection error\n: ${err.message}`);
         return res.status(500).send(`Error: ${err.message}`);
     }
 }
+
+
+
+
+
 
 
 

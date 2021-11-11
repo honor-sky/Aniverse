@@ -25,17 +25,42 @@ const {logger} = require('../../../config/winston');
 //     }
 // }
 
-// 입양 동물정보 업로드 API
-// async function insertAdoptInfo2(animalSpecies, animalGender, animalAge, animalVaccinated, animalDiseases, animalFind, animalIntro, animalImage) {
+// async function selectCenterIdx(centerName){
+//     try{
+//         const connection = await pool.getConnection(async (conn) => conn);
+//
+//         const selectCenterQuery = `
+//             SELECT Center.centerIdx
+//             FROM Center
+//             WHERE Center.centerName = ?;
+//         `;
+//
+//         const  selectCenterParams = [centerName];
+//         const [selectCenterRows] = await connection.query(
+//             selectCenterQuery,
+//             selectCenterParams
+//         );
+//
+//         connection.release();
+//         return selectCenterRows;
+//     } catch (err){
+//         logger.error(`selectCenter DB Connection error\n: ${err.message}`);
+//         return res.status(500).send(`Error: ${err.message}`);
+//     }
+// }
+
+//
+// // 입양 동물정보 업로드 API
+// async function insertAdoptInfo2(centerIdx, animalSpecies, animalGender, animalAge, animalVaccinated, animalDiseases, animalFind, animalIntro, animalImage) {
 //     try{
 //         const connection = await pool.getConnection(async (conn) => conn);
 //
 //         const insertAdoptInfo2Query = `
-//         INSERT into Animal ( animalSpecies, animalGender, animalAge, animalVaccinated, animalDiseases, animalFind, animalIntro, animalImage)
-//         value ("?","?","?","?","?","?","?", "?");
+//         INSERT into Animal (centerIdx, animalSpecies, animalGender, animalAge, animalVaccinated, animalDiseases, animalFind, animalIntro, animalImage)
+//         value ("?","?","?","?","?","?","?", "?", "?");
 //         `;
 //
-//         const  insertAdoptInfo2Params = [animalSpecies, animalGender, animalAge, animalVaccinated, animalDiseases, animalFind, animalIntro, animalImage]
+//         const  insertAdoptInfo2Params = [centerIdx, animalSpecies, animalGender, animalAge, animalVaccinated, animalDiseases, animalFind, animalIntro, animalImage]
 //         const [insertAdoptInfoRows2] = await connection.query(
 //             insertAdoptInfo2Query,
 //             insertAdoptInfo2Params
@@ -103,7 +128,6 @@ async function selectAdoptList(status) {
         return res.status(500).send(`Error: ${err.message}`);
     }
 }
-
 
 
 
@@ -230,14 +254,66 @@ async function insertAdoptRequestInfo(adoptListIdx, userIdx, contactName, contac
     }
 }
 
+// 5. 후기(모니터링)글 업로드1
+// async function insertReview1(adoptRequestIdx, adoptReviewText) {
+//     try{
+//         const connection = await pool.getConnection(async (conn) => conn);
+//         const insertReview1Params = [adoptRequestIdx, adoptReviewText]
+//
+//         const insertReview1Query = `
+//         INSERT into AdoptReview (adoptRequestIdx, adoptReviewText)
+//         value ("?","?");
+//         `;
+//
+//         const [insertReview1Rows] = await connection.query(
+//             insertReview1Query,
+//             insertReview1Params);
+//
+//         connection.release();
+//         return [insertReview1Rows];
+//     } catch (err){
+//         logger.error(`insertReview1 DB Connection error\n: ${err.message}`);
+//         return res.status(500).send(`Error: ${err.message}`);
+//     }
+// }
+//
+//
+// // 5. 후기(모니터링)글 업로드2
+// async function insertReview2(adoptReviewIdx,adoptReviewFile) {
+//     try{
+//         const connection = await pool.getConnection(async (conn) => conn);
+//         const insertReview2Params = [adoptReviewIdx,adoptReviewFile]
+//
+//         const insertReview2Query = `
+//         INSERT into AdoptReviewFile (adoptReviewIdx,adoptReviewFile)
+//         value ("?","?");
+//         `;
+//
+//         const [insertReview2Rows] = await connection.query(
+//             insertReview2Query,
+//             insertReview2Params
+//         );
+//
+//         connection.release();
+//         return [insertReview2Rows];
+//     } catch (err){
+//         logger.error(`insertReview2 DB Connection error\n: ${err.message}`);
+//         return res.status(500).send(`Error: ${err.message}`);
+//     }
+// }
+
+
 
 module.exports = {
     // insertAdoptInfo1,
+    // selectCenterIdx,
     // insertAdoptInfo2,
     // insertAdoptInfo3,
     selectAdoptList,
     selectAdoptAnimal,
     selectAdoptListIdx,
-    // insertAdoptListIdx,
+    // insertAdoptListIdx
     insertAdoptRequestInfo
+    // insertReview1,
+    // insertReview2
 }

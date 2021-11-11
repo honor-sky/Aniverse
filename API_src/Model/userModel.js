@@ -77,6 +77,56 @@ async function selectUserInfo(userId) {
     }
 }
 
+
+// 센터이름으로 유저인덱스, 권한 뽑아오기
+// async function selectCenterUserInfo(centerName) {
+//     try {
+//         const connection = await pool.getConnection(async (conn) => conn);
+//         const selectUserInfooQuery = `
+//             select u.userIdx, u.userAuth
+//             from User u left join Center c on u.userIdx = c.userIdx
+//             where c.centerName = ?;
+//         `;
+//
+//         const selectCenterUserParams = [centerName];
+//         const [selectCenterUserRows] = await connection.query(
+//             selectCenterUserQuery,
+//             selectCenterUserParams
+//         );
+//
+//         return selectCenterUserRows;
+//         connection.release();
+//     } catch (err) {
+//         logger.error(`selectCenterUser DB Connection error\n: ${err.message}`);
+//         return res.status(500).send(`Error: ${err.message}`);
+//     }
+// }
+//
+// // 마켓이름으로 유저인덱스, 권한 뽑아오기
+// async function selectMarketUserInfo(marketName) {
+//     try {
+//         const connection = await pool.getConnection(async (conn) => conn);
+//         const selectMarketUserQuery = `
+//             select u.userIdx, u.userAuth
+//             from User u left join Market m on u.userIdx = m.userIdx
+//             where m.marketName = ?;
+//         `;
+//
+//         const selectMarketUserParams = [marketName];
+//         const [selectMarketUserRows] = await connection.query(
+//             selectMarketUserQuery,
+//             selectMarketUserParams
+//         );
+//
+//         return selectMarketUserRows;
+//         connection.release();
+//     } catch (err) {
+//         logger.error(`selectMarketUser DB Connection error\n: ${err.message}`);
+//         return res.status(500).send(`Error: ${err.message}`);
+//     }
+// }
+
+
 // 인덱스로 권한 뽑아오기 daeun
 async function selectUserInfoo(userIdx) {
     try {
@@ -185,6 +235,33 @@ async function selectMypage(userIdx){
     }
 }
 
+// userId 뽑기
+async function selectUserId(userIdx){
+    try{
+        const connection = await pool.getConnection(async (conn) => conn);
+
+        const selectUserIdQuery = `
+            select u.userId
+            from User u 
+            where u.userIdx = ?;
+        `;
+
+        const selectUserIdParams = [userIdx];
+        const [selectUserIdRows] = await connection.query(
+            selectUserIdQuery,
+            selectUserIdParams
+        );
+
+        return selectUserIdRows;
+        connection.release();
+    } catch (err){
+        logger.error(`selectUserId DB Connection error\n: ${err.message}`);
+        return res.status(500).send(`Error: ${err.message}`);
+    }
+}
+
+
+
 // mypage product - 일반유저, 센터 -> 구매한 상품 조회
 async function selectMypageProductUC(userIdx){
     try{
@@ -227,7 +304,7 @@ async function selectMypageProductM(userIdx){
                  p.productPrice,
                  p.productImage,
                  p.productIdx
-          from Product p left join Market m on m.marketIdx = p.marketIdx
+          from Product p left join Market m on m.userIdx = p.userIdx
           where m.userIdx = ?;
         `;
 
@@ -373,62 +450,88 @@ async function selectMypageProtectC(userIdx){
         return res.status(500).send(`Error: ${err.message}`);
     }
 }
-
-// mypage fundint -> 일반유저입장 펀딩중
-async function selectMypageFundingIngUM(userIdx){
-    try{
-        const connection = await pool.getConnection(async (conn) => conn);
-
-        const selectMypageFundingIngUMQuery = `
-            select f.fundingName,
-                   f.fundingImage,
-                   f.fundingPurpose,
-                   f.fundingIdx
-            from Funding f
-            where f.fundingIdx = ?;
-        `;
-
-        const selectMypageProtectUMParams = [userIdx];
-        const [mypageFundingIngRows] = await connection.query(
-            selectMypageFundingIngUMQuery,
-            selectMypageFundingIngUMParams
-        );
-
-        return mypageFundingIngRows;
-        connection.release();
-    } catch (err){
-        logger.error(`selectMypageFunding DB Connection error\n: ${err.message}`);
-        return res.status(500).send(`Error: ${err.message}`);
-    }
-}
-
-// mypage fundint -> 일반유저입장 펀딩완료
-async function selectMypageFundingEndUM(userIdx){
-    try{
-        const connection = await pool.getConnection(async (conn) => conn);
-
-        const selectFundingEndUMQuery = `
-            select f.fundingName,
-                   f.fundingImage,
-                   f.fundingPurpose,
-                   f.fundingIdx
-            from Funding f
-            where f.fundingIdx = ?;
-        `;
-
-        const selectMypageFundingEndUMParams = [userIdx];
-        const [mypageFundingEndRows] = await connection.query(
-            selectMypageFundingEndUMQuery,
-            selectMypageFundingEndUMParams
-        );
-
-        return mypageFundingEndRows;
-        connection.release();
-    } catch (err){
-        logger.error(`selectMypageFunding DB Connection error\n: ${err.message}`);
-        return res.status(500).send(`Error: ${err.message}`);
-    }
-}
+//
+// // mypage funding -> 일반유저입장 펀딩중
+// // async function selectMypageFundingUM(userIdx){
+// //     try{
+// //         const connection = await pool.getConnection(async (conn) => conn);
+// //
+// //         const selectMypageFundingIngUMQuery = `
+// //                 select f.fundingName,
+// //                        f.fundingImage
+// //                 from Funding f left join DonateJelly dj on f.fundingIdx = dj.fundingIdx
+// //                 where dj.userIdx = ? and f.status = 'Y';
+// //         `;
+// //
+// //         const selectMypageProtectUMParams = [userIdx];
+// //         const [mypageFundingIngRows] = await connection.query(
+// //             selectMypageFundingIngUMQuery,
+// //             selectMypageFundingIngUMParams
+// //         );
+// //
+// //         return mypageFundingIngRows;
+// //         connection.release();
+// //     } catch (err){
+// //         logger.error(`selectMypageFunding DB Connection error\n: ${err.message}`);
+// //         return res.status(500).send(`Error: ${err.message}`);
+// //     }
+// // }
+// //
+// // // mypage funding -> 센터입장 펀딩중
+// // async function selectMypageFundingC(userIdx){
+// //     try{
+// //         const connection = await pool.getConnection(async (conn) => conn);
+// //
+// //         const selectMypageFundingIngUMQuery = `
+// //                 select f.fundingName,
+// //                        f.fundingImage
+// //                 from Funding f
+// //                 where f.userIdx = ? and f.status = 'Y';
+// //         `;
+// //
+// //         const selectMypageProtectUMParams = [userIdx];
+// //         const [mypageFundingIngRows] = await connection.query(
+// //             selectMypageFundingIngUMQuery,
+// //             selectMypageFundingIngUMParams
+// //         );
+// //
+// //         return mypageFundingIngRows;
+// //         connection.release();
+// //     } catch (err){
+// //         logger.error(`selectMypageFunding DB Connection error\n: ${err.message}`);
+// //         return res.status(500).send(`Error: ${err.message}`);
+// //     }
+// // }
+//
+//
+//
+// // mypage funding -> 일반유저입장 펀딩완료 -> 모니터링 조회 API와 동일
+// // async function selectMypageFundingEndUM(userIdx){
+// //     try{
+// //         const connection = await pool.getConnection(async (conn) => conn);
+// //
+// //         const selectFundingEndUMQuery = `
+// //             select f.fundingName,
+// //                    f.fundingImage,
+// //                    f.fundingPurpose,
+// //                    f.fundingIdx
+// //             from Funding f
+// //             where f.fundingIdx = ?;
+// //         `;
+// //
+// //         const selectMypageFundingEndUMParams = [userIdx];
+// //         const [mypageFundingEndRows] = await connection.query(
+// //             selectMypageFundingEndUMQuery,
+// //             selectMypageFundingEndUMParams
+// //         );
+// //
+// //         return mypageFundingEndRows;
+// //         connection.release();
+// //     } catch (err){
+// //         logger.error(`selectMypageFunding DB Connection error\n: ${err.message}`);
+// //         return res.status(500).send(`Error: ${err.message}`);
+// //     }
+// // }
 
 
 
@@ -437,13 +540,19 @@ module.exports = {
     userIdCheck,
     selectUserInfo,
     selectUserInfoo,
+    // selectCenterUserInfo,
+    // selectMarketUserInfo,
     selectAdopt,
     selectFunding,
     selectMarket,
     selectMypage,
+    selectUserId,
     selectMypageProductUC,
     selectMypageProductM,
     selectMypageAdoptUM,
     selectMypageProtectUM,
     selectMypageAdoptC,
     selectMypageProtectC
+// selectMypageFundingUM,
+// selectMypageFundingC
+}

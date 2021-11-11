@@ -121,18 +121,18 @@ exports.getImgClick = async function (req, res) {
 
 
 /**
- * Adopt 4. 입양신청글 작성 API 토큰필요
- * [POST] /adopt/userinfo'
+ * Adopt 4. 임보신청글 작성 API 토큰필요
+ * [POST] /protect/userinfo
  */
 exports.postAdoptUserInfo = async function (req, res) {
-    const {animalIdx, userIdx, contactName, contactPhoneNum, adoptComment} = req.body;
+    const {animalIdx, userIdx, contactName, contactPhoneNum, protectComment} = req.body;
     try{
-        var adoptListIdxRows = await adoptModel.selectAdoptListIdx(animalIdx);
-        console.log(adoptListIdxRows[0].adoptListIdx);
-        var adoptListIdx = adoptListIdxRows[0].adoptListIdx;
+        var protectListIdxRows = await protectModel.selectProtectListIdx(animalIdx);
+        // console.log(adoptListIdxRows[0].adoptListIdx);
+        var protectListIdx = protectListIdxRows[0].protectListIdx;
         // const postAdoptListIdx = await adoptModel.insertAdoptListIdx(adoptListIdx);
-        const postAdoptInfo = await adoptModel.insertAdoptRequestInfo(
-            adoptListIdx, userIdx, contactName, contactPhoneNum, adoptComment
+        const postProtectInfo = await protectModel.insertProtectRequestInfo(
+            protectListIdx, userIdx, contactName, contactPhoneNum, protectComment
         );
 
         res.json({
@@ -140,14 +140,38 @@ exports.postAdoptUserInfo = async function (req, res) {
         });
 
     } catch (err){
-        logger.error(`postAdoptUserInfo DB Connection error\n: ${err.message}`);
+        logger.error(`postProtectUserInfo DB Connection error\n: ${err.message}`);
         return res.status(500).send(`Error: ${err.message}`);
     }
 };
 
 
-
 /**
- * Adopt 6. 입양후기글 조회 API
- * [GET] /adopt/review'
+ * Adopt 5. 입양 모니터링 작성 API
+ * [POST] /adopt/review'
  */
+// exports.postReview = async function (req, res) {
+//     const {animalIdx, userIdx, contactName, contactPhoneNum, adoptComment} = req.body;
+//     try{
+//         var adoptListIdxRows = await adoptModel.selectAdoptListIdx(animalIdx);
+//         console.log(adoptListIdxRows[0].adoptListIdx);
+//         var adoptListIdx = adoptListIdxRows[0].adoptListIdx;
+//         // const postAdoptListIdx = await adoptModel.insertAdoptListIdx(adoptListIdx);
+//         const postAdoptInfo = await adoptModel.insertAdoptRequestInfo(
+//             adoptListIdx, userIdx, contactName, contactPhoneNum, adoptComment
+//         );
+//
+//         res.json({
+//             isSuccess: true
+//         });
+//
+//     } catch (err){
+//         logger.error(`postAdoptUserInfo DB Connection error\n: ${err.message}`);
+//         return res.status(500).send(`Error: ${err.message}`);
+//     }
+// };
+
+
+// /**
+//  * Adopt 6. 입양후기글 조회 API
+//  * [GET] /adopt/review'

@@ -94,8 +94,99 @@ exports.getFundingIng = async function (req, res) {
     }
 };
 
+/**
+ * Funding 4. 펀딩 모니터링 업로드 API -1
+ * [POST] /funding/postreview
+ */
+// exports.postFundingReview = async function (req, res) {
+//     const {
+//         userIdx,
+//         fundingIdx,
+//         fundingReviewText
+//     } = req.body;
+//
+//     try {
+//         const insertFundingReviewRows =
+//             await fundingModel.insertFundingReview(
+//                 userIdx, fundingIdx, fundingReviewText);
+//
+//         res.json({
+//             isSuccess: true
+//         });
+//
+//     } catch (err){
+//         logger.error(`postFundingReview DB Connection error\n: ${err.message}`);
+//         return res.status(500).send(`Error: ${err.message}`);
+//     }
+// };
 
+/**
+ * Funding 4. 펀딩 모니터링 업로드 API -2
+ * [POST] /funding/postreview
+ */
+// exports.postFundingReview = async function (req, res) {
+//     const {
+//         fundingName,
+//         fundingReviewFile1,
+//         fundingReviewFile2
+//     } = req.body;
+//
+//     try {
+//         const selectFundingReviewIdxRows =
+//             await fundingModel.selectFundingReviewIdx(fundingName);
+//
+//         var fundingReviewIdx = selectFundingReviewIdxRows[0].fundingReviewIdx;
+//
+//         const insertFundingReviewFileRows =
+//             await fundingModel.insertFundingReviewFile(
+//                 fundingReviewIdx,
+//                 fundingReviewFile1,
+//                 fundingReviewFile2
+//             );
+//
+//         res.json({
+//             isSuccess: true
+//         });
+//
+//     } catch (err){
+//         logger.error(`insertFundingReviewFile DB Connection error\n: ${err.message}`);
+//         return res.status(500).send(`Error: ${err.message}`);
+//     }
+// };
 
+/**
+ * Funding 5. 펀딩 모니터링 조회 API
+ * [POST] /funding/getreview
+ */
+exports.getFundingReview = async function (req, res) {
+    const { fundingName } = req.body;
+    try{
+        const selectFundingReviewRows =
+            await fundingModel.selectFundingReview(fundingName);
+        // console.log(selectFundingReviewRows[0].fundingName);
+        const selectFundingReviewFileRows =
+            await fundingModel.selectFundingReviewFile(fundingName);
+
+        if (!selectFundingReviewRows){
+            return res.json({
+                isSuccess : false
+            })
+        }
+
+        res.json({
+            isSuccess: true,
+            fundingName : selectFundingReviewRows[0].fundingName,
+            fundingImage : selectFundingReviewRows[0].fundingImage,
+            fundingReviewText : selectFundingReviewRows[0].fundingReviewText,
+            fundingReviewFile1 : selectFundingReviewFileRows[0].fundingReviewFile,
+            fundingReviewFile2 : selectFundingReviewFileRows[1].fundingReviewFile
+        });
+
+    } catch (err){
+        logger.error(`selectFundingReview DB Connection error\n: ${err.message}`);
+        return res.status(500).send(`Error: ${err.message}`);
+    }
+};
 
 
 

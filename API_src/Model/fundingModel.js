@@ -11,7 +11,7 @@ async function selectFundingList() {
                    f.fundingName,
                    f.fundingImage
             from Funding f
-            where f.status = 'S' or 'F';
+            where f.fundingIdx = 16;
         `;
 
         const [selectFundingListRows] = await connection.query(
@@ -49,7 +49,7 @@ async function selectFundingList() {
 //         return res.status(500).send(`Error: ${err.message}`);
 //     }
 // }
-
+//
 // 2. 펀딩 업로드 API 2
 async function insertFundingInfo2(userIdx, centerName, fundingName, fundingImage, fundingPurpose, fundingAmount, fundingPeriod) {
     try{
@@ -102,40 +102,150 @@ async function selectFundingIng(fundingIdx) {
     }
 }
 
-// // 4. 펀딩완료 사진 조회 API
-// async function selectFundingIngRows(status) {
+
+// // 4. 펀딩 모니터링 업로드 1
+// async function insertFundingReview(userIdx, fundingIdx, fundingReviewText) {
 //     try{
 //         const connection = await pool.getConnection(async (conn) => conn);
 //
-//         const selectFundingListQuery = `
-//             select f.fundingName,
-//                    f.fundingImage,
-//                    f.fundingPurpose,
-//                    f.fundingAmount,
-//                    f.fundingReceived,
-//                    f.fundingPeriod
-//             from Funding f
-//             where f.fundingIdx = ?;
-//         `;
-//         selectFundingListParams = [status];
-//         const [selectFundingListRows] = await connection.query(
-//             selectFundingListQuery,
-//             selectFundingListParams
+//         const insertFundingReviewQuery =
+//             `insert into FundingReview(userIdx, fundingIdx, fundingReviewText)
+//              value (?, ?, ?);
+//             `;
+//         const  insertFundingReviewParams = [userIdx, fundingIdx, fundingReviewText]
+//         const [insertFundingReviewRows] = await connection.query(
+//             insertFundingReviewQuery,
+//             insertFundingReviewParams
 //         );
 //
 //         connection.release();
-//         return selectFundingListRows;
+//         return insertFundingReviewRows;
 //     } catch (err){
-//         logger.error(`selectFundingIng DB Connection error\n: ${err.message}`);
+//         logger.error(`insertFundingReview DB Connection error\n: ${err.message}`);
 //         return res.status(500).send(`Error: ${err.message}`);
 //     }
 // }
 
 
+// // 4. 펀딩리뷰인덱스 뽑아오기
+// async function selectFundingReviewIdx(fundingName) {
+//     try{
+//         const connection = await pool.getConnection(async (conn) => conn);
+//
+//         const selectFundingReviewIdx = `
+//             select fr.fundingReviewIdx
+//             from FundingReview fr left join funding f on f.fundingIdx = fr.fundingIdx
+//             where f.fundingName = ?;
+//         `;
+//
+//         const selectFundingReviewIdxParams = [fundingName];
+//         const [selectFundingReviewIdxRows] = await connection.query(
+//             selectFundingListQuery,
+//             selectFundingReviewIdxParams
+//         );
+//
+//         connection.release();
+//         return selectFundingReviewIdxRows;
+//     } catch (err){
+//         logger.error(`selectFundingReviewIdx DB Connection error\n: ${err.message}`);
+//         return res.status(500).send(`Error: ${err.message}`);
+//     }
+// }
+//
+// // 4. 펀딩 모니터링 업로드 2
+// async function insertFundingReviewFile(fundingReviewIdx, fundingReviewFile1, fundingReviewFile2) {
+//     try{
+//         const connection = await pool.getConnection(async (conn) => conn);
+//
+//         const insertFundingReviewFile1Query =
+//             `insert into FundingReviewFile(fundingReviewIdx, fundingReviewFile1)
+//              value (?, ?);
+//             `;
+//         const insertFundingReviewFile2Query =
+//             `insert into FundingReviewFile(fundingReviewIdx, fundingReviewFile2)
+//              value (?, ?);
+//             `;
+//         const  insertFundingReviewFile1Params = [fundingName, fundingReviewFile1]
+//         const [insertFundingReviewFile1Rows] = await connection.query(
+//             insertFundingReviewFile1Query,
+//             insertFundingReviewFile1Params
+//         );
+//         const  insertFundingReviewFile2Params = [fundingName, fundingReviewFile2]
+//         const [insertFundingReviewFile2Rows] = await connection.query(
+//             insertFundingReviewFile2Query,
+//             insertFundingReviewFile2Params
+//         );
+//
+//         connection.release();
+//         return insertFundingReviewFile1Rows;
+//     } catch (err){
+//         logger.error(`insertFundingReviewFile DB Connection error\n: ${err.message}`);
+//         return res.status(500).send(`Error: ${err.message}`);
+//     }
+// }
+//
+
+// 4. 펀딩완료 모니터링 조회 API
+async function selectFundingReview(fundingName) {
+    try{
+        const connection = await pool.getConnection(async (conn) => conn);
+
+        const selectFundingReviewQuery = `
+            select f.fundingName,
+                   f.fundingImage,
+                   f.fundingName,
+                   fr.fundingReviewText
+            from Funding f left join FundingReview fr on f.fundingIdx = fr.fundingIdx
+            where f.fundingName = ?;
+        `;
+        selectFundingReviewParams = [fundingName];
+        const [selectFundingReviewRows] = await connection.query(
+            selectFundingReviewQuery,
+            selectFundingReviewParams
+        );
+
+        connection.release();
+        return selectFundingReviewRows;
+    } catch (err){
+        logger.error(`selectFundingReview DB Connection error\n: ${err.message}`);
+        return res.status(500).send(`Error: ${err.message}`);
+    }
+}
+
+// 4. 펀딩완료 모니터링 파일 조회 API
+async function selectFundingReviewFile(fundingName) {
+    try{
+        const connection = await pool.getConnection(async (conn) => conn);
+
+        const selectFundingReviewFileQuery = `
+            select frf.fundingReviewFileIdx,
+                   frf.fundingReviewFile
+            from Funding f left join FundingReview fr on f.fundingIdx = fr.fundingIdx
+                           left join FundingReviewFile frf on frf.fundingReviewIdx = fr.fundingReviewIdx
+            where f.fundingName = ?;
+        `;
+        selectFundingReviewFileParams = [fundingName];
+        const [selectFundingReviewFileRows] = await connection.query(
+            selectFundingReviewFileQuery,
+            selectFundingReviewFileParams
+        );
+
+        connection.release();
+        return selectFundingReviewFileRows;
+    } catch (err){
+        logger.error(`selectFundingReviewFile DB Connection error\n: ${err.message}`);
+        return res.status(500).send(`Error: ${err.message}`);
+    }
+}
+
 
 module.exports = {
     selectFundingList,
     insertFundingInfo2,
-    selectFundingIng
-// selectFundingEnd
+    selectFundingIng,
+    // insertFundingReview,
+    // insertFundingReviewFile,
+    // selectFundingReviewIdx,
+    selectFundingReview,
+    selectFundingReviewFile
 }
