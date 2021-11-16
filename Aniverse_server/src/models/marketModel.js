@@ -86,36 +86,36 @@ async function postProduct1(userIdx, productName, productIntro, productPrice, pr
 
 
 // 3. 상품 업로드 API
-// async function postProduct2(marketName, marketAddress, marketPhoneNum) {
-//     try {
-//         const connection = await pool.getConnection(async (conn) => conn);
-//         try {
-//             const insertProductQuery2 = `
-//                 insert into Market (marketName, marketAddress, marketPhoneNum)
-//                 values (?, ?, ?);
-//             `;
-//             const insertProductParams2 = [productName, productIntro, productPrice, productImage, categoryIdx];
-//             const insertProductRow2 =await connection.query(
-//                 insertProductQuery2,
-//                 insertProductParams2
-//             );
-//             connection.release();
-//             return insertProductRow2;
-//         } catch (err){
-//             connection.release();
-//             // logger.error(`InsertUserInfo Transaction error\n: ${err.message}`);
-//             return res.status(500).send(`Error: ${err.message}`);
-//         }
-//     } catch (err) {
-//         logger.error(`InsertProduct2 DB Connection error\n: ${err.message}`);
-//         return res.status(500).send(`Error: ${err.message}`);
-//     }
-// }
+async function postProduct2(marketName, marketAddress, marketPhoneNum) {
+    try {
+        const connection = await pool.getConnection(async (conn) => conn);
+        try {
+            const insertProductQuery2 = `
+                insert into Market (marketName, marketAddress, marketPhoneNum)
+                values (?, ?, ?);
+            `;
+            const insertProductParams2 = [productName, productIntro, productPrice, productImage, categoryIdx];
+            const insertProductRow2 =await connection.query(
+                insertProductQuery2,
+                insertProductParams2
+            );
+            connection.release();
+            return insertProductRow2;
+        } catch (err){
+            connection.release();
+            // logger.error(`InsertUserInfo Transaction error\n: ${err.message}`);
+            return res.status(500).send(`Error: ${err.message}`);
+        }
+    } catch (err) {
+        logger.error(`InsertProduct2 DB Connection error\n: ${err.message}`);
+        return res.status(500).send(`Error: ${err.message}`);
+    }
+}
 
 
 module.exports = {
     selectMarket,
     selectCategory,
     postProduct1
-    // postProduct2
+    postProduct2
 }

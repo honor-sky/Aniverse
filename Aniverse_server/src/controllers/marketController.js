@@ -83,13 +83,9 @@ exports.postProduct = async function (req, res) {
             userIdx, productName, productIntro, productPrice, productImage, categoryIdx
         );
 
-        // const postProuct2 = await marketModel.postProduct2(
-        //     marketName, marketAddress, marketPhoneNum
-        // )
-
-        // const postAnimalReviewinfo2Result = await adoptModel.insertReview2(
-        //     adoptReviewIdx,adoptReviewFile
-        // );
+        const postProuct2 = await marketModel.postProduct2(
+            marketName, marketAddress, marketPhoneNum
+        )
 
         res.json({
             isSuccess: true

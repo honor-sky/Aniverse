@@ -12,6 +12,5 @@ module.exports = function(app){
     app.post('/market/product', market.postProduct);
 
     // 4. 상품 구매 API
-    // app.post('/market/purchase', market.purchaseProduct);
-
+    app.post('/market/purchase', market.productPurchase);
 };
