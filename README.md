@@ -21,9 +21,9 @@
 |디자인/레이아웃|XML|
 |동작/서버 연결|JAVA|
 |백||
-|서버|amazone EC2/winSCP|
+|서버 구축 및 관리|amazone EC2/winSCP|
 |프레임워크|Node.Js|
-|데이터베이스|MySQL/RDS|
+|데이터베이스 구축 및 관리|MySQL/RDS|
 
 
 # 기획 소개
