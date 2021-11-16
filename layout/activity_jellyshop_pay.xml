@@ -81,7 +81,6 @@
                         android:layout_height="wrap_content"
                         android:layout_weight="1"
                         android:gravity="center"
-                        android:text="TextView"
                         android:textSize="20sp" />
 
                     <TextView
@@ -90,7 +89,6 @@
                         android:layout_height="wrap_content"
                         android:layout_weight="1"
                         android:gravity="center"
-                        android:text="TextView"
                         android:textSize="20sp" />
                 </LinearLayout>
 
@@ -113,6 +111,7 @@
                     android:layout_height="19dp" />
 
                 <RadioGroup
+                    android:id="@+id/purchaseWay"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent" >
 
@@ -122,19 +121,19 @@
                         android:orientation="vertical">
 
                         <RadioButton
-                            android:id="@+id/radioButton3"
+                            android:id="@+id/card"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:text="카드 간편 결제" />
 
                         <RadioButton
-                            android:id="@+id/radioButton4"
+                            android:id="@+id/account"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:text="계좌 간편 결제" />
 
                         <RadioButton
-                            android:id="@+id/radioButton5"
+                            android:id="@+id/normal"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:text="일반 결제" />
@@ -167,7 +166,7 @@
             android:gravity="center"
             android:text="결제하기"
             android:textColor="#FFFFFF"
-            android:textSize="25sp"
+            android:textSize="23sp"
             android:textStyle="bold"></Button>
 
     </FrameLayout>

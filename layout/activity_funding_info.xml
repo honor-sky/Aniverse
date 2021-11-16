@@ -1,18 +1,17 @@
 <?xml version="1.0" encoding="utf-8"?>
 
-<RelativeLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="wrap_content"
     android:layout_height="wrap_content"
     android:orientation="vertical"
-    tools:context=".Adopt_info">
+    tools:context=".Funding_info">
 
     <FrameLayout
         android:layout_width="417dp"
         android:layout_height="150dp"
-        android:background="@drawable/background">
+        android:background="@drawable/jelly_bg">
 
         <TextView
             android:id="@+id/textView6"
@@ -41,19 +40,18 @@
         android:layout_marginTop="80dp"
         android:background="@drawable/top_round_wsquare">
 
-
-        <ImageView
-            android:id="@+id/itemImage"
-            android:layout_width="350dp"
-            android:layout_height="300dp"
-            android:layout_marginStart="20dp"
-            android:layout_marginTop="25dp"
-            tools:srcCompat="@drawable/gradient_round_squre" />
+    <ImageView
+        android:id="@+id/img"
+        android:layout_width="350dp"
+        android:layout_height="300dp"
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="25dp"
+        tools:srcCompat="@drawable/gradient_round_square2" />
 
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="100dp"
-            android:layout_marginStart="20dp"
+            android:layout_marginStart="5dp"
             android:layout_marginTop="330dp"
             android:orientation="vertical">
 
@@ -61,22 +59,35 @@
                 android:layout_width="match_parent"
                 android:layout_height="20dp" />
 
-            <ProgressBar
-                android:id="@+id/progressBar"
-                style="?android:attr/progressBarStyleHorizontal"
-                android:layout_width="350dp"
-                android:layout_height="wrap_content"
-                android:layout_gravity="center"
-                app:layout_constraintBottom_toTopOf="@+id/center_button"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintHorizontal_bias="0.494"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/ani_1"
-                app:layout_constraintVertical_bias="0.269" />
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="20dp"
+                android:orientation="horizontal">
+
+                <ProgressBar
+                    android:id="@+id/progressBar"
+                    style="?android:attr/progressBarStyleHorizontal"
+                    android:layout_width="330dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="10dp"
+                    android:progressDrawable="@drawable/jelly_seekbar"
+                    android:max="100"
+                    android:progress="60" />
+
+                <TextView
+                    android:id="@+id/percent"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:layout_weight="1"
+                    android:text="%"
+                    android:textAlignment="center"
+                    android:textSize="16sp" />
+            </LinearLayout>
 
             <Space
                 android:layout_width="match_parent"
-                android:layout_height="20dp" />
+                android:layout_height="wrap_content" />
 
             <LinearLayout
                 android:layout_width="match_parent"
@@ -94,40 +105,100 @@
                     app:layout_constraintEnd_toStartOf="@+id/seekBar" />
 
                 <SeekBar
-                    android:id="@+id/seekBar2"
-                    android:layout_width="wrap_content"
+                    android:id="@+id/jellyBar"
+                    android:layout_width="220dp"
                     android:layout_height="wrap_content"
                     android:layout_gravity="center"
-                    android:layout_weight="1" />
+                    android:layout_weight="1"
+                    android:max="100"
+                    android:min="10"
+                    android:progressDrawable="@drawable/jelly_seekbar"
+                    android:thumb="@drawable/pink_jelly" />
+
+                <TextView
+                    android:id="@+id/countJelly"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="젤리개수"
+                    android:textSize="16sp" />
             </LinearLayout>
 
         </LinearLayout>
-
         <ScrollView
             android:layout_width="361dp"
             android:layout_height="200dp"
             android:layout_marginStart="20dp"
-            android:layout_marginTop="430dp"/>
+            android:layout_marginTop="430dp">
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:orientation="vertical">
+                <Space
+                    android:layout_width="310dp"
+                    android:layout_height="15dp" />
+                <TextView
+                    android:id="@+id/fundingname"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textColor="#7ED687"
+                    android:textSize="24sp"
+                    android:textStyle="bold">
+                </TextView>
+                <Space
+                    android:layout_width="310dp"
+                    android:layout_height="10dp" />
+                <TextView
+                    android:id="@+id/fundingamount"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content">
+                </TextView>
+                <Space
+                    android:layout_width="310dp"
+                    android:layout_height="10dp" />
+                <TextView
+                    android:id="@+id/fundingperiod"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content">
+                </TextView>
+                <Space
+                    android:layout_width="310dp"
+                    android:layout_height="10dp" />
+                <TextView
+                    android:id="@+id/fundingpurpose"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content">
+                </TextView>
+                <Space
+                    android:layout_width="310dp"
+                    android:layout_height="10dp" />
+                <TextView
+                    android:id="@+id/centername"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content">
+                </TextView>
 
-        <com.google.android.material.bottomnavigation.BottomNavigationView
-            android:id="@+id/main_bottom"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="640dp"
-            android:background="#00ffffff">
-
-            <Button
-                android:id="@+id/fund_btn"
-                android:layout_width="350dp"
-                android:layout_height="wrap_content"
-                android:layout_marginStart="20dp"
-                android:background="@drawable/gradient_round_squre"
-                android:text="기부하기"
-                android:textSize="25sp" />
-        </com.google.android.material.bottomnavigation.BottomNavigationView>
-
+            </LinearLayout>
+        </ScrollView>
     </FrameLayout>
 
+    <FrameLayout
+        android:layout_width="350dp"
+        android:layout_height="80dp"
+        android:layout_centerHorizontal="true"
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="680dp"
+        android:background="#00ffffff"
+        android:elevation="10dp">
 
+        <Button
+            android:id="@+id/fund_btn"
+            android:layout_width="350dp"
+            android:layout_height="wrap_content"
+            android:background="@drawable/gradient_round_square2"
+            android:text="기부하기"
+            android:textColor="@color/white"
+            android:textSize="25sp" />
+    </FrameLayout>
 
 </RelativeLayout>

@@ -124,7 +124,7 @@
             android:id="@+id/main_bottom"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginTop="580dp"
+            android:layout_marginTop="640dp"
             android:background="@android:color/white">
 
             <ImageButton
@@ -182,8 +182,6 @@
             android:layout_weight="1" />
 
     </FrameLayout>
-
-
 
 
 </RelativeLayout>

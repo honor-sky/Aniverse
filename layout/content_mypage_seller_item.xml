@@ -50,23 +50,22 @@
             android:orientation="horizontal">
 
             <Button
-                android:id="@+id/order"
+                android:id="@+id/my_sell_item"
                 android:layout_width="155dp"
                 android:layout_height="match_parent"
-
                 android:background="@drawable/button_select"
-                android:text="주문상품"
+                android:text="나의 마켓"
                 android:textColor="@drawable/text_select2"
                 android:textSize="20sp"
                 android:textStyle="bold"
                 tools:ignore="TouchTargetSizeCheck" />
 
             <Button
-                android:id="@+id/sell"
+                android:id="@+id/order"
                 android:layout_width="155dp"
                 android:layout_height="match_parent"
-                android:text="판매완료상품"
                 android:background="@drawable/button_select"
+                android:text="주문상품"
                 android:textColor="@drawable/text_select2"
                 android:textSize="20sp"
                 android:textStyle="bold"

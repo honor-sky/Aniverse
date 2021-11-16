@@ -8,11 +8,11 @@
     tools:context=".Signup">
 
 
-
     <FrameLayout
         android:layout_width="match_parent"
         android:layout_height="550dp"
         android:background="@drawable/background">
+
         <ImageButton
             android:id="@+id/back_btn"
             android:layout_width="wrap_content"
@@ -49,9 +49,78 @@
             android:textColor="#7ED687"
             android:textSize="25sp"
             android:textStyle="bold" />
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="20dp"
+            android:layout_marginTop="80dp"
+            android:orientation="vertical" >
 
-        <EditText
-            android:id="@+id/username"
+        <com.google.android.material.textfield.TextInputLayout
+            android:layout_width="310dp"
+            android:layout_height="match_parent">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/username"
+                android:layout_width="310dp"
+                android:layout_height="wrap_content"
+                android:hint="성명" />
+        </com.google.android.material.textfield.TextInputLayout>
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content">
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:layout_width="220dp"
+                android:layout_height="wrap_content">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/ID"
+                    android:layout_width="220dp"
+                    android:layout_height="wrap_content"
+                    android:hint="아이디" />
+
+            </com.google.android.material.textfield.TextInputLayout>
+                <Button
+                    android:id="@+id/check_button"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+
+                    android:text="중복확인" />
+
+        </LinearLayout>
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:layout_width="310dp"
+                android:layout_height="match_parent">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/pass"
+                    android:layout_width="310dp"
+                    android:layout_height="wrap_content"
+                    android:hint="비밀번호" />
+            </com.google.android.material.textfield.TextInputLayout>
+            <com.google.android.material.textfield.TextInputLayout
+                android:layout_width="310dp"
+                android:layout_height="match_parent">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/pass_confirm"
+                    android:layout_width="310dp"
+                    android:layout_height="wrap_content"
+                    android:hint="비밀번호 확인" />
+            </com.google.android.material.textfield.TextInputLayout>
+            <TextView
+                android:id="@+id/message"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="*비밀번호가 일치하지 않습니다."
+                android:textColor="#f05650"
+                android:textSize="13sp" />
+
+<!--        <EditText
+
             android:layout_width="300dp"
             android:layout_height="50dp"
             android:layout_marginStart="23dp"
@@ -79,36 +148,27 @@
             android:text="중복확인" />
 
         <EditText
-            android:id="@+id/password"
+            android:id="@+id/pass"
             android:layout_width="300dp"
             android:layout_height="50dp"
             android:layout_marginStart="23dp"
             android:layout_marginTop="172dp"
             android:ems="10"
             android:hint="비밀번호"
-            android:inputType="textPassword"
             android:textColorHint="#CCCCCC" />
 
         <EditText
-            android:id="@+id/confirm"
+            android:id="@+id/pass_confirm"
             android:layout_width="300dp"
             android:layout_height="50dp"
             android:layout_marginStart="23dp"
             android:layout_marginTop="230dp"
             android:ems="10"
             android:hint="비밀번호 확인"
-            android:inputType="phone"
-            android:textColorHint="#CCCCCC" />
+            android:textColorHint="#CCCCCC" />-->
 
-        <TextView
-            android:id="@+id/message"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="25dp"
-            android:layout_marginTop="280dp"
-            android:text="*비밀번호가 일치하지 않습니다."
-            android:textColor="#f05650"
-            android:textSize="13sp" />
+
+        </LinearLayout>
     </FrameLayout>
 
     <FrameLayout

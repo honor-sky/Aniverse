@@ -10,8 +10,16 @@
     <FrameLayout
         android:layout_width="match_parent"
         android:layout_height="550dp"
-        android:background="@drawable/background">
+        android:background="@drawable/jelly_bg">
 
+        <ImageButton
+            android:id="@+id/back_btn"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="13dp"
+            android:layout_marginTop="15dp"
+            android:background="#00ff0000"
+            app:srcCompat="@drawable/ic_baseline_arrow_back_ios_24" />
     </FrameLayout>
 
     <FrameLayout
@@ -37,7 +45,7 @@
             android:layout_marginStart="100dp"
             android:layout_marginTop="15dp"
             android:text="젤리 사용 정보"
-            android:textColor="#7ED687"
+            android:textColor="#fA8E99"
             android:textSize="25sp"
             android:textStyle="bold" />
 
@@ -54,16 +62,16 @@
 
                 <TextView
                     android:id="@+id/textView12"
-                    android:layout_width="match_parent"
+                    android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_centerHorizontal="true"
-                    android:text="결과 자료"
+                    android:text="결과 사진"
                     android:textColor="#6F6F6F"
                     android:textSize="20sp"
                     android:textStyle="bold" />
 
                 <ImageButton
-                    android:id="@+id/imageButton2"
+                    android:id="@+id/result_img"
                     android:layout_width="225dp"
                     android:layout_height="125dp"
                     android:layout_gravity="center"
@@ -76,7 +84,7 @@
 
                 <TextView
                     android:id="@+id/textView9"
-                    android:layout_width="match_parent"
+                    android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_centerHorizontal="true"
                     android:text="증빙 자료"
@@ -85,7 +93,7 @@
                     android:textStyle="bold" />
 
                 <ImageButton
-                    android:id="@+id/imageButton"
+                    android:id="@+id/evidence_img"
                     android:layout_width="225dp"
                     android:layout_height="125dp"
                     android:layout_gravity="center"
@@ -93,21 +101,21 @@
                     app:srcCompat="@android:drawable/ic_menu_upload" />
 
                 <Space
-                    android:layout_width="match_parent"
+                    android:layout_width="wrap_content"
                     android:layout_height="19dp" />
 
                 <com.google.android.material.textfield.TextInputLayout
-                    android:layout_width="match_parent"
+                    android:layout_width="310dp"
                     android:layout_height="match_parent">
 
                     <com.google.android.material.textfield.TextInputEditText
-                        android:layout_width="match_parent"
-                        android:layout_height="100dp"
+                        android:layout_width="310dp"
+                        android:layout_height="wrap_content"
                         android:hint="글 작성" />
                 </com.google.android.material.textfield.TextInputLayout>
 
                 <Space
-                    android:layout_width="match_parent"
+                    android:layout_width="wrap_content"
                     android:layout_height="19dp"
                     android:layout_weight="1" />
 
@@ -132,9 +140,10 @@
             android:layout_height="60dp"
             android:layout_marginStart="50dp"
             android:layout_marginTop="10dp"
-            android:background="@drawable/gradient_round_squre"
+            android:background="@drawable/jellyshop_button"
             android:gravity="center"
             android:text="업로드하기"
+            android:textColor="@color/white"
             android:textSize="23sp"
             android:textStyle="bold"></Button>
 

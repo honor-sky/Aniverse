@@ -1,18 +1,27 @@
 <?xml version="1.0" encoding="utf-8"?>
 
-<RelativeLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="wrap_content"
     android:layout_height="wrap_content"
     android:orientation="vertical"
-    tools:context=".Adopt_info">
+    tools:context=".Market_item_info">
 
     <FrameLayout
         android:layout_width="417dp"
         android:layout_height="150dp"
         android:background="@drawable/background">
+
+        <TextView
+            android:id="@+id/textView6"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="150dp"
+            android:layout_marginTop="20dp"
+            android:text="MARKET"
+            android:textColor="@color/white"
+            android:textSize="25sp" />
 
         <ImageButton
             android:id="@+id/back_btn"
@@ -22,17 +31,8 @@
             android:layout_marginTop="15dp"
             android:background="#00ff0000"
             app:srcCompat="@drawable/ic_baseline_arrow_back_ios_24" />
-
-        <TextView
-            android:id="@+id/textView6"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="130dp"
-            android:layout_marginTop="20dp"
-            android:text="Market / 마켓"
-            android:textColor="@color/white"
-            android:textSize="25sp" />
     </FrameLayout>
+
 
     <FrameLayout
         android:id="@+id/frameLayout"
@@ -41,40 +41,80 @@
         android:layout_marginTop="80dp"
         android:background="@drawable/top_round_wsquare">
 
-
         <ImageView
-            android:id="@+id/petImage"
+            android:id="@+id/img"
             android:layout_width="350dp"
             android:layout_height="300dp"
             android:layout_marginStart="20dp"
             android:layout_marginTop="25dp"
             tools:srcCompat="@drawable/gradient_round_squre" />
+
         <ScrollView
             android:layout_width="361dp"
-            android:layout_height="300dp"
+            android:layout_height="200dp"
             android:layout_marginStart="20dp"
-            android:layout_marginTop="330dp">
-        </ScrollView>
+            android:layout_marginTop="360dp">
 
-        <FrameLayout
-            android:id="@+id/main_bottom"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="640dp"
-            android:background="#00ffffff">
-
-            <Button
-                android:id="@+id/upload_btn"
-                android:layout_width="350dp"
+            <LinearLayout
+                android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginStart="20dp"
-                android:background="@drawable/gradient_round_squre"
-                android:text="구매하기"
-                android:textSize="25sp" />
+                android:orientation="vertical">
+
+
+                <TextView
+                    android:id="@+id/productname"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="배변패드"
+                    android:textColor="#7ED687"
+                    android:textSize="24sp"
+                    android:textStyle="bold"></TextView>
+
+
+                <Space
+                    android:layout_width="310dp"
+                    android:layout_height="10dp" />
+
+                <TextView
+                    android:id="@+id/productprice"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"></TextView>
+
+                <Space
+                    android:layout_width="310dp"
+                    android:layout_height="10dp" />
+
+                <TextView
+                    android:id="@+id/productintro"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"></TextView>
+
+                <Space
+                    android:layout_width="310dp"
+                    android:layout_height="10dp" />
+            </LinearLayout>
+        </ScrollView>
     </FrameLayout>
 
+    <FrameLayout
+        android:layout_width="350dp"
+        android:layout_height="80dp"
+        android:layout_centerHorizontal="true"
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="680dp"
+        android:background="#00ffffff"
+        android:elevation="10dp">
+
+        <Button
+            android:id="@+id/fund_btn"
+            android:layout_width="350dp"
+            android:layout_height="wrap_content"
+            android:background="@drawable/gradient_round_squre"
+            android:text="구매하기"
+            android:textColor="@color/white"
+            android:textSize="25sp" />
     </FrameLayout>
-
-
 
 </RelativeLayout>
+
+

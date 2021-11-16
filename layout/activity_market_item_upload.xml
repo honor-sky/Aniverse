@@ -12,15 +12,6 @@
         android:layout_height="550dp"
         android:background="@drawable/background">
 
-        <ImageButton
-            android:id="@+id/back_btn"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="13dp"
-            android:layout_marginTop="15dp"
-            android:background="#00ff0000"
-            app:srcCompat="@drawable/ic_baseline_arrow_back_ios_24" />
-
     </FrameLayout>
 
     <FrameLayout
@@ -31,7 +22,7 @@
 
     <FrameLayout
         android:layout_width="350dp"
-        android:layout_height="630dp"
+        android:layout_height="580dp"
         android:layout_centerHorizontal="true"
         android:layout_marginStart="20dp"
         android:layout_marginTop="50dp"
@@ -51,19 +42,19 @@
             android:textStyle="bold" />
 
         <ScrollView
-            android:layout_width="330dp"
+            android:layout_width="match_parent"
             android:layout_height="500dp"
-            android:layout_marginStart="13dp"
+            android:layout_marginStart="20dp"
             android:layout_marginTop="60dp">
 
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:orientation="vertical">
+                android:orientation="vertical" >
 
                 <TextView
-                    android:id="@+id/item_info"
-                    android:layout_width="310dp"
+                    android:id="@+id/textView8"
+                    android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_centerHorizontal="true"
                     android:text="상품 정보"
@@ -75,51 +66,39 @@
                     android:layout_width="310dp"
                     android:layout_height="19dp" />
 
-                <!--     <Spinner
+                <Spinner
                     android:id="@+id/spinner"
                     android:layout_width="match_parent"
                     android:layout_height="50dp"
-                    android:entries="@array/category" />-->
+                    android:entries="@array/category" />
 
                 <com.google.android.material.textfield.TextInputLayout
-                    style="@style/Theme.AppCompat.DayNight.NoActionBar"
                     android:layout_width="310dp"
-                    android:layout_height="wrap_content">
+                    android:layout_height="match_parent">
 
                     <com.google.android.material.textfield.TextInputEditText
                         android:layout_width="310dp"
-                        android:layout_height="match_parent"
-                        android:layout_marginTop="0dp"
+                        android:layout_height="wrap_content"
                         android:hint="상품명" />
                 </com.google.android.material.textfield.TextInputLayout>
 
-                <Space
-                    android:layout_width="310dp"
-                    android:layout_height="19dp" />
-
                 <com.google.android.material.textfield.TextInputLayout
-                    style="@style/Theme.AppCompat.DayNight.NoActionBar"
                     android:layout_width="310dp"
-                    android:layout_height="wrap_content">
+                    android:layout_height="match_parent">
 
                     <com.google.android.material.textfield.TextInputEditText
                         android:layout_width="310dp"
-                        android:layout_height="match_parent"
+                        android:layout_height="100dp"
                         android:hint="상품 정보" />
                 </com.google.android.material.textfield.TextInputLayout>
 
-                <Space
-                    android:layout_width="310dp"
-                    android:layout_height="19dp" />
-
                 <com.google.android.material.textfield.TextInputLayout
-                    style="@style/Theme.AppCompat.DayNight.NoActionBar"
                     android:layout_width="310dp"
-                    android:layout_height="wrap_content">
+                    android:layout_height="match_parent">
 
                     <com.google.android.material.textfield.TextInputEditText
                         android:layout_width="310dp"
-                        android:layout_height="match_parent"
+                        android:layout_height="wrap_content"
                         android:hint="금액" />
 
                 </com.google.android.material.textfield.TextInputLayout>
@@ -127,15 +106,6 @@
                 <Space
                     android:layout_width="310dp"
                     android:layout_height="12dp" />
-                <TextView
-                    android:id="@+id/ess"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_centerHorizontal="true"
-                    android:text="*필수"
-                    android:textColor="#f05650"
-                    android:textSize="15sp"
-                    android:textStyle="bold" />
 
                 <TextView
                     android:id="@+id/textView9"
@@ -148,7 +118,7 @@
                     android:textStyle="bold" />
 
                 <ImageButton
-                    android:id="@+id/imageButton"
+                    android:id="@+id/item_image"
                     android:layout_width="225dp"
                     android:layout_height="125dp"
                     android:layout_gravity="center"
@@ -156,103 +126,12 @@
                     app:srcCompat="@android:drawable/ic_menu_upload" />
 
                 <Space
-                    android:layout_width="310dp"
+                    android:layout_width="match_parent"
                     android:layout_height="19dp" />
 
-                <TextView
-                    android:id="@+id/seller_info"
-                    android:layout_width="310dp"
-                    android:layout_height="wrap_content"
-                    android:layout_centerHorizontal="true"
-                    android:text="판매자 정보"
-                    android:textColor="#7ED687"
-                    android:textSize="24sp"
-                    android:textStyle="bold" />
-
-                <Space
-                    android:layout_width="310dp"
-                    android:layout_height="19dp" />
-
-                <com.google.android.material.textfield.TextInputLayout
-                    style="@style/Theme.AppCompat.DayNight.NoActionBar"
-                    android:layout_width="310dp"
-                    android:layout_height="wrap_content">
-
-                    <com.google.android.material.textfield.TextInputEditText
-                        android:layout_width="310dp"
-                        android:layout_height="match_parent"
-                        android:hint="업체명" />
-                </com.google.android.material.textfield.TextInputLayout>
-
-                <Space
-                    android:layout_width="310dp"
-                    android:layout_height="19dp"
-                    android:layout_weight="1" />
-
-                <com.google.android.material.textfield.TextInputLayout
-                    style="@style/Theme.AppCompat.DayNight.NoActionBar"
-                    android:layout_width="310dp"
-                    android:layout_height="wrap_content">
-
-                    <com.google.android.material.textfield.TextInputEditText
-                        android:layout_width="310dp"
-                        android:layout_height="match_parent"
-                        android:hint="업체 주소지" />
-                </com.google.android.material.textfield.TextInputLayout>
-
-                <Space
-                    android:layout_width="310dp"
-                    android:layout_height="19dp"
-                    android:layout_weight="1" />
-
-                <com.google.android.material.textfield.TextInputLayout
-                    style="@style/Theme.AppCompat.DayNight.NoActionBar"
-                    android:layout_width="310dp"
-                    android:layout_height="wrap_content">
-
-                    <com.google.android.material.textfield.TextInputEditText
-                        android:layout_width="310dp"
-                        android:layout_height="match_parent"
-                        android:hint="판매자 번호"
-                        android:inputType="phone" />
-                </com.google.android.material.textfield.TextInputLayout>
-
-                <Space
-                    android:layout_width="310dp"
-                    android:layout_height="19dp"
-                    android:layout_weight="1" />
-
-                <com.google.android.material.textfield.TextInputLayout
-                    style="@style/Theme.AppCompat.DayNight.NoActionBar"
-                    android:layout_width="310dp"
-                    android:layout_height="wrap_content">
-
-                    <com.google.android.material.textfield.TextInputEditText
-                        android:layout_width="310dp"
-                        android:layout_height="match_parent"
-                        android:hint="고객 문의 번호"
-                        android:inputType="phone" />
-                </com.google.android.material.textfield.TextInputLayout>
-
-                <Space
-                    android:layout_width="310dp"
-                    android:layout_height="19dp" />
-
-                <TextView
-                    android:id="@+id/ess_message"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_centerHorizontal="true"
-                    android:text="*모든 입력란은 필수적으로 채워주셔야 합니다."
-                    android:textColor="#f05650"
-                    android:textSize="15sp"
-                    android:textStyle="bold" />
-
-                <Space
-                    android:layout_width="310dp"
-                    android:layout_height="19dp" />
             </LinearLayout>
         </ScrollView>
+
 
     </FrameLayout>
 
@@ -261,21 +140,20 @@
         android:layout_height="100dp"
         android:layout_centerHorizontal="true"
         android:layout_marginStart="20dp"
-        android:layout_marginTop="640dp"
+        android:layout_marginTop="600dp"
         android:background="#00ffffff"
         android:elevation="10dp">
 
         <Button
-            android:id="@+id/upload_btn"
+            android:id="@+id/buy_btn"
             android:layout_width="250dp"
             android:layout_height="60dp"
             android:layout_marginStart="50dp"
-            android:layout_marginTop="15dp"
+            android:layout_marginTop="10dp"
             android:background="@drawable/gradient_round_squre"
             android:gravity="center"
             android:text="업로드하기"
             android:textSize="23sp"
-            android:textColor="@color/white"
             android:textStyle="bold"></Button>
 
     </FrameLayout>

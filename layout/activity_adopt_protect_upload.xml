@@ -5,7 +5,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".Adopt_protect_upload">
+    tools:context=".Adopt_upload">
 
     <FrameLayout
         android:layout_width="match_parent"
@@ -88,93 +88,33 @@
 
                 <ImageButton
                     android:id="@+id/animal_img"
-                    android:layout_width="225dp"
-                    android:layout_height="125dp"
+                    android:layout_width="300dp"
+                    android:layout_height="200dp"
                     android:layout_gravity="center"
                     android:layout_weight="1"
+                    android:scaleType="fitCenter"
                     app:srcCompat="@android:drawable/ic_menu_upload" />
 
                 <Space
                     android:layout_width="310dp"
                     android:layout_height="19dp" />
 
-                <RadioGroup
+                <com.google.android.material.textfield.TextInputLayout
+                    style="@style/Theme.AppCompat.DayNight.NoActionBar"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent">
 
-                    <LinearLayout
-                        android:layout_width="match_parent"
-                        android:layout_height="match_parent"
-                        android:orientation="horizontal">
-
-                        <TextView
-                            android:id="@+id/textView12"
-                            android:layout_width="159dp"
-                            android:layout_height="wrap_content"
-                            android:layout_centerHorizontal="true"
-                            android:text="성별"
-                            android:textColor="#6C6C6C"
-                            android:textSize="20sp"
-                            android:textStyle="bold" />
-
-                        <RadioButton
-                            android:id="@+id/sex_radioButton"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:layout_weight="1"
-                            android:text="남" />
-
-                        <RadioButton
-                            android:id="@+id/sex_radioButton2"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:layout_weight="1"
-                            android:text="여" />
-                    </LinearLayout>
-                </RadioGroup>
+                    <com.google.android.material.textfield.TextInputEditText
+                        android:id="@+id/sex"
+                        android:layout_width="310dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="0dp"
+                        android:hint="성별" />
+                </com.google.android.material.textfield.TextInputLayout>
 
                 <Space
                     android:layout_width="match_parent"
                     android:layout_height="12dp" />
-
-                <RadioGroup
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent">
-
-                    <LinearLayout
-                        android:layout_width="match_parent"
-                        android:layout_height="match_parent"
-                        android:orientation="horizontal">
-
-                        <TextView
-                            android:id="@+id/textView14"
-                            android:layout_width="159dp"
-                            android:layout_height="wrap_content"
-                            android:layout_centerHorizontal="true"
-                            android:text="중성화 여부"
-                            android:textColor="#6C6C6C"
-                            android:textSize="20sp"
-                            android:textStyle="bold" />
-
-                        <RadioButton
-                            android:id="@+id/neut_radioButton"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:layout_weight="1"
-                            android:text="유" />
-
-                        <RadioButton
-                            android:id="@+id/neut_radioButton2"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:layout_weight="1"
-                            android:text="무" />
-                    </LinearLayout>
-                </RadioGroup>
-
-                <Space
-                    android:layout_width="310dp"
-                    android:layout_height="19dp" />
 
                 <com.google.android.material.textfield.TextInputLayout
                     style="@style/Theme.AppCompat.DayNight.NoActionBar"
@@ -208,7 +148,8 @@
 
                 <Space
                     android:layout_width="310dp"
-                    android:layout_height="12dp" />
+                    android:layout_height="19dp"
+                    android:layout_weight="1" />
 
                 <com.google.android.material.textfield.TextInputLayout
                     style="@style/Theme.AppCompat.DayNight.NoActionBar"
@@ -250,16 +191,12 @@
                     android:layout_height="match_parent">
 
                     <com.google.android.material.textfield.TextInputEditText
-                        android:id="@+id/deadline"
+                        android:id="@+id/startDate"
                         android:layout_width="310dp"
                         android:layout_height="wrap_content"
-                        android:hint="입양 마감일"
-                        android:inputType="phone" />
+                        android:hint="보호 시작 날짜"
+                        android:inputType="date" />
                 </com.google.android.material.textfield.TextInputLayout>
-
-                <Space
-                    android:layout_width="310dp"
-                    android:layout_height="19dp" />
 
                 <Space
                     android:layout_width="310dp"
@@ -271,19 +208,20 @@
                     android:layout_height="match_parent">
 
                     <com.google.android.material.textfield.TextInputEditText
-                        android:id="@+id/personality"
+                        android:id="@+id/endDate"
                         android:layout_width="310dp"
                         android:layout_height="wrap_content"
-                        android:hint="특성 및 성격"
-                        android:inputType="phone" />
+                        android:hint="보호 마감 날짜"
+                        android:inputType="date" />
                 </com.google.android.material.textfield.TextInputLayout>
 
                 <Space
                     android:layout_width="310dp"
                     android:layout_height="19dp" />
 
+
                 <TextView
-                    android:id="@+id/textView10"
+                    android:id="@+id/centerInfo"
                     android:layout_width="310dp"
                     android:layout_height="wrap_content"
                     android:layout_centerHorizontal="true"
@@ -302,51 +240,11 @@
                     android:layout_height="match_parent">
 
                     <com.google.android.material.textfield.TextInputEditText
-                        android:id="@+id/center_name"
+                        android:id="@+id/centerName"
                         android:layout_width="310dp"
                         android:layout_height="wrap_content"
                         android:hint="보호소명" />
                 </com.google.android.material.textfield.TextInputLayout>
-
-                <Space
-                    android:layout_width="310dp"
-                    android:layout_height="19dp"
-                    android:layout_weight="1" />
-
-                <com.google.android.material.textfield.TextInputLayout
-                    style="@style/Theme.AppCompat.DayNight.NoActionBar"
-                    android:layout_width="310dp"
-                    android:layout_height="match_parent">
-
-                    <com.google.android.material.textfield.TextInputEditText
-                        android:id="@+id/center_address"
-                        android:layout_width="310dp"
-                        android:layout_height="wrap_content"
-                        android:hint="보호소 주소지" />
-                </com.google.android.material.textfield.TextInputLayout>
-
-                <Space
-                    android:layout_width="310dp"
-                    android:layout_height="19dp"
-                    android:layout_weight="1" />
-
-                <com.google.android.material.textfield.TextInputLayout
-                    style="@style/Theme.AppCompat.DayNight.NoActionBar"
-                    android:layout_width="310dp"
-                    android:layout_height="match_parent">
-
-                    <com.google.android.material.textfield.TextInputEditText
-                        android:id="@+id/center_customer_number"
-                        android:layout_width="310dp"
-                        android:layout_height="wrap_content"
-                        android:hint="문의 번호"
-                        android:inputType="phone" />
-                </com.google.android.material.textfield.TextInputLayout>
-
-                <Space
-                    android:layout_width="310dp"
-                    android:layout_height="19dp"
-                    android:layout_weight="1" />
 
                 <Space
                     android:layout_width="310dp"

@@ -4,39 +4,45 @@
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    android:layout_width="wrap_content"
-    android:layout_height="wrap_content"
-    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/background"
     tools:context=".Adopt_confirm">
 
-    <FrameLayout
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:background="@drawable/background">
+    <ImageButton
+        android:id="@+id/back_btn"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="13dp"
+        android:layout_marginTop="15dp"
+        android:background="#00ff0000"
+        app:srcCompat="@drawable/ic_baseline_arrow_back_ios_24" />
 
-        <TextView
-            android:id="@+id/textView5"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="30dp"
-            android:layout_marginTop="450dp"
-            android:text="            신청이 완료 되었습니다.\n   보호소에서 곧 연락드릴 예정입니다.\n            소중한 참여 감사합니다."
-            android:textColor="@color/white"
-            android:textSize="55sp" />
+    <TextView
+        android:id="@+id/textView5"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:layout_marginStart="15dp"
+        android:layout_marginTop="250dp"
+        android:text="            신청이 완료 되었습니다.\n   보호소에서 곧 연락드릴 예정입니다.\n            소중한 참여 감사합니다."
+        android:textColor="@color/white"
+        android:textSize="23sp" />
+
         <ImageView
             android:id="@+id/circle"
-            android:layout_width="400dp"
-            android:layout_height="400dp"
-            android:layout_marginStart="280dp"
-            android:layout_marginTop="800dp"
+            android:layout_width="150dp"
+            android:layout_height="150dp"
+            android:layout_marginStart="128dp"
+            android:layout_marginTop="380dp"
             app:srcCompat="@drawable/ic_baseline_circle_24" />
+
         <ImageView
             android:id="@+id/jelly"
-            android:layout_width="400dp"
-            android:layout_height="400dp"
-            android:layout_marginStart="283dp"
-            android:layout_marginTop="800dp"
+            android:layout_width="150dp"
+            android:layout_height="150dp"
+            android:layout_marginStart="130dp"
+            android:layout_marginTop="380dp"
             app:srcCompat="@drawable/ic_jelly_icon" />
-    </FrameLayout>
 
 </RelativeLayout>
