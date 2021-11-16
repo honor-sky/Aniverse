@@ -22,6 +22,7 @@
 |동작/서버 연결|JAVA|
 
 |백||
+|---|---|
 |서버 구축|Amazon EC2 Instance|
 |서버 관리|winSCP|
 |프레임워크|Node.Js|
