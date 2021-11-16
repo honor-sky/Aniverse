@@ -1,4 +1,4 @@
-package org.tecttown.aniverse;
+package org.gyeongsoton.gyeongsoton_jelly;
 
 import androidx.activity.result.ActivityResult;
 import androidx.activity.result.ActivityResultCallback;

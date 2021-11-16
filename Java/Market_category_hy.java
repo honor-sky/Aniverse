@@ -1,9 +1,11 @@
-package org.tecttown.aniverse;
+package org.gyeongsoton.gyeongsoton_jelly;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ImageView;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
@@ -16,7 +18,17 @@ public class Market_category_hy extends Fragment {
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
         setHasOptionsMenu(true);
-        return inflater.inflate(R.layout.fragment_market_category_hy, container, false);
+        ViewGroup view= (ViewGroup) inflater.inflate(R.layout.fragment_market_category_all, container, false);
+
+        ImageView ani_img1=view.findViewById(R.id.item_1);
+        ani_img1.setOnClickListener(new View.OnClickListener(){
+            @Override
+            public void onClick(View v){
+                Intent intent = new Intent(getActivity(), Market_item_info.class);
+                startActivity(intent);
+            }
+        });
+        return view;
     }
 
     @Override

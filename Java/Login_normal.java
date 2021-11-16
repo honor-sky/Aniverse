@@ -15,11 +15,15 @@ import com.android.volley.toolbox.Volley;
 import org.json.JSONException;
 import org.json.JSONObject;
 
+import java.io.File;
+import java.io.FileWriter;
+
 public class Login_normal extends AppCompatActivity {
 
     private EditText login_ID, login_pass;
     private Button signup_btn,login_btn,normalbtn,centerbtn,sellerbtn;
     private ImageButton back_btn;
+    String userIdx,userAuth=null;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -71,7 +75,6 @@ public class Login_normal extends AppCompatActivity {
             }
         });
 
-
         login_ID = findViewById( R.id.login_ID );
         login_pass = findViewById( R.id.login_pass );
 
@@ -88,21 +91,18 @@ public class Login_normal extends AppCompatActivity {
                     public void onResponse(String response) {
                         try {
                             JSONObject jsonObject = new JSONObject( response );
-                            boolean success = jsonObject.getBoolean( "success" );
+                            boolean success = jsonObject.getBoolean( "isSuccess" );
 
                             if(success) {//로그인 성공시
 
-                                String UserEmail = jsonObject.getString( "UserID" );
-                                String UserPwd = jsonObject.getString( "UserPass" );
-                                String UserName = jsonObject.getString( "UserName" );
+                                 userIdx = Integer.toString(jsonObject.getInt( "userIdx" ));
+                                 userAuth  = jsonObject.getString( "userAuth" ); //유저의 유형
 
-                                Toast.makeText( getApplicationContext(), String.format("%s님 환영합니다.", UserName), Toast.LENGTH_SHORT ).show();
-                                Intent intent = new Intent( Login_normal.this, MainActivity.class );
-
-                                intent.putExtra( "UserID", UserID );
-                                intent.putExtra( "UserPass", UserPass );
-                                intent.putExtra( "UserName", UserName );
-
+                                Toast.makeText( getApplicationContext(), String.format("%s님 환영합니다.", UserID), Toast.LENGTH_SHORT ).show();
+                                Intent intent = new Intent( Login_normal.this, Mypage.class ); //로그인 성공시 마이페이지로 화면 전환
+                                 //화면 전환 시 전달되는 값들
+                                intent.putExtra( "userIdx", userIdx );
+                                intent.putExtra( "userAuth", userAuth );
                                 startActivity( intent );
 
                             } else {//로그인 실패시

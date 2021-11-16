@@ -1,4 +1,4 @@
-package org.tecttown.aniverse;
+package org.gyeongsoton.gyeongsoton_jelly;
 
 import static android.content.ContentValues.TAG;
 
@@ -12,6 +12,7 @@ import android.view.WindowManager;
 import android.widget.Button;
 import android.widget.ImageButton;
 import android.widget.ImageView;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
@@ -19,27 +20,21 @@ import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentTransaction;
 
 import com.android.volley.Request;
-import com.android.volley.RequestQueue;
 import com.android.volley.Response;
 import com.android.volley.VolleyError;
-import com.android.volley.toolbox.JsonArrayRequest;
 import com.android.volley.toolbox.JsonObjectRequest;
-import com.android.volley.toolbox.Volley;
 import com.bumptech.glide.Glide;
 
-import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
-import java.util.ArrayList;
 
 
 public class Adopt_list extends AppCompatActivity {
 
-    ArrayList<Adopt_list_data> items= new ArrayList<>();
-    ImageView image1;
-    //ItemAdapter adapter;
+    private ImageView ani_1;
+    private TextView textView1;
+    String userIdx,userAuth;
 
-    String URL="http://3.34.166.156/";
 
     private final int Fragment_1 = 1;
     private final int Fragment_2 = 2;
@@ -52,43 +47,20 @@ public class Adopt_list extends AppCompatActivity {
                 WindowManager.LayoutParams.FLAG_FULLSCREEN);
         setContentView(R.layout.activity_adopt_list);
 
-        /*JsonObjectRequest jsonObjReq = new JsonObjectRequest(Request.Method.POST, URL, null, new Response.Listener<JSONObject>() {
-            //post 방식이 갱신에도 적합
-            @Override
-            public void onResponse(JSONObject response) {
-                Toast.makeText(Adopt_list.this, response.toString(), Toast.LENGTH_SHORT).show();
-                Log.d(TAG, response.toString());
-
-                //파라미터로 응답받은 결과 JsonArray를 분석
-                items.clear();
-                try {
-
-                        int no= Integer.parseInt(response.getString("no")); //no가 문자열이라서 바꿔야함.
-                        String imgPath=response.getString("imgPath");
-                        imgPath = URL+imgPath;
-
-                        items.add(0,new Adopt_list_data(no,imgPath)); // 첫 번째 매개변수는 몇번째에 추가 될지, 제일 위에 오도록
-                    } catch (JSONException jsonException) {
-                    jsonException.printStackTrace();
-                }
-            }
-        }, new Response.ErrorListener() {
-            @Override
-            public void onErrorResponse(VolleyError error) {
-                Toast.makeText(Adopt_list.this, "ERROR", Toast.LENGTH_SHORT).show();
-            }
-        });
-
-        image1.findViewById(R.id.imageView);
-        Glide.with(this).load(items.get(0).getImgPath()).into(image1);*/
+        Intent intent= getIntent();
+        //userIdx= intent.getStringExtra("userIdx");
+        //userAuth= intent.getStringExtra("userAuth");
+        //userIdx="28";
+        //userAuth="U";
+        Button add_btn = (Button)findViewById(R.id.add_btn);
 
 
-        ImageButton home_btn = (ImageButton)findViewById(R.id.home_btn);
-        home_btn.setOnClickListener(new View.OnClickListener() {
-
+        add_btn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent = new Intent(getApplicationContext(), MainActivity.class);
+                Intent intent = new Intent(getApplicationContext(), Adopt_protect_upload.class);
+               // intent.putExtra( "userIdx", userIdx);
+               // intent.putExtra( "userAuth", userAuth);
                 startActivity(intent);
             }
         });
@@ -99,6 +71,18 @@ public class Adopt_list extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 Intent intent = new Intent(getApplicationContext(), Adopt_list.class);
+                //intent.putExtra( "userIdx", userIdx);
+                //intent.putExtra( "userAuth", userAuth);
+                startActivity(intent);
+            }
+        });
+
+        ImageButton home_btn = (ImageButton)findViewById(R.id.home_btn);
+        home_btn.setOnClickListener(new View.OnClickListener() {
+
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(getApplicationContext(), MainActivity.class);
                 startActivity(intent);
             }
         });
@@ -179,24 +163,6 @@ public class Adopt_list extends AppCompatActivity {
         protect_tab.setPressed(false);
         complete_tab.setPressed(false);
 
-        Button add_btn = (Button)findViewById(R.id.add_btn);
-        add_btn.setOnClickListener(new View.OnClickListener() {
-
-            @Override
-            public void onClick(View view) {
-                Intent intent = new Intent(getApplicationContext(),Adopt_upload.class);
-                startActivity(intent);
-            }
-        });
-
-
-
-      /*  //실제 요청 작업을 수행해주는 요청큐 객체 생성
-        RequestQueue requestQueue= Volley.newRequestQueue(this);
-        //요청큐에 요청 객체 생성
-        requestQueue.add(jsonObjReq);*/
-
-
     }
 
     private void FragmentView(int fragment) {
@@ -213,15 +179,16 @@ public class Adopt_list extends AppCompatActivity {
                 // 두번째 프래그먼트 호출
                 Fragment fragment2 = new Adopt_protect_fragment();
                 getSupportFragmentManager().beginTransaction().replace(R.id.adopt_list_container,fragment2).commit();
+
                 break;
 
             case 3:
                 // 세번째 프래그먼트 호출
                 Fragment fragment3 = new Adopt_complete_fragment();
                 getSupportFragmentManager().beginTransaction().replace(R.id.adopt_list_container,fragment3).commit();
+
                 break;
         }
     }
 
 }
-

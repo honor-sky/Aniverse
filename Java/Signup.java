@@ -9,6 +9,7 @@ import android.content.Intent;
 import android.view.View;
 import android.widget.EditText;
 import android.widget.ImageButton;
+import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 import androidx.appcompat.app.AlertDialog;
@@ -21,7 +22,7 @@ import com.android.volley.toolbox.Volley;
 
 public class Signup extends AppCompatActivity {
 
-    private EditText username, ID, password,confirm;
+    private EditText username, ID, pass,pass_confirm;
     private TextView message;
     private Button join_button, check_button;
     private ImageButton back_btn;
@@ -45,8 +46,8 @@ public class Signup extends AppCompatActivity {
         //아이디값 찾아주기
         username = findViewById( R.id.username );
         ID = findViewById( R.id.ID );
-        password = findViewById( R.id.password );
-        confirm = findViewById(R.id.confirm);
+        pass = findViewById( R.id.pass );
+        pass_confirm = findViewById(R.id.pass_confirm);
         message = findViewById(R.id.message);
         message.setVisibility(View.INVISIBLE);
 
@@ -75,7 +76,7 @@ public class Signup extends AppCompatActivity {
                         try {
 
                             JSONObject jsonResponse = new JSONObject(response); //서버 응답 받아 json 파일 받아옴
-                            boolean success = jsonResponse.getBoolean("success");
+                            boolean success = jsonResponse.getBoolean("isSuccess");
 
                             if (success) {
                                 AlertDialog.Builder builder = new AlertDialog.Builder(Signup.this);
@@ -102,7 +103,7 @@ public class Signup extends AppCompatActivity {
         });
 
         //비밀번호 확인
-        confirm.addTextChangedListener(new TextWatcher() {
+        pass_confirm.addTextChangedListener(new TextWatcher() {
             @Override
             public void beforeTextChanged(CharSequence charSequence, int i, int i1, int i2) {
 
@@ -110,7 +111,7 @@ public class Signup extends AppCompatActivity {
 
             @Override
             public void onTextChanged(CharSequence charSequence, int i, int i1, int i2) {
-                if(password.getText().toString().equals(confirm.getText().toString())) {
+                if(pass.getText().toString().equals(pass_confirm.getText().toString())) {
                     //setImage.setImageResource(R.drawable.sign_up_password_right);
                     message.setVisibility(View.INVISIBLE);
                 } else {
@@ -134,8 +135,8 @@ public class Signup extends AppCompatActivity {
             public void onClick(View view) {
                 final String UserName = username.getText().toString();
                 final String UserID = ID.getText().toString();
-                final String UserPass = password.getText().toString();
-                final String UserNum = confirm.getText().toString();
+                final String UserPas = pass.getText().toString();
+                final String PassConfirm = pass.getText().toString();
 
 
                 //아이디 중복체크 했는지 확인
@@ -147,7 +148,7 @@ public class Signup extends AppCompatActivity {
                 }
 
                 //한 칸이라도 입력 안했을 경우
-                if (UserName.equals("") || UserID.equals("") || UserPass.equals("")||UserNum.equals("")) {
+                if (UserName.equals("") || UserID.equals("") || UserPas.equals("")||PassConfirm.equals("")) {
                     AlertDialog.Builder builder = new AlertDialog.Builder(Signup.this);
                     dialog = builder.setMessage("모두 입력해주세요.").setNegativeButton("확인", null).create();
                     dialog.show();
@@ -160,7 +161,7 @@ public class Signup extends AppCompatActivity {
 
                         try {
                             JSONObject jsonObject = new JSONObject( response );
-                            boolean success = jsonObject.getBoolean( "success" );
+                            boolean success = jsonObject.getBoolean( "isSuccess" );
 
                             //회원가입 성공시
                             if (success) {
@@ -183,7 +184,8 @@ public class Signup extends AppCompatActivity {
                 };
 
                 //서버로 Volley를 이용해서 요청
-                SignupRequest signupRequest = new SignupRequest( UserID, UserPass, UserName, UserNum,responseListener);
+                System.out.println(PassConfirm);
+                SignupRequest signupRequest = new SignupRequest( UserID,UserName,responseListener);
                 RequestQueue queue = Volley.newRequestQueue( Signup.this );
                 queue.add( signupRequest );
             }

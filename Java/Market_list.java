@@ -1,4 +1,4 @@
-package org.tecttown.aniverse;
+package org.gyeongsoton.gyeongsoton_jelly;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.fragment.app.Fragment;
@@ -7,14 +7,16 @@ import androidx.fragment.app.FragmentTransaction;
 import android.annotation.SuppressLint;
 import android.content.Intent;
 import android.os.Bundle;
-import android.view.View;
 import android.view.MotionEvent;
-import android.widget.ImageButton;
+import android.view.View;
 import android.view.WindowManager;
 import android.widget.Button;
+import android.widget.ImageButton;
 import android.widget.ImageView;
 
 public class Market_list extends AppCompatActivity {
+
+    String userIdx,userAuth;
 
     private final int Fragment_1 = 1;
     private final int Fragment_2 = 2;
@@ -30,12 +32,31 @@ public class Market_list extends AppCompatActivity {
                 WindowManager.LayoutParams.FLAG_FULLSCREEN);
         setContentView(R.layout.activity_market_list);
 
+        Button add_btn = (Button)findViewById(R.id.item_add_btn);
+
+       // Intent intent= getIntent();
+       // userIdx= intent.getStringExtra("userIdx");
+       // userAuth= intent.getStringExtra("userAuth");
+
+
+        add_btn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(getApplicationContext(), Market_item_upload.class);
+                intent.putExtra( "userIdx", userIdx);
+                intent.putExtra( "userAuth", userAuth);
+                startActivity(intent);
+            }
+        });
+
         ImageButton home_btn = (ImageButton)findViewById(R.id.home_btn);
         home_btn.setOnClickListener(new View.OnClickListener() {
 
             @Override
             public void onClick(View view) {
                 Intent intent = new Intent(getApplicationContext(), MainActivity.class);
+                intent.putExtra( "userIdx", userIdx);
+                intent.putExtra( "userAuth", userAuth);
                 startActivity(intent);
             }
         });
@@ -46,6 +67,8 @@ public class Market_list extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 Intent intent = new Intent(getApplicationContext(), Adopt_list.class);
+                intent.putExtra( "userIdx", userIdx);
+                intent.putExtra( "userAuth", userAuth);
                 startActivity(intent);
             }
         });
@@ -56,16 +79,20 @@ public class Market_list extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 Intent intent = new Intent(getApplicationContext(), Funding_list.class);
+                intent.putExtra( "userIdx", userIdx);
+                intent.putExtra( "userAuth", userAuth);
                 startActivity(intent);
             }
         });
 
         ImageButton market_btn = (ImageButton)findViewById(R.id.market_btn);
-        funding_btn.setOnClickListener(new View.OnClickListener() {
+        market_btn.setOnClickListener(new View.OnClickListener() {
 
             @Override
             public void onClick(View view) {
                 Intent intent = new Intent(getApplicationContext(), Market_list.class);
+                intent.putExtra( "userIdx", userIdx);
+                intent.putExtra( "userAuth", userAuth);
                 startActivity(intent);
             }
         });
@@ -76,6 +103,8 @@ public class Market_list extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 Intent intent = new Intent(getApplicationContext(), Mypage.class);
+                intent.putExtra( "userIdx", userIdx);
+                intent.putExtra( "userAuth", userAuth);
                 startActivity(intent);
             }
         });
@@ -169,16 +198,6 @@ public class Market_list extends AppCompatActivity {
         btn3.setPressed(false);
         btn4.setPressed(false);
         btn5.setPressed(false);
-
-        Button add_btn = (Button)findViewById(R.id.item_add_btn);
-        add_btn.setOnClickListener(new View.OnClickListener() {
-
-            @Override
-            public void onClick(View view) {
-                Intent intent = new Intent(getApplicationContext(), Market_item_upload.class);
-                startActivity(intent);
-            }
-        });
     }
 
     private void FragmentView(int fragment) {
@@ -190,6 +209,11 @@ public class Market_list extends AppCompatActivity {
                 Fragment fragment1 = new Market_category_all();
                 transaction.replace(R.id.item_list_container, fragment1);
                 transaction.commit();
+
+                Bundle bundle = new Bundle(); // 파라미터의 숫자는 전달하려는 값의 갯수
+                bundle.putString("userIdx",userIdx);
+                bundle.putString("userAuth",userAuth);
+                fragment1.setArguments(bundle);
                 break;
 
             case 2:
@@ -221,6 +245,4 @@ public class Market_list extends AppCompatActivity {
                 break;
         }
     }
-
-
 }
