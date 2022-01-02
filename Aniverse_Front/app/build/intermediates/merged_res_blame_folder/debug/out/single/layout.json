@@ -1,0 +1,202 @@
+[
+    {
+        "merged": "C:\\Users\\user\\AndroidStudioProjects\\gyeongsoton_jelly\\app\\build\\intermediates\\incremental\\mergeDebugResources\\stripped.dir\\layout\\activity_funding_monitoring.xml",
+        "source": "C:\\Users\\user\\AndroidStudioProjects\\gyeongsoton_jelly\\app\\src\\main\\res\\layout\\activity_funding_monitoring.xml"
+    },
+    {
+        "merged": "C:\\Users\\user\\AndroidStudioProjects\\gyeongsoton_jelly\\app\\build\\intermediates\\incremental\\mergeDebugResources\\stripped.dir\\layout\\fragment_adopt_monitor_diagno.xml",
+        "source": "C:\\Users\\user\\AndroidStudioProjects\\gyeongsoton_jelly\\app\\src\\main\\res\\layout\\fragment_adopt_monitor_diagno.xml"
+    },
+    {
+        "merged": "C:\\Users\\user\\AndroidStudioProjects\\gyeongsoton_jelly\\app\\build\\intermediates\\incremental\\mergeDebugResources\\stripped.dir\\layout\\activity_adopt_monitoring_upload.xml",
+        "source": "C:\\Users\\user\\AndroidStudioProjects\\gyeongsoton_jelly\\app\\src\\main\\res\\layout\\activity_adopt_monitoring_upload.xml"
+    },
+    {
+        "merged": "C:\\Users\\user\\AndroidStudioProjects\\gyeongsoton_jelly\\app\\build\\intermediates\\incremental\\mergeDebugResources\\stripped.dir\\layout\\activity_market_list.xml",
+        "source": "C:\\Users\\user\\AndroidStudioProjects\\gyeongsoton_jelly\\app\\src\\main\\res\\layout\\activity_market_list.xml"
+    },
+    {
+        "merged": "C:\\Users\\user\\AndroidStudioProjects\\gyeongsoton_jelly\\app\\build\\intermediates\\incremental\\mergeDebugResources\\stripped.dir\\layout\\activity_mypage_seller_item.xml",
+        "source": "C:\\Users\\user\\AndroidStudioProjects\\gyeongsoton_jelly\\app\\src\\main\\res\\layout\\activity_mypage_seller_item.xml"
+    },
+    {
+        "merged": "C:\\Users\\user\\AndroidStudioProjects\\gyeongsoton_jelly\\app\\build\\intermediates\\incremental\\mergeDebugResources\\stripped.dir\\layout\\fragment_market_category_snack.xml",
+        "source": "C:\\Users\\user\\AndroidStudioProjects\\gyeongsoton_jelly\\app\\src\\main\\res\\layout\\fragment_market_category_snack.xml"
+    },
+    {
+        "merged": "C:\\Users\\user\\AndroidStudioProjects\\gyeongsoton_jelly\\app\\build\\intermediates\\incremental\\mergeDebugResources\\stripped.dir\\layout\\activity_jellyshop_pay.xml",
+        "source": "C:\\Users\\user\\AndroidStudioProjects\\gyeongsoton_jelly\\app\\src\\main\\res\\layout\\activity_jellyshop_pay.xml"
+    },
+    {
+        "merged": "C:\\Users\\user\\AndroidStudioProjects\\gyeongsoton_jelly\\app\\build\\intermediates\\incremental\\mergeDebugResources\\stripped.dir\\layout\\activity_adopt_protect_upload.xml",
+        "source": "C:\\Users\\user\\AndroidStudioProjects\\gyeongsoton_jelly\\app\\src\\main\\res\\layout\\activity_adopt_protect_upload.xml"
+    },
+    {
+        "merged": "C:\\Users\\user\\AndroidStudioProjects\\gyeongsoton_jelly\\app\\build\\intermediates\\incremental\\mergeDebugResources\\stripped.dir\\layout\\fragment_home.xml",
+        "source": "C:\\Users\\user\\AndroidStudioProjects\\gyeongsoton_jelly\\app\\src\\main\\res\\layout\\fragment_home.xml"
+    },
+    {
+        "merged": "C:\\Users\\user\\AndroidStudioProjects\\gyeongsoton_jelly\\app\\build\\intermediates\\incremental\\mergeDebugResources\\stripped.dir\\layout\\fragment_adopt_animal.xml",
+        "source": "C:\\Users\\user\\AndroidStudioProjects\\gyeongsoton_jelly\\app\\src\\main\\res\\layout\\fragment_adopt_animal.xml"
+    },
+    {
+        "merged": "C:\\Users\\user\\AndroidStudioProjects\\gyeongsoton_jelly\\app\\build\\intermediates\\incremental\\mergeDebugResources\\stripped.dir\\layout\\activity_funding_animal_upload.xml",
+        "source": "C:\\Users\\user\\AndroidStudioProjects\\gyeongsoton_jelly\\app\\src\\main\\res\\layout\\activity_funding_animal_upload.xml"
+    },
+    {
+        "merged": "C:\\Users\\user\\AndroidStudioProjects\\gyeongsoton_jelly\\app\\build\\intermediates\\incremental\\mergeDebugResources\\stripped.dir\\layout\\activity_funding_upload.xml",
+        "source": "C:\\Users\\user\\AndroidStudioProjects\\gyeongsoton_jelly\\app\\src\\main\\res\\layout\\activity_funding_upload.xml"
+    },
+    {
+        "merged": "C:\\Users\\user\\AndroidStudioProjects\\gyeongsoton_jelly\\app\\build\\intermediates\\incremental\\mergeDebugResources\\stripped.dir\\layout\\activity_protect_info.xml",
+        "source": "C:\\Users\\user\\AndroidStudioProjects\\gyeongsoton_jelly\\app\\src\\main\\res\\layout\\activity_protect_info.xml"
+    },
+    {
+        "merged": "C:\\Users\\user\\AndroidStudioProjects\\gyeongsoton_jelly\\app\\build\\intermediates\\incremental\\mergeDebugResources\\stripped.dir\\layout\\activity_adopt_request.xml",
+        "source": "C:\\Users\\user\\AndroidStudioProjects\\gyeongsoton_jelly\\app\\src\\main\\res\\layout\\activity_adopt_request.xml"
+    },
+    {
+        "merged": "C:\\Users\\user\\AndroidStudioProjects\\gyeongsoton_jelly\\app\\build\\intermediates\\incremental\\mergeDebugResources\\stripped.dir\\layout\\fragment_adopt_protect.xml",
+        "source": "C:\\Users\\user\\AndroidStudioProjects\\gyeongsoton_jelly\\app\\src\\main\\res\\layout\\fragment_adopt_protect.xml"
+    },
+    {
+        "merged": "C:\\Users\\user\\AndroidStudioProjects\\gyeongsoton_jelly\\app\\build\\intermediates\\incremental\\mergeDebugResources\\stripped.dir\\layout\\fragment_market_category_clothe.xml",
+        "source": "C:\\Users\\user\\AndroidStudioProjects\\gyeongsoton_jelly\\app\\src\\main\\res\\layout\\fragment_market_category_clothe.xml"
+    },
+    {
+        "merged": "C:\\Users\\user\\AndroidStudioProjects\\gyeongsoton_jelly\\app\\build\\intermediates\\incremental\\mergeDebugResources\\stripped.dir\\layout\\activity_login_seller.xml",
+        "source": "C:\\Users\\user\\AndroidStudioProjects\\gyeongsoton_jelly\\app\\src\\main\\res\\layout\\activity_login_seller.xml"
+    },
+    {
+        "merged": "C:\\Users\\user\\AndroidStudioProjects\\gyeongsoton_jelly\\app\\build\\intermediates\\incremental\\mergeDebugResources\\stripped.dir\\layout\\activity_jellyshop.xml",
+        "source": "C:\\Users\\user\\AndroidStudioProjects\\gyeongsoton_jelly\\app\\src\\main\\res\\layout\\activity_jellyshop.xml"
+    },
+    {
+        "merged": "C:\\Users\\user\\AndroidStudioProjects\\gyeongsoton_jelly\\app\\build\\intermediates\\incremental\\mergeDebugResources\\stripped.dir\\layout\\fragment_adopt_complete.xml",
+        "source": "C:\\Users\\user\\AndroidStudioProjects\\gyeongsoton_jelly\\app\\src\\main\\res\\layout\\fragment_adopt_complete.xml"
+    },
+    {
+        "merged": "C:\\Users\\user\\AndroidStudioProjects\\gyeongsoton_jelly\\app\\build\\intermediates\\incremental\\mergeDebugResources\\stripped.dir\\layout\\activity_signup.xml",
+        "source": "C:\\Users\\user\\AndroidStudioProjects\\gyeongsoton_jelly\\app\\src\\main\\res\\layout\\activity_signup.xml"
+    },
+    {
+        "merged": "C:\\Users\\user\\AndroidStudioProjects\\gyeongsoton_jelly\\app\\build\\intermediates\\incremental\\mergeDebugResources\\stripped.dir\\layout\\activity_mypage.xml",
+        "source": "C:\\Users\\user\\AndroidStudioProjects\\gyeongsoton_jelly\\app\\src\\main\\res\\layout\\activity_mypage.xml"
+    },
+    {
+        "merged": "C:\\Users\\user\\AndroidStudioProjects\\gyeongsoton_jelly\\app\\build\\intermediates\\incremental\\mergeDebugResources\\stripped.dir\\layout\\activity_funding_info.xml",
+        "source": "C:\\Users\\user\\AndroidStudioProjects\\gyeongsoton_jelly\\app\\src\\main\\res\\layout\\activity_funding_info.xml"
+    },
+    {
+        "merged": "C:\\Users\\user\\AndroidStudioProjects\\gyeongsoton_jelly\\app\\build\\intermediates\\incremental\\mergeDebugResources\\stripped.dir\\layout\\activity_mypage_buy_item.xml",
+        "source": "C:\\Users\\user\\AndroidStudioProjects\\gyeongsoton_jelly\\app\\src\\main\\res\\layout\\activity_mypage_buy_item.xml"
+    },
+    {
+        "merged": "C:\\Users\\user\\AndroidStudioProjects\\gyeongsoton_jelly\\app\\build\\intermediates\\incremental\\mergeDebugResources\\stripped.dir\\layout\\fragment_mypage_seller_orderitem.xml",
+        "source": "C:\\Users\\user\\AndroidStudioProjects\\gyeongsoton_jelly\\app\\src\\main\\res\\layout\\fragment_mypage_seller_orderitem.xml"
+    },
+    {
+        "merged": "C:\\Users\\user\\AndroidStudioProjects\\gyeongsoton_jelly\\app\\build\\intermediates\\incremental\\mergeDebugResources\\stripped.dir\\layout\\fragment_market_category_hy.xml",
+        "source": "C:\\Users\\user\\AndroidStudioProjects\\gyeongsoton_jelly\\app\\src\\main\\res\\layout\\fragment_market_category_hy.xml"
+    },
+    {
+        "merged": "C:\\Users\\user\\AndroidStudioProjects\\gyeongsoton_jelly\\app\\build\\intermediates\\incremental\\mergeDebugResources\\stripped.dir\\layout\\activity_main.xml",
+        "source": "C:\\Users\\user\\AndroidStudioProjects\\gyeongsoton_jelly\\app\\src\\main\\res\\layout\\activity_main.xml"
+    },
+    {
+        "merged": "C:\\Users\\user\\AndroidStudioProjects\\gyeongsoton_jelly\\app\\build\\intermediates\\incremental\\mergeDebugResources\\stripped.dir\\layout\\activity_adopt_upload.xml",
+        "source": "C:\\Users\\user\\AndroidStudioProjects\\gyeongsoton_jelly\\app\\src\\main\\res\\layout\\activity_adopt_upload.xml"
+    },
+    {
+        "merged": "C:\\Users\\user\\AndroidStudioProjects\\gyeongsoton_jelly\\app\\build\\intermediates\\incremental\\mergeDebugResources\\stripped.dir\\layout\\fragment_dashboard.xml",
+        "source": "C:\\Users\\user\\AndroidStudioProjects\\gyeongsoton_jelly\\app\\src\\main\\res\\layout\\fragment_dashboard.xml"
+    },
+    {
+        "merged": "C:\\Users\\user\\AndroidStudioProjects\\gyeongsoton_jelly\\app\\build\\intermediates\\incremental\\mergeDebugResources\\stripped.dir\\layout\\activity_funding_center_upload.xml",
+        "source": "C:\\Users\\user\\AndroidStudioProjects\\gyeongsoton_jelly\\app\\src\\main\\res\\layout\\activity_funding_center_upload.xml"
+    },
+    {
+        "merged": "C:\\Users\\user\\AndroidStudioProjects\\gyeongsoton_jelly\\app\\build\\intermediates\\incremental\\mergeDebugResources\\stripped.dir\\layout\\fragment_second.xml",
+        "source": "C:\\Users\\user\\AndroidStudioProjects\\gyeongsoton_jelly\\app\\src\\main\\res\\layout\\fragment_second.xml"
+    },
+    {
+        "merged": "C:\\Users\\user\\AndroidStudioProjects\\gyeongsoton_jelly\\app\\build\\intermediates\\incremental\\mergeDebugResources\\stripped.dir\\layout\\activity_protect_request.xml",
+        "source": "C:\\Users\\user\\AndroidStudioProjects\\gyeongsoton_jelly\\app\\src\\main\\res\\layout\\activity_protect_request.xml"
+    },
+    {
+        "merged": "C:\\Users\\user\\AndroidStudioProjects\\gyeongsoton_jelly\\app\\build\\intermediates\\incremental\\mergeDebugResources\\stripped.dir\\layout\\activity_login_normal.xml",
+        "source": "C:\\Users\\user\\AndroidStudioProjects\\gyeongsoton_jelly\\app\\src\\main\\res\\layout\\activity_login_normal.xml"
+    },
+    {
+        "merged": "C:\\Users\\user\\AndroidStudioProjects\\gyeongsoton_jelly\\app\\build\\intermediates\\incremental\\mergeDebugResources\\stripped.dir\\layout\\fragment_adopt_monitor_review.xml",
+        "source": "C:\\Users\\user\\AndroidStudioProjects\\gyeongsoton_jelly\\app\\src\\main\\res\\layout\\fragment_adopt_monitor_review.xml"
+    },
+    {
+        "merged": "C:\\Users\\user\\AndroidStudioProjects\\gyeongsoton_jelly\\app\\build\\intermediates\\incremental\\mergeDebugResources\\stripped.dir\\layout\\activity_adopt_list.xml",
+        "source": "C:\\Users\\user\\AndroidStudioProjects\\gyeongsoton_jelly\\app\\src\\main\\res\\layout\\activity_adopt_list.xml"
+    },
+    {
+        "merged": "C:\\Users\\user\\AndroidStudioProjects\\gyeongsoton_jelly\\app\\build\\intermediates\\incremental\\mergeDebugResources\\stripped.dir\\layout\\activity_market_item_upload.xml",
+        "source": "C:\\Users\\user\\AndroidStudioProjects\\gyeongsoton_jelly\\app\\src\\main\\res\\layout\\activity_market_item_upload.xml"
+    },
+    {
+        "merged": "C:\\Users\\user\\AndroidStudioProjects\\gyeongsoton_jelly\\app\\build\\intermediates\\incremental\\mergeDebugResources\\stripped.dir\\layout\\activity_loginin_center.xml",
+        "source": "C:\\Users\\user\\AndroidStudioProjects\\gyeongsoton_jelly\\app\\src\\main\\res\\layout\\activity_loginin_center.xml"
+    },
+    {
+        "merged": "C:\\Users\\user\\AndroidStudioProjects\\gyeongsoton_jelly\\app\\build\\intermediates\\incremental\\mergeDebugResources\\stripped.dir\\layout\\activity_adopt_monitor.xml",
+        "source": "C:\\Users\\user\\AndroidStudioProjects\\gyeongsoton_jelly\\app\\src\\main\\res\\layout\\activity_adopt_monitor.xml"
+    },
+    {
+        "merged": "C:\\Users\\user\\AndroidStudioProjects\\gyeongsoton_jelly\\app\\build\\intermediates\\incremental\\mergeDebugResources\\stripped.dir\\layout\\fragment_notifications.xml",
+        "source": "C:\\Users\\user\\AndroidStudioProjects\\gyeongsoton_jelly\\app\\src\\main\\res\\layout\\fragment_notifications.xml"
+    },
+    {
+        "merged": "C:\\Users\\user\\AndroidStudioProjects\\gyeongsoton_jelly\\app\\build\\intermediates\\incremental\\mergeDebugResources\\stripped.dir\\layout\\activity_market_item_buy.xml",
+        "source": "C:\\Users\\user\\AndroidStudioProjects\\gyeongsoton_jelly\\app\\src\\main\\res\\layout\\activity_market_item_buy.xml"
+    },
+    {
+        "merged": "C:\\Users\\user\\AndroidStudioProjects\\gyeongsoton_jelly\\app\\build\\intermediates\\incremental\\mergeDebugResources\\stripped.dir\\layout\\activity_market_item_info.xml",
+        "source": "C:\\Users\\user\\AndroidStudioProjects\\gyeongsoton_jelly\\app\\src\\main\\res\\layout\\activity_market_item_info.xml"
+    },
+    {
+        "merged": "C:\\Users\\user\\AndroidStudioProjects\\gyeongsoton_jelly\\app\\build\\intermediates\\incremental\\mergeDebugResources\\stripped.dir\\layout\\content_mypage_seller_item.xml",
+        "source": "C:\\Users\\user\\AndroidStudioProjects\\gyeongsoton_jelly\\app\\src\\main\\res\\layout\\content_mypage_seller_item.xml"
+    },
+    {
+        "merged": "C:\\Users\\user\\AndroidStudioProjects\\gyeongsoton_jelly\\app\\build\\intermediates\\incremental\\mergeDebugResources\\stripped.dir\\layout\\fragment_mypage_seller_sellitem.xml",
+        "source": "C:\\Users\\user\\AndroidStudioProjects\\gyeongsoton_jelly\\app\\src\\main\\res\\layout\\fragment_mypage_seller_sellitem.xml"
+    },
+    {
+        "merged": "C:\\Users\\user\\AndroidStudioProjects\\gyeongsoton_jelly\\app\\build\\intermediates\\incremental\\mergeDebugResources\\stripped.dir\\layout\\activity_funding_list.xml",
+        "source": "C:\\Users\\user\\AndroidStudioProjects\\gyeongsoton_jelly\\app\\src\\main\\res\\layout\\activity_funding_list.xml"
+    },
+    {
+        "merged": "C:\\Users\\user\\AndroidStudioProjects\\gyeongsoton_jelly\\app\\build\\intermediates\\incremental\\mergeDebugResources\\stripped.dir\\layout\\fragment_first.xml",
+        "source": "C:\\Users\\user\\AndroidStudioProjects\\gyeongsoton_jelly\\app\\src\\main\\res\\layout\\fragment_first.xml"
+    },
+    {
+        "merged": "C:\\Users\\user\\AndroidStudioProjects\\gyeongsoton_jelly\\app\\build\\intermediates\\incremental\\mergeDebugResources\\stripped.dir\\layout\\activity_adopt_info.xml",
+        "source": "C:\\Users\\user\\AndroidStudioProjects\\gyeongsoton_jelly\\app\\src\\main\\res\\layout\\activity_adopt_info.xml"
+    },
+    {
+        "merged": "C:\\Users\\user\\AndroidStudioProjects\\gyeongsoton_jelly\\app\\build\\intermediates\\incremental\\mergeDebugResources\\stripped.dir\\layout\\activity_funding_monitoring_upload.xml",
+        "source": "C:\\Users\\user\\AndroidStudioProjects\\gyeongsoton_jelly\\app\\src\\main\\res\\layout\\activity_funding_monitoring_upload.xml"
+    },
+    {
+        "merged": "C:\\Users\\user\\AndroidStudioProjects\\gyeongsoton_jelly\\app\\build\\intermediates\\incremental\\mergeDebugResources\\stripped.dir\\layout\\fragment_market_category_all.xml",
+        "source": "C:\\Users\\user\\AndroidStudioProjects\\gyeongsoton_jelly\\app\\src\\main\\res\\layout\\fragment_market_category_all.xml"
+    },
+    {
+        "merged": "C:\\Users\\user\\AndroidStudioProjects\\gyeongsoton_jelly\\app\\build\\intermediates\\incremental\\mergeDebugResources\\stripped.dir\\layout\\fragment_market_category_toy.xml",
+        "source": "C:\\Users\\user\\AndroidStudioProjects\\gyeongsoton_jelly\\app\\src\\main\\res\\layout\\fragment_market_category_toy.xml"
+    },
+    {
+        "merged": "C:\\Users\\user\\AndroidStudioProjects\\gyeongsoton_jelly\\app\\build\\intermediates\\incremental\\mergeDebugResources\\stripped.dir\\layout\\activity_market_bottom_sheet.xml",
+        "source": "C:\\Users\\user\\AndroidStudioProjects\\gyeongsoton_jelly\\app\\src\\main\\res\\layout\\activity_market_bottom_sheet.xml"
+    },
+    {
+        "merged": "C:\\Users\\user\\AndroidStudioProjects\\gyeongsoton_jelly\\app\\build\\intermediates\\incremental\\mergeDebugResources\\stripped.dir\\layout\\activity_adopt_confirm.xml",
+        "source": "C:\\Users\\user\\AndroidStudioProjects\\gyeongsoton_jelly\\app\\src\\main\\res\\layout\\activity_adopt_confirm.xml"
+    }
+]
