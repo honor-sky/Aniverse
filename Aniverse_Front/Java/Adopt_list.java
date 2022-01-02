@@ -33,7 +33,7 @@ public class Adopt_list extends AppCompatActivity {
 
     private ImageView ani_1;
     private TextView textView1;
-    String userIdx,userAuth;
+    //String userIdx,userAuth;
 
 
     private final int Fragment_1 = 1;
