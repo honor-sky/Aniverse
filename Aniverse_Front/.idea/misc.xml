@@ -1,0 +1,114 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="DesignSurface">
+    <option name="filePathToZoomLevelMap">
+      <map>
+        <entry key="..\:/Users/user/AndroidStudioProjects/gyeongsoton_jelly/app/src/main/res/drawable-v24/ic_launcher_foreground.xml" value="0.20234375" />
+        <entry key="..\:/Users/user/AndroidStudioProjects/gyeongsoton_jelly/app/src/main/res/drawable/back_round_layout.xml" value="0.26979166666666665" />
+        <entry key="..\:/Users/user/AndroidStudioProjects/gyeongsoton_jelly/app/src/main/res/drawable/back_square.xml" value="0.26979166666666665" />
+        <entry key="..\:/Users/user/AndroidStudioProjects/gyeongsoton_jelly/app/src/main/res/drawable/background.xml" value="0.26979166666666665" />
+        <entry key="..\:/Users/user/AndroidStudioProjects/gyeongsoton_jelly/app/src/main/res/drawable/border.xml" value="0.20234375" />
+        <entry key="..\:/Users/user/AndroidStudioProjects/gyeongsoton_jelly/app/src/main/res/drawable/bottombar.xml" value="0.26979166666666665" />
+        <entry key="..\:/Users/user/AndroidStudioProjects/gyeongsoton_jelly/app/src/main/res/drawable/bottombar_layout.xml" value="0.26979166666666665" />
+        <entry key="..\:/Users/user/AndroidStudioProjects/gyeongsoton_jelly/app/src/main/res/drawable/button_design.xml" value="0.26979166666666665" />
+        <entry key="..\:/Users/user/AndroidStudioProjects/gyeongsoton_jelly/app/src/main/res/drawable/gradient_round_square2.xml" value="0.1203125" />
+        <entry key="..\:/Users/user/AndroidStudioProjects/gyeongsoton_jelly/app/src/main/res/drawable/gradient_round_squre.xml" value="0.20234375" />
+        <entry key="..\:/Users/user/AndroidStudioProjects/gyeongsoton_jelly/app/src/main/res/drawable/ic_adopt_icon.xml" value="0.20234375" />
+        <entry key="..\:/Users/user/AndroidStudioProjects/gyeongsoton_jelly/app/src/main/res/drawable/ic_baseline_arrow_back_ios_24.xml" value="0.20234375" />
+        <entry key="..\:/Users/user/AndroidStudioProjects/gyeongsoton_jelly/app/src/main/res/drawable/ic_baseline_arrow_drop_up_24.xml" value="0.20234375" />
+        <entry key="..\:/Users/user/AndroidStudioProjects/gyeongsoton_jelly/app/src/main/res/drawable/ic_baseline_circle_24.xml" value="0.20234375" />
+        <entry key="..\:/Users/user/AndroidStudioProjects/gyeongsoton_jelly/app/src/main/res/drawable/ic_baseline_person_24.xml" value="0.20234375" />
+        <entry key="..\:/Users/user/AndroidStudioProjects/gyeongsoton_jelly/app/src/main/res/drawable/ic_baseline_pets_24.xml" value="0.26979166666666665" />
+        <entry key="..\:/Users/user/AndroidStudioProjects/gyeongsoton_jelly/app/src/main/res/drawable/ic_baseline_search_24.xml" value="0.20234375" />
+        <entry key="..\:/Users/user/AndroidStudioProjects/gyeongsoton_jelly/app/src/main/res/drawable/ic_baseline_shopping_cart_24.xml" value="0.20234375" />
+        <entry key="..\:/Users/user/AndroidStudioProjects/gyeongsoton_jelly/app/src/main/res/drawable/ic_dashboard_black_24dp.xml" value="0.20234375" />
+        <entry key="..\:/Users/user/AndroidStudioProjects/gyeongsoton_jelly/app/src/main/res/drawable/ic_funding_icon.xml" value="0.20234375" />
+        <entry key="..\:/Users/user/AndroidStudioProjects/gyeongsoton_jelly/app/src/main/res/drawable/ic_home_black_24dp.xml" value="0.20234375" />
+        <entry key="..\:/Users/user/AndroidStudioProjects/gyeongsoton_jelly/app/src/main/res/drawable/ic_jelly_icon.xml" value="0.20234375" />
+        <entry key="..\:/Users/user/AndroidStudioProjects/gyeongsoton_jelly/app/src/main/res/drawable/ic_jelly_icon2.xml" value="0.20234375" />
+        <entry key="..\:/Users/user/AndroidStudioProjects/gyeongsoton_jelly/app/src/main/res/drawable/ic_launcher_background.xml" value="0.26979166666666665" />
+        <entry key="..\:/Users/user/AndroidStudioProjects/gyeongsoton_jelly/app/src/main/res/drawable/ic_launcher_background2.xml" value="0.15546875" />
+        <entry key="..\:/Users/user/AndroidStudioProjects/gyeongsoton_jelly/app/src/main/res/drawable/ic_market_icon.xml" value="0.20234375" />
+        <entry key="..\:/Users/user/AndroidStudioProjects/gyeongsoton_jelly/app/src/main/res/drawable/ic_notifications_black_24dp.xml" value="0.20234375" />
+        <entry key="..\:/Users/user/AndroidStudioProjects/gyeongsoton_jelly/app/src/main/res/drawable/img_square.xml" value="0.180859375" />
+        <entry key="..\:/Users/user/AndroidStudioProjects/gyeongsoton_jelly/app/src/main/res/drawable/jelly_bg.xml" value="0.20234375" />
+        <entry key="..\:/Users/user/AndroidStudioProjects/gyeongsoton_jelly/app/src/main/res/drawable/jelly_seekbar.xml" value="0.1765625" />
+        <entry key="..\:/Users/user/AndroidStudioProjects/gyeongsoton_jelly/app/src/main/res/drawable/jellyshop_button.xml" value="0.20234375" />
+        <entry key="..\:/Users/user/AndroidStudioProjects/gyeongsoton_jelly/app/src/main/res/drawable/no_pressed_btn_design.xml" value="0.1" />
+        <entry key="..\:/Users/user/AndroidStudioProjects/gyeongsoton_jelly/app/src/main/res/drawable/pink_jelly.xml" value="0.1765625" />
+        <entry key="..\:/Users/user/AndroidStudioProjects/gyeongsoton_jelly/app/src/main/res/drawable/pressed_btn_design.xml" value="0.1" />
+        <entry key="..\:/Users/user/AndroidStudioProjects/gyeongsoton_jelly/app/src/main/res/drawable/rect_line.xml" value="0.20234375" />
+        <entry key="..\:/Users/user/AndroidStudioProjects/gyeongsoton_jelly/app/src/main/res/drawable/round_layout.xml" value="0.26979166666666665" />
+        <entry key="..\:/Users/user/AndroidStudioProjects/gyeongsoton_jelly/app/src/main/res/drawable/round_square.xml" value="0.14583333333333334" />
+        <entry key="..\:/Users/user/AndroidStudioProjects/gyeongsoton_jelly/app/src/main/res/drawable/round_squre_nocol.xml" value="0.126171875" />
+        <entry key="..\:/Users/user/AndroidStudioProjects/gyeongsoton_jelly/app/src/main/res/drawable/shadow.xml" value="0.20234375" />
+        <entry key="..\:/Users/user/AndroidStudioProjects/gyeongsoton_jelly/app/src/main/res/drawable/text_input_box.xml" value="0.20234375" />
+        <entry key="..\:/Users/user/AndroidStudioProjects/gyeongsoton_jelly/app/src/main/res/drawable/text_select.xml" value="0.26979166666666665" />
+        <entry key="..\:/Users/user/AndroidStudioProjects/gyeongsoton_jelly/app/src/main/res/drawable/text_select2.xml" value="0.20234375" />
+        <entry key="..\:/Users/user/AndroidStudioProjects/gyeongsoton_jelly/app/src/main/res/drawable/top_round_wsquare.xml" value="0.14583333333333334" />
+        <entry key="..\:/Users/user/AndroidStudioProjects/gyeongsoton_jelly/app/src/main/res/drawable/wround_square.xml" value="0.14583333333333334" />
+        <entry key="..\:/Users/user/AndroidStudioProjects/gyeongsoton_jelly/app/src/main/res/layout/activity_adopt_confirm.xml" value="0.20811965811965813" />
+        <entry key="..\:/Users/user/AndroidStudioProjects/gyeongsoton_jelly/app/src/main/res/layout/activity_adopt_info.xml" value="0.2" />
+        <entry key="..\:/Users/user/AndroidStudioProjects/gyeongsoton_jelly/app/src/main/res/layout/activity_adopt_list.xml" value="0.2" />
+        <entry key="..\:/Users/user/AndroidStudioProjects/gyeongsoton_jelly/app/src/main/res/layout/activity_adopt_monitor.xml" value="0.20811965811965813" />
+        <entry key="..\:/Users/user/AndroidStudioProjects/gyeongsoton_jelly/app/src/main/res/layout/activity_adopt_monitoring_upload.xml" value="0.264" />
+        <entry key="..\:/Users/user/AndroidStudioProjects/gyeongsoton_jelly/app/src/main/res/layout/activity_adopt_protect_upload.xml" value="0.264" />
+        <entry key="..\:/Users/user/AndroidStudioProjects/gyeongsoton_jelly/app/src/main/res/layout/activity_adopt_request.xml" value="0.264" />
+        <entry key="..\:/Users/user/AndroidStudioProjects/gyeongsoton_jelly/app/src/main/res/layout/activity_adopt_upload.xml" value="0.264" />
+        <entry key="..\:/Users/user/AndroidStudioProjects/gyeongsoton_jelly/app/src/main/res/layout/activity_funding_animal_upload.xml" value="0.264" />
+        <entry key="..\:/Users/user/AndroidStudioProjects/gyeongsoton_jelly/app/src/main/res/layout/activity_funding_center_upload.xml" value="0.176" />
+        <entry key="..\:/Users/user/AndroidStudioProjects/gyeongsoton_jelly/app/src/main/res/layout/activity_funding_info.xml" value="0.2" />
+        <entry key="..\:/Users/user/AndroidStudioProjects/gyeongsoton_jelly/app/src/main/res/layout/activity_funding_list.xml" value="0.2" />
+        <entry key="..\:/Users/user/AndroidStudioProjects/gyeongsoton_jelly/app/src/main/res/layout/activity_funding_monitoring.xml" value="0.2" />
+        <entry key="..\:/Users/user/AndroidStudioProjects/gyeongsoton_jelly/app/src/main/res/layout/activity_funding_monitoring_upload.xml" value="0.264" />
+        <entry key="..\:/Users/user/AndroidStudioProjects/gyeongsoton_jelly/app/src/main/res/layout/activity_funding_upload.xml" value="0.264" />
+        <entry key="..\:/Users/user/AndroidStudioProjects/gyeongsoton_jelly/app/src/main/res/layout/activity_jellyshop.xml" value="0.264" />
+        <entry key="..\:/Users/user/AndroidStudioProjects/gyeongsoton_jelly/app/src/main/res/layout/activity_jellyshop_pay.xml" value="0.264" />
+        <entry key="..\:/Users/user/AndroidStudioProjects/gyeongsoton_jelly/app/src/main/res/layout/activity_login.xml" value="0.25364583333333335" />
+        <entry key="..\:/Users/user/AndroidStudioProjects/gyeongsoton_jelly/app/src/main/res/layout/activity_login_normal.xml" value="0.264" />
+        <entry key="..\:/Users/user/AndroidStudioProjects/gyeongsoton_jelly/app/src/main/res/layout/activity_login_page.xml" value="0.264" />
+        <entry key="..\:/Users/user/AndroidStudioProjects/gyeongsoton_jelly/app/src/main/res/layout/activity_login_seller.xml" value="0.264" />
+        <entry key="..\:/Users/user/AndroidStudioProjects/gyeongsoton_jelly/app/src/main/res/layout/activity_loginin_center.xml" value="0.264" />
+        <entry key="..\:/Users/user/AndroidStudioProjects/gyeongsoton_jelly/app/src/main/res/layout/activity_main.xml" value="0.176" />
+        <entry key="..\:/Users/user/AndroidStudioProjects/gyeongsoton_jelly/app/src/main/res/layout/activity_main2.xml" value="0.2" />
+        <entry key="..\:/Users/user/AndroidStudioProjects/gyeongsoton_jelly/app/src/main/res/layout/activity_market_bottom_sheet.xml" value="0.264" />
+        <entry key="..\:/Users/user/AndroidStudioProjects/gyeongsoton_jelly/app/src/main/res/layout/activity_market_item_buy.xml" value="0.2" />
+        <entry key="..\:/Users/user/AndroidStudioProjects/gyeongsoton_jelly/app/src/main/res/layout/activity_market_item_info.xml" value="0.19597989949748743" />
+        <entry key="..\:/Users/user/AndroidStudioProjects/gyeongsoton_jelly/app/src/main/res/layout/activity_market_item_upload.xml" value="0.264" />
+        <entry key="..\:/Users/user/AndroidStudioProjects/gyeongsoton_jelly/app/src/main/res/layout/activity_market_list.xml" value="0.2" />
+        <entry key="..\:/Users/user/AndroidStudioProjects/gyeongsoton_jelly/app/src/main/res/layout/activity_mypage.xml" value="0.264" />
+        <entry key="..\:/Users/user/AndroidStudioProjects/gyeongsoton_jelly/app/src/main/res/layout/activity_mypage_buy_item.xml" value="0.264" />
+        <entry key="..\:/Users/user/AndroidStudioProjects/gyeongsoton_jelly/app/src/main/res/layout/activity_mypage_seller_item.xml" value="0.190234375" />
+        <entry key="..\:/Users/user/AndroidStudioProjects/gyeongsoton_jelly/app/src/main/res/layout/activity_protect_info.xml" value="0.190234375" />
+        <entry key="..\:/Users/user/AndroidStudioProjects/gyeongsoton_jelly/app/src/main/res/layout/activity_protect_request.xml" value="0.190234375" />
+        <entry key="..\:/Users/user/AndroidStudioProjects/gyeongsoton_jelly/app/src/main/res/layout/activity_signin_center.xml" value="0.179296875" />
+        <entry key="..\:/Users/user/AndroidStudioProjects/gyeongsoton_jelly/app/src/main/res/layout/activity_signup.xml" value="0.264" />
+        <entry key="..\:/Users/user/AndroidStudioProjects/gyeongsoton_jelly/app/src/main/res/layout/activity_signup_center.xml" value="0.190234375" />
+        <entry key="..\:/Users/user/AndroidStudioProjects/gyeongsoton_jelly/app/src/main/res/layout/activity_signup_page.xml" value="0.264" />
+        <entry key="..\:/Users/user/AndroidStudioProjects/gyeongsoton_jelly/app/src/main/res/layout/content_mypage_seller_item.xml" value="0.264" />
+        <entry key="..\:/Users/user/AndroidStudioProjects/gyeongsoton_jelly/app/src/main/res/layout/fragment_adopt_animal.xml" value="0.2404692082111437" />
+        <entry key="..\:/Users/user/AndroidStudioProjects/gyeongsoton_jelly/app/src/main/res/layout/fragment_adopt_complete.xml" value="0.176" />
+        <entry key="..\:/Users/user/AndroidStudioProjects/gyeongsoton_jelly/app/src/main/res/layout/fragment_adopt_monitor_diagno.xml" value="0.143359375" />
+        <entry key="..\:/Users/user/AndroidStudioProjects/gyeongsoton_jelly/app/src/main/res/layout/fragment_adopt_monitor_review.xml" value="0.264" />
+        <entry key="..\:/Users/user/AndroidStudioProjects/gyeongsoton_jelly/app/src/main/res/layout/fragment_adopt_protect.xml" value="0.264" />
+        <entry key="..\:/Users/user/AndroidStudioProjects/gyeongsoton_jelly/app/src/main/res/layout/fragment_market_category_all.xml" value="0.178515625" />
+        <entry key="..\:/Users/user/AndroidStudioProjects/gyeongsoton_jelly/app/src/main/res/layout/fragment_market_category_clothe.xml" value="0.178515625" />
+        <entry key="..\:/Users/user/AndroidStudioProjects/gyeongsoton_jelly/app/src/main/res/layout/fragment_market_category_hy.xml" value="0.178515625" />
+        <entry key="..\:/Users/user/AndroidStudioProjects/gyeongsoton_jelly/app/src/main/res/layout/fragment_market_category_snack.xml" value="0.178515625" />
+        <entry key="..\:/Users/user/AndroidStudioProjects/gyeongsoton_jelly/app/src/main/res/layout/fragment_market_category_toy.xml" value="0.264" />
+        <entry key="..\:/Users/user/AndroidStudioProjects/gyeongsoton_jelly/app/src/main/res/layout/fragment_mypage_seller_orderitem.xml" value="0.264" />
+        <entry key="..\:/Users/user/AndroidStudioProjects/gyeongsoton_jelly/app/src/main/res/layout/fragment_mypage_seller_sellitem.xml" value="0.264" />
+        <entry key="..\:/Users/user/AndroidStudioProjects/gyeongsoton_jelly/app/src/main/res/layout/mypage_seller_item.xml" value="0.190234375" />
+        <entry key="..\:/Users/user/AndroidStudioProjects/gyeongsoton_jelly/app/src/main/res/menu/bottom_nav_menu.xml" value="0.135546875" />
+        <entry key="..\:/Users/user/AndroidStudioProjects/gyeongsoton_jelly/app/src/main/res/mipmap-anydpi-v26/ic_launcher.xml" value="0.15625" />
+        <entry key="..\:/Users/user/AndroidStudioProjects/gyeongsoton_jelly/app/src/main/res/mipmap-anydpi-v26/ic_launcher_round.xml" value="0.15625" />
+      </map>
+    </option>
+  </component>
+  <component name="ProjectRootManager" version="2" languageLevel="JDK_11" default="true" project-jdk-name="Android Studio default JDK" project-jdk-type="JavaSDK">
+    <output url="file://$PROJECT_DIR$/build/classes" />
+  </component>
+  <component name="ProjectType">
+    <option name="id" value="Android" />
+  </component>
+</project>
