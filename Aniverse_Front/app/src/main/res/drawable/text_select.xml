@@ -1,0 +1,9 @@
+<selector xmlns:android="http://schemas.android.com/apk/res/android">
+    <item android:state_selected="true" android:color="#6DC6A2"/>
+    <item android:state_pressed="true" android:color="#6DC6A2"/>
+    <item android:state_focused="true" android:color="#000000"/>
+    <item android:color="#000000"/>
+</selector>
+
+<!--입양중 입양완료 같은 버튼 눌릴 때 색 변하는거-->
+
