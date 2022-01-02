@@ -33,7 +33,7 @@ public class Adopt_list extends AppCompatActivity {
 
     private ImageView ani_1;
     private TextView textView1;
-    String userIdx,userAuth;
+   // String userIdx,userAuth;
 
 
     private final int Fragment_1 = 1;
@@ -43,8 +43,7 @@ public class Adopt_list extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN,
-                WindowManager.LayoutParams.FLAG_FULLSCREEN);
+        getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN, WindowManager.LayoutParams.FLAG_FULLSCREEN);
         setContentView(R.layout.activity_adopt_list);
 
         Intent intent= getIntent();
@@ -120,6 +119,11 @@ public class Adopt_list extends AppCompatActivity {
         Button protect_tab = (Button)findViewById(R.id.protect_tab);
         Button complete_tab = (Button)findViewById(R.id.complete_tab);
 
+        //FragmentView(Fragment_1);
+        //adopt_tab.setPressed(true);
+        //protect_tab.setPressed(false);
+        //complete_tab.setPressed(false);
+
         adopt_tab.setOnTouchListener(new View.OnTouchListener() {
             @SuppressLint("ClickableViewAccessibility")
             @Override
@@ -158,10 +162,7 @@ public class Adopt_list extends AppCompatActivity {
             }
         });
 
-        FragmentView(Fragment_1);
-        adopt_tab.setPressed(true);
-        protect_tab.setPressed(false);
-        complete_tab.setPressed(false);
+
 
     }
 
@@ -171,8 +172,8 @@ public class Adopt_list extends AppCompatActivity {
         switch (fragment) {
             case 1:
                 // 첫번째 프래그먼트 호출
-                Fragment fragment1 = new Adopt_animal_fragment();
-                getSupportFragmentManager().beginTransaction().replace(R.id.adopt_list_container,fragment1).commit();
+                Fragment fragment1 = new Adopt_animal_fragment(); //미리 정의
+                getSupportFragmentManager().beginTransaction().replace(R.id.adopt_list_container,fragment1).commit(); //공통으로 뺄 것
                 break;
 
             case 2:
