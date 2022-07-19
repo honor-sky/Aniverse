@@ -1,6 +1,5 @@
 # Aniverse 
-Title : Android Application Development Project 
-Team : Jelly Keeper
+### Title : Android Application Development Project  ### Team : Jelly Keeper
 
 [2021-08-30] ~ [2021-11-15] 단국대학교 SW융합대학 X 경영경제대학 연합 해커톤 경소톤 공모전 활동 
 
