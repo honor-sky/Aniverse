@@ -1,8 +1,8 @@
 # Aniverse 
-### Title : Android Application Development Project  
-### Team : 젤리수호대 (Jelly Keeper)
-
 [2021-08-30] ~ [2021-11-15] 단국대학교 SW융합대학 X 경영경제대학 연합 해커톤 경소톤 공모전 활동 
+
+### Subject : Android Application Development for abandoned animals  
+### Team : 젤리수호대 (Jelly Keeper)
 
 
 # 참여자
